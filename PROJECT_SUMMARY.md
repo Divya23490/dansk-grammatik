@@ -123,6 +123,9 @@ The noun, adjective, verb, comma, spelling and vocabulary trainers follow the sa
 | `src/vocabSets/*.ts` | Vocabulary sets: store (tombstones, newer-wins merge), Supabase sync, deck matching by any word form, set words as flashcards, suggested meanings |
 | `src/ui/exam/SelectionCapture.web.tsx` | Web-only text selection in reading papers → "Add to set" pill (native file is a pass-through) |
 | `src/ui/vocab/AddToSetSheet.tsx` | Add or edit a set word: deck match, suggested meaning, source sentence, set picker |
+| `src/vocab/cloze.ts`, `src/ui/vocab/GapFill.tsx` | Gap-fill vocab cards: the word cut from one of its own sentences, tap choices weighted to its other forms, typo-tolerant check |
+| `src/ui/FlipCard.tsx`, `src/ui/vocab/{SwipeToGrade,SpeakButton,DailyGoal}.tsx`, `src/ui/vocab/useCardKeys.ts` | Flashcard flip animation, swipe and keyboard grading (Again / Hard / Good), read-aloud, daily goal |
+| `src/profile/vocabGoal.ts` | Today's vocab card count, derived from the progress log |
 | `supabase/functions/gloss/index.ts` | Edge Function: DeepL translation of a picked-out word, with its sentence as context; signed-in users only |
 | `src/feedback/types.ts` | `WritingTask`, `Correction`, `WritingFeedback`, `FeedbackProvider` contracts |
 | `src/feedback/offlineRules.ts` | Deterministic regex writing checker |
@@ -192,6 +195,7 @@ The noun, adjective, verb, comma, spelling and vocabulary trainers follow the sa
 - Onboarding exam picker (`src/ui/Onboarding.tsx`)
 - Exam guides for PD3, PD2 and FVU-dansk (`app/exam.tsx`, `src/content/examGuides.ts`)
 - Custom vocabulary sets: select a word or phrase in a reading text (web) and add it, with its sentence, to a set; practise sets in the flashcard trainer without moving the vocab niveau (`app/sets/`, `src/vocabSets/`, `app/vocab.tsx`)
+- Vocab trainer modes and grading: Danish → English, English → Danish and gap-fill cards; Again / Hard / Good by button, swipe or keyboard; read-aloud; redo missed cards; daily goal (`app/vocab.tsx`, `src/vocab/cloze.ts`, `src/ui/vocab/`)
 
 ---
 

@@ -70,10 +70,16 @@ Three commitments follow from that:
   Fordele/Ulemper, Holdning).
 - **Ordforråd (vocabulary flashcards)** — 35 hard words and discourse
   connectors pulled from the real corpus above, each carrying the actual
-  sentence it came from rather than a bare translation. Flip-and-self-grade,
-  with the same decaying-mastery model as the grammar map (`profile/mastery.ts`
-  is shared between the two) — a word "known" once and never revisited fades
-  back to "needs review" instead of a false permanent green checkmark.
+  sentence it came from rather than a bare translation. Three card modes:
+  Danish → English, English → Danish, and gap-fill (put the word back into one
+  of its own sentences, in the form the sentence uses, by tapping or typing).
+  Grade a card *Again / Hard / Good* with the buttons, by swiping (right/left),
+  or on the web with the keys (space flips; ←/1, ↓/2, →/3 grade). Hear the word
+  read aloud, redo just the missed cards at the end of a round, and track a
+  daily goal (10–50 cards, counted from the progress log). Same decaying-mastery
+  model as the grammar map (`profile/mastery.ts` is shared between the two) — a
+  word "known" once and never revisited fades back to "needs review" instead of
+  a false permanent green checkmark.
 - **My sets (your own vocabulary)** — select a word or phrase in any reading
   text (web) and choose **＋ Add to set** to file it, with the sentence it came
   from, into a set of your own. A word the deck already has (in any of its
@@ -280,6 +286,12 @@ src/
     Screen.tsx              max-width wrapper — the phone→web responsive seam
     exam/SelectionCapture.web.tsx  select text in a reading paper → "Add to set"
     vocab/AddToSetSheet.tsx  add / edit a set word (deck match, meaning, set)
+    FlipCard.tsx             animated two-sided card (flashcards)
+    vocab/GapFill.tsx        gap-fill vocab card (tap or type)
+    vocab/SwipeToGrade.tsx   swipe a flashcard right/left to grade it
+    vocab/useCardKeys.ts     web keyboard shortcuts for the flashcards
+    vocab/SpeakButton.tsx    Danish read-aloud (expo-speech)
+    vocab/DailyGoal.tsx      today's cards against the daily goal
     Snackbar.tsx             short confirmation with Undo
 supabase/
   migrations/              numbered, additive-only schema changes
