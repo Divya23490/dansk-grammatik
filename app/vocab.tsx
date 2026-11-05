@@ -1,13 +1,13 @@
 import { useLocalSearchParams } from 'expo-router';
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { Pressable, View } from 'react-native';
+import { Platform, Pressable, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Screen } from '../src/ui/Screen';
 import { splitAtForm, type VocabExample } from '../src/content/examples';
 import { MAX_LEVEL, type Level } from '../src/content/levels';
-import type { VocabCategory } from '../src/content/vocabulary';
+import { VOCABULARY, type VocabCategory } from '../src/content/vocabulary';
 import { currentLevelNow, useCurrentLevel } from '../src/profile/levelStore';
-import { useVocabSession, type SessionLength } from '../src/profile/vocabSession';
+import { useVocabSession, type CardMode, type SessionLength } from '../src/profile/vocabSession';
 import { LevelBadge, LevelUpNotice } from '../src/ui/LevelBadge';
 import {
   SESSION_CATEGORIES,
@@ -18,6 +18,14 @@ import {
   useVocabProfile,
 } from '../src/profile/vocabStore';
 import { Segmented } from '../src/ui/Segmented';
+import { FlipCard } from '../src/ui/FlipCard';
+import { DailyGoal } from '../src/ui/vocab/DailyGoal';
+import { GapFill } from '../src/ui/vocab/GapFill';
+import type { Grade } from '../src/ui/vocab/grade';
+import { SpeakButton } from '../src/ui/vocab/SpeakButton';
+import { SwipeToGrade } from '../src/ui/vocab/SwipeToGrade';
+import { useCardKeys } from '../src/ui/vocab/useCardKeys';
+import { clozeFor } from '../src/vocab/cloze';
 import { Button, Card, Label, StrengthBar, Txt, s } from '../src/ui/primitives';
 import { useTheme } from '../src/ui/theme';
 import { cardsFor, type SetCard } from '../src/vocabSets/cards';
@@ -40,6 +48,12 @@ const CATEGORY_PLURAL: Record<VocabCategory, string> = {
   phrase: 'Phrases',
 };
 
+const MODE_OPTIONS: { key: CardMode; label: string }[] = [
+  { key: 'da-en', label: 'Danish → English' },
+  { key: 'en-da', label: 'English → Danish' },
+  { key: 'gap', label: 'Gap-fill' },
+];
+
 const LENGTH_OPTIONS: { key: string; label: string }[] = [
   { key: '10', label: '10' },
   { key: '20', label: '20' },
@@ -57,9 +71,24 @@ interface Session {
   allLevels: boolean;
   /** A round of the learner's own sets instead of the deck: these sets' cards, no niveau. */
   setIds?: string[];
+  /** A redo round: exactly these cards (the ones missed last round), weakest first. */
+  pool?: SetCard[];
   /** Every word shown this round, the current card included — none repeats until these run out. */
   served: Set<string>;
-  results: { word: SetCard; knewIt: boolean }[];
+  results: { word: SetCard; grade: Grade }[];
+}
+
+/** The cards a round draws from, when it has a fixed list: a redo, or the learner's sets. */
+function fixedPool(session: Session): SetCard[] | null {
+  if (session.pool) return session.pool;
+  if (session.setIds) return setPool(session.setIds);
+  return null;
+}
+
+/** Words missed this round ("again" or "hard"), each once. */
+function missedIn(session: Session): SetCard[] {
+  // A word can come round twice once the deck runs dry; list it once.
+  return [...new Map(session.results.filter((r) => r.grade !== 'good').map((r) => [r.word.id, r.word])).values()];
 }
 
 /** The cards in these of the learner's sets, read fresh from the store. */
@@ -118,6 +147,24 @@ export default function Vocab() {
     setFinished(false);
   }, []);
 
+  const startRedo = useCallback((prev: Session) => {
+    const pool = missedIn(prev);
+    const first = nextFromPool(useVocabProfile.getState().stats, pool);
+    if (!first) return;
+    setSession({
+      categories: prev.categories,
+      length: pool.length,
+      allLevels: prev.allLevels,
+      setIds: prev.setIds,
+      pool,
+      served: new Set([first.id]),
+      results: [],
+    });
+    setWord(first);
+    setFlipped(false);
+    setFinished(false);
+  }, []);
+
   // Arriving from a set's own screen ("Practise this set"): start a round of it straight away.
   const { sets: setsParam } = useLocalSearchParams<{ sets?: string }>();
   const hydratedSets = useVocabSets((st) => st.hydrated);
@@ -140,10 +187,12 @@ export default function Vocab() {
   }, [session, backToSetup]);
 
   const grade = useCallback(
-    (knewIt: boolean) => {
+    (g: Grade) => {
       if (!session || !word) return;
-      record(word.id, knewIt, { ownSet: !!session.setIds });
-      const results = [...session.results, { word, knewIt }];
+      // The progress log is known / not known; "hard" was a struggle, so it
+      // counts as not known and the word comes back sooner.
+      record(word.id, g === 'good', { ownSet: !!session.setIds });
+      const results = [...session.results, { word, grade: g }];
       if (session.length !== 'endless' && results.length >= session.length) {
         setSession({ ...session, results });
         setFinished(true);
@@ -152,8 +201,9 @@ export default function Vocab() {
       // A fixed round never repeats a card; Endless lets weak words come back, as before.
       const exclude = session.length === 'endless' ? undefined : session.served;
       const stats = useVocabProfile.getState().stats;
-      const nxt = session.setIds
-        ? (nextFromPool(stats, setPool(session.setIds), word.id, Date.now(), exclude) ?? word)
+      const fixed = fixedPool(session);
+      const nxt = fixed
+        ? (nextFromPool(stats, fixed, word.id, Date.now(), exclude) ?? word)
         : nextWord(stats, word.id, Date.now(), currentLevelNow('vocab'), {
             categories: session.categories,
             allLevels: session.allLevels,
@@ -165,6 +215,36 @@ export default function Vocab() {
     },
     [record, session, word],
   );
+
+  const mode = useVocabSession((st) => st.mode);
+  const dailyGoal = useVocabSession((st) => st.dailyGoal);
+  const setDailyGoal = useVocabSession((st) => st.setDailyGoal);
+
+  // Distractors for gap-fill taps: the round's own cards, or the whole deck.
+  // Once per round, so the options don't reshuffle under the learner.
+  const gapPool = useMemo(
+    () => (session ? (fixedPool(session) ?? VOCABULARY) : VOCABULARY),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [session?.setIds, session?.pool],
+  );
+  // The sentence rotates with each sighting, so a word seen again can show another.
+  const cloze = useMemo(
+    () => (word && mode === 'gap' ? clozeFor(word, stats[word.id]?.attempts ?? 0) : null),
+    // Not on `stats`: grading this card would swap its sentence mid-answer.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [word, mode, session?.results.length],
+  );
+  // English first needs an English meaning to show; an own card may lack one.
+  const reverse = mode === 'en-da' && !!word?.glossEn;
+
+  useCardKeys({
+    enabled: !!word && !!session && !finished && !cloze,
+    flipped,
+    onFlip: () => setFlipped((f) => !f),
+    onGrade: grade,
+  });
+
+  const cardKey = session && word ? `${session.results.length}:${word.id}` : 'none';
 
   return (
     <Screen
@@ -187,6 +267,8 @@ export default function Vocab() {
         <StrengthBar value={summary.total ? summary.mastered / summary.total : 0} color={t.c.success} />
       </View>
 
+      <DailyGoal goal={dailyGoal} onChangeGoal={setDailyGoal} />
+
       <LevelUpNotice domain="vocab" />
 
       {!session ? (
@@ -197,8 +279,14 @@ export default function Vocab() {
           onAgain={() =>
             session.setIds
               ? startSets(session.setIds, useVocabSession.getState().length)
-              : start(session.categories, session.length as SessionLength, session.allLevels)
+              : start(
+                  session.categories,
+                  // A redo's length is however many were missed; a new round goes back to the chosen one.
+                  session.pool ? useVocabSession.getState().length : (session.length as SessionLength),
+                  session.allLevels,
+                )
           }
+          onRedo={() => startRedo(session)}
           onChange={backToSetup}
         />
       ) : word ? (
@@ -224,47 +312,83 @@ export default function Vocab() {
           </View>
 
           {/* ── The card ─────────────────────────────────────────────────── */}
-          <Pressable onPress={() => setFlipped((f) => !f)}>
-            <Card style={{ minHeight: 220, justifyContent: 'center' }}>
-              {!flipped ? (
-                <View style={{ alignItems: 'center', gap: t.space(2) }}>
-                  <View style={[s.row, { gap: t.space(2) }]}>
-                    <Label color={t.c.textFaint}>{word.own ? 'My word' : CATEGORY_LABEL[word.category]}</Label>
-                    {word.own ? null : <LevelBadge level={word.level} />}
+          {cloze ? (
+            <GapFill key={cardKey} card={word} cloze={cloze} pool={gapPool} onDone={(k) => grade(k ? 'good' : 'again')} />
+          ) : (
+            <>
+              <SwipeToGrade key={cardKey} enabled={flipped} onGrade={grade}>
+                <FlipCard
+                  flipped={flipped}
+                  onPress={() => setFlipped((f) => !f)}
+                  accessibilityLabel={
+                    flipped ? 'Turn the card back' : `${reverse ? word.glossEn : word.word}. Flip the card`
+                  }
+                  // English first: the front must not read the answer out.
+                  frontCorner={reverse ? undefined : <SpeakButton text={word.word} />}
+                  backCorner={<SpeakButton text={word.word} />}
+                  front={
+                    <Card style={{ flexGrow: 1, minHeight: 220, justifyContent: 'center' }}>
+                      <View style={{ alignItems: 'center', gap: t.space(2) }}>
+                        <View style={[s.row, { gap: t.space(2) }]}>
+                          <Label color={t.c.textFaint}>
+                            {reverse ? 'IN DANISH?' : word.own ? 'My word' : CATEGORY_LABEL[word.category]}
+                          </Label>
+                          {word.own ? null : <LevelBadge level={word.level} />}
+                        </View>
+                        {reverse ? (
+                          <Txt variant="title" style={{ textAlign: 'center' }}>
+                            {word.glossEn}
+                          </Txt>
+                        ) : (
+                          <Txt variant="display" style={{ textAlign: 'center', fontSize: 26 }}>
+                            {word.word}
+                          </Txt>
+                        )}
+                        <Txt variant="body" color={t.c.textFaint} style={{ marginTop: t.space(3) }}>
+                          Tap to flip the card
+                        </Txt>
+                      </View>
+                    </Card>
+                  }
+                  back={
+                    <Card style={{ flexGrow: 1, minHeight: 220, justifyContent: 'center', gap: t.space(3) }}>
+                      {reverse ? (
+                        <View>
+                          <Label color={t.c.accent}>DANISH</Label>
+                          <Txt variant="display" style={{ fontSize: 26, marginTop: t.space(1) }}>
+                            {word.word}
+                          </Txt>
+                        </View>
+                      ) : null}
+                      <CardBack word={word} />
+                    </Card>
+                  }
+                />
+              </SwipeToGrade>
+
+              {/* ── Self-grade ───────────────────────────────────────────── */}
+              {flipped ? (
+                <View style={{ gap: t.space(2) }}>
+                  <View style={[s.row, { gap: t.space(3) }]}>
+                    <Button label="Again" tone="ghost" onPress={() => grade('again')} style={{ flex: 1 }} />
+                    <Button label="Hard" tone="primary" onPress={() => grade('hard')} style={{ flex: 1 }} />
+                    <Button label="Good" tone="success" onPress={() => grade('good')} style={{ flex: 1 }} />
                   </View>
-                  <Txt variant="display" style={{ textAlign: 'center', fontSize: 26 }}>
-                    {word.word}
-                  </Txt>
-                  <Txt variant="body" color={t.c.textFaint} style={{ marginTop: t.space(3) }}>
-                    Tap to flip the card
+                  <Txt variant="body" color={t.c.textFaint} style={{ textAlign: 'center', fontSize: 13 }}>
+                    {Platform.OS === 'web'
+                      ? 'Keys: ← or 1 again · ↓ or 2 hard · → or 3 good · space to turn'
+                      : 'Or swipe the card: right if you knew it, left if not.'}
                   </Txt>
                 </View>
               ) : (
-                <CardBack word={word} />
+                <Txt variant="body" color={t.c.textFaint} style={{ textAlign: 'center' }}>
+                  {reverse
+                    ? 'Say the Danish word before you flip the card.'
+                    : 'Try to guess the meaning before you flip the card.'}
+                  {Platform.OS === 'web' ? ' (Space flips it.)' : ''}
+                </Txt>
               )}
-            </Card>
-          </Pressable>
-
-          {/* ── Self-grade ───────────────────────────────────────────────── */}
-          {flipped ? (
-            <View style={[s.row, { gap: t.space(3) }]}>
-              <Button
-                label="Didn’t know it"
-                tone="ghost"
-                onPress={() => grade(false)}
-                style={{ flex: 1 }}
-              />
-              <Button
-                label="Knew it"
-                tone="success"
-                onPress={() => grade(true)}
-                style={{ flex: 1 }}
-              />
-            </View>
-          ) : (
-            <Txt variant="body" color={t.c.textFaint} style={{ textAlign: 'center' }}>
-              Try to guess the meaning before you flip the card.
-            </Txt>
+            </>
           )}
         </>
       ) : null}
@@ -304,6 +428,8 @@ function SessionSetup({
   const length = useVocabSession((st) => st.length);
   const setCategories = useVocabSession((st) => st.setCategories);
   const setLength = useVocabSession((st) => st.setLength);
+  const mode = useVocabSession((st) => st.mode);
+  const setMode = useVocabSession((st) => st.setMode);
   const allLevels = useVocabSession((st) => st.allLevels);
   const setAllLevels = useVocabSession((st) => st.setAllLevels);
 
@@ -322,6 +448,13 @@ function SessionSetup({
         value={String(length)}
         onChange={(k) => setLength(k === 'endless' ? 'endless' : (Number(k) as SessionLength))}
       />
+    </View>
+  );
+
+  const modePicker = (
+    <View style={{ gap: t.space(2) }}>
+      <Label color={t.c.textFaint}>CARDS</Label>
+      <Segmented compact options={MODE_OPTIONS} value={mode} onChange={(k) => setMode(k as CardMode)} />
     </View>
   );
 
@@ -358,6 +491,7 @@ function SessionSetup({
             ))}
           </View>
         </View>
+        {modePicker}
         {lengthPicker}
         <Button label="Start" onPress={() => onStartSets(chosen, length)} disabled={chosen.length === 0} />
       </Card>
@@ -393,6 +527,7 @@ function SessionSetup({
           onChange={(k) => setAllLevels(k === 'all')}
         />
       </View>
+      {modePicker}
       {lengthPicker}
       <Button label="Start" onPress={() => onStart(categories, length, allLevels)} disabled={available === 0} />
     </Card>
@@ -439,18 +574,18 @@ function ToggleChip({
 function SessionSummary({
   session,
   onAgain,
+  onRedo,
   onChange,
 }: {
   session: Session;
   onAgain: () => void;
+  onRedo: () => void;
   onChange: () => void;
 }) {
   const t = useTheme();
-  const knew = session.results.filter((r) => r.knewIt).length;
-  // A word can come round twice once the deck runs dry; list it once.
-  const missed = [
-    ...new Map(session.results.filter((r) => !r.knewIt).map((r) => [r.word.id, r.word])).values(),
-  ];
+  const knew = session.results.filter((r) => r.grade === 'good').length;
+  const hard = session.results.filter((r) => r.grade === 'hard').length;
+  const missed = missedIn(session);
 
   return (
     <Card style={{ gap: t.space(4) }}>
@@ -458,6 +593,11 @@ function SessionSummary({
         <Txt variant="title">
           Knew {knew} of {session.results.length}
         </Txt>
+        {hard ? (
+          <Txt variant="body" color={t.c.textMuted} style={{ marginTop: t.space(1) }}>
+            {hard} {hard === 1 ? 'was' : 'were'} hard.
+          </Txt>
+        ) : null}
         <Txt variant="body" color={t.c.textMuted} style={{ marginTop: t.space(1) }}>
           {missed.length
             ? 'These will come back sooner — have another look now.'
@@ -477,6 +617,7 @@ function SessionSummary({
           ))}
         </View>
       ) : null}
+      {missed.length ? <Button label={`Redo the ${missed.length} missed`} tone="success" onPress={onRedo} /> : null}
       <View style={[s.row, { gap: t.space(3) }]}>
         <Button label="Change setup" tone="ghost" onPress={onChange} style={{ flex: 1 }} />
         <Button label="Another round" onPress={onAgain} style={{ flex: 1 }} />
