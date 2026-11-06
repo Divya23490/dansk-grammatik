@@ -46,7 +46,8 @@
     "content:lock": "UPDATE_CONTENT_LOCK=1 vitest run src/content/ids.test.ts",
     "test:e2e": "E2E=1 vitest run src/sync/supabase.e2e.test.ts",
     "exam:upload": "vitest run src/content/exams && node scripts/upload-exam-papers.mjs",
-    "exam:difficulty": "node scripts/exam-difficulty.mjs"
+    "exam:difficulty": "node scripts/exam-difficulty.mjs",
+    "writing:upload": "vitest run src/content/writing && node scripts/upload-writing.mjs"
   },
   "private": true
 }

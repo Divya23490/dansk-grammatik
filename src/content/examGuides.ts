@@ -119,7 +119,7 @@ const PD3: ExamGuide = {
         { label: 'Official writing paper 2022', url: `${SIRI}/apahvtdf/pd3-skriftlig-fremstilling-sommer-2022.pdf` },
         { label: 'Example of a passing answer', url: `${SIRI}/ncfhgdmf/260921-pd3-besvarelse-002.pdf` },
       ],
-      route: { label: 'Practise the official 2022 tasks in the Writing studio', path: '/write' },
+      route: { label: 'Open Writing prep: tips, templates, graded examples and practice', path: '/writing' },
     },
     {
       key: 'speaking',

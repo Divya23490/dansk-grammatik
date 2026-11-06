@@ -51,8 +51,15 @@ export default function ExamGuideScreen() {
           onPress={() => router.push('/topics/practice')}
         />
         ) : null}
+        {exam === 'PD3' ? (
         <ListRow
-          title="Writing studio"
+          title="Writing prep"
+          detail="The three PD3 writing tasks: tips, templates, graded examples and timed practice."
+          onPress={() => router.push('/writing' as never)}
+        />
+        ) : null}
+        <ListRow
+          title="Free writing studio"
           detail="Exam-style letters and essays, checked for word order."
           onPress={() => router.push('/write')}
         />

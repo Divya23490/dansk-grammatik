@@ -434,6 +434,25 @@ served from Supabase to signed-in users only. To set them up:
 Simulated papers ship with the app (`src/content/exams/simulated/`) and need
 none of this.
 
+### Writing prep (official tasks and learner samples)
+
+Tips, templates, graded examples and simulated tasks ship with the app
+(`src/content/writing/`, all written for it and labelled illustrative). Past
+official writing tasks and real learner texts are private:
+
+1. In the SQL editor, run `supabase/migrations/0004_writing.sql` (the
+   `writing_items` table). Official tasks are readable by any signed-in user;
+   learner samples only by their `owner`.
+2. In `.env.local`, next to `SUPABASE_SECRET_KEY`, set the account that may
+   read the learner samples (without it they are skipped):
+
+   ```
+   WRITING_SAMPLES_OWNER=<app account e-mail>
+   ```
+
+3. With the items in `content-private/writing/` (gitignored), run
+   `npm run writing:upload`. It validates everything, then uploads what changed.
+
 ### Vocabulary sets and suggested meanings
 
 1. In the SQL editor, run `supabase/migrations/0003_vocab_sets.sql` (the

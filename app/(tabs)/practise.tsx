@@ -135,7 +135,12 @@ export default function Practise() {
 
       <ListGroup title="Writing">
         <ListRow
-          title="Writing studio"
+          title="Writing prep"
+          detail="PD3 e-mail, diagram and list tasks: templates, graded examples and timed practice."
+          onPress={() => router.push('/writing' as never)}
+        />
+        <ListRow
+          title="Free writing studio"
           detail="Write a letter or an essay and get the word order checked rule by rule."
           onPress={() => router.push('/write')}
         />

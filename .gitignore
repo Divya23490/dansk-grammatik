@@ -54,3 +54,6 @@ content-private/
 
 # Supabase CLI state (project link, versions)
 supabase/.temp/
+
+# Learner's own writing material (own answers, classmates' texts, course papers): local only.
+more data for reference/
