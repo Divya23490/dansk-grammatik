@@ -102,7 +102,11 @@ The noun, adjective, verb, comma, spelling and vocabulary trainers follow the sa
 | `app/rule/[id].tsx` | Rule card for any rule: explanation, common mistakes, wrong/right pairs, learner's mastery, links to its lesson and trainer |
 | `app/nouns.tsx`, `adjectives.tsx`, `verbs.tsx`, `comma.tsx`, `spelling.tsx`, `vocab.tsx` | Six more trainers (typed answers or flashcards) |
 | `app/sets/index.tsx`, `app/sets/[id].tsx` | The learner's own vocabulary sets: list, and one set's words (practise, add, edit, remove) |
-| `app/write.tsx` | Writing studio: tasks grouped by exam (`src/content/writingTasks.ts`: official PD3 2022 and PD2 2023 tasks, plus labelled practice tasks including FVU), checked by `activeProvider()` |
+| `app/write.tsx` | Free writing studio: tasks grouped by exam (`src/content/writingTasks.ts`: official PD3 2022 and PD2 2023 tasks, plus labelled practice tasks including FVU), checked by `activeProvider()` |
+| `app/writing/index.tsx`, `[type].tsx`, `practice/[taskId].tsx` | PD3 writing prep: hub; per task type (D1 e-mail, 2A diagram, 2B list) Tips / Template / Examples / Practice / Phrases tabs, with a two-column Examples view on desktop; the practice editor (free or template mode with topic hints and starters, timer, autosaved drafts, basic check, "Copy for AI review") |
+| `src/content/writing/*.ts` | Writing content contract (`types.ts`), per-type guides (tips, template, phrases, pitfalls), simulated tasks with illustrative 12/7/4/02 answer ladders, official example links, validator |
+| `src/writing/*.ts` | Writing drafts store (local, per user), private items loader (`writing_items`, per-user cache), structure checks (`analyse.ts`), annotation segmenting, the review-prompt builder |
+| `scripts/upload-writing.mjs` | Uploads `content-private/writing/*.json` (official past tasks; learner samples readable only by `WRITING_SAMPLES_OWNER`) to `writing_items` |
 | `app/topics/index.tsx`, `[id].tsx`, `practice.tsx`, `practice/[id].tsx` | Oral-exam topic archive with search and year filter, topic Q&A with model answers, practice topics |
 | `app/exam.tsx` | Exam guide with a PD3 / PD2 / FVU switcher, driven by `src/content/examGuides.ts` (format, timings, tips, links to official sample PDFs and the FVU rules) |
 | `app/progress.tsx` | Overall mastery, daily streak, per-trainer progress |
@@ -151,7 +155,8 @@ The noun, adjective, verb, comma, spelling and vocabulary trainers follow the sa
   2. missing inversion after a fronted adverbial
   3. "og" used where the infinitive marker "at" is needed
 
-  It also adds a word-count note for essays.
+  It also adds a word-count note for essays, and (since writing prep) closed-list spelling rules for the learner's recurring slips (*kollegere*, *arbejdeplads*, *tinger*, *svart*, modal + *har*).
+- **Writing prep's stand-in for AI review:** "Copy for AI review" in the practice editor builds a censor-style prompt (`src/writing/reviewPrompt.ts`) with the task and the answer, for the learner to paste into Claude themselves. Nothing is sent from the app.
 
 ---
 
@@ -270,7 +275,7 @@ What isn't tested:
 
 **Limitations**
 - **The AI coach is a stub.** No proxy exists; `focusRules` and `targetExam` are hard-coded (`src/feedback/claudeCoach.ts`).
-- **The offline writing checker is narrow.** It only knows 3 regex patterns. It can't judge style, register or task fulfilment, and it says so in its notes (`src/feedback/offlineRules.ts`).
+- **The offline writing checker is narrow.** It only knows a handful of regex patterns plus structure checks (length, bullet coverage, evaluation share). It can't judge style, register or task fulfilment, and it says so in its notes (`src/feedback/offlineRules.ts`).
 - **The content pool is small.** There are 25 word-order exercises (`src/content/exercises.ts`), so the "never repeat a solved one" bonus runs out quickly.
 - **Speaking can't be practised with a partner.** There's no speech or conversation feature.
 - **Exam coverage is uneven.** PD2 and FVU now have guides, but there's no official FVU sample material (FVU papers aren't published), and PD2 has no oral topic archive (`src/content/examGuides.ts`).
