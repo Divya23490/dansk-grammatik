@@ -21,6 +21,7 @@ import { ALL_NODE_IDS } from '../path/curriculum';
 import { ADJECTIVE_BANK } from './adjectives';
 import { COMMA_EXAMPLES } from './commaExamples';
 import { SIMULATED_PAPERS } from './exams/simulated';
+import { GRADED_ANSWERS, SIM_WRITING_TASKS } from './writing';
 import { EXERCISES } from './exercises';
 import { NOUN_BANK } from './nouns';
 import { RETIRED_IDS, RULE_ALIASES } from './retired';
@@ -58,6 +59,9 @@ const current: Record<string, string[]> = {
   ),
   // Grammar path lessons and checkpoints: path results point at these.
   'path:nodes': ALL_NODE_IDS,
+  // Writing prep: drafts and attempts are stored under the task id.
+  writingTasks: ids(SIM_WRITING_TASKS),
+  writingExamples: ids(GRADED_ANSWERS),
 };
 
 /** Ids that rule aliases may point at: every rule-like id, drill topics included. */

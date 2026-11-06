@@ -16,6 +16,7 @@ import { switchUser } from '../sync/log';
 import { supabaseRemote } from '../sync/remote';
 import { startSync, stopSync, syncNow } from '../sync/sync';
 import { switchSetsUser } from '../vocabSets/store';
+import { switchWritingUser } from '../writing/draftStore';
 import { startSetsSync, stopSetsSync, supabaseSetsRemote } from '../vocabSets/sync';
 import { supabase } from './supabase';
 
@@ -61,6 +62,7 @@ async function applySession(session: Session | null): Promise<void> {
     await switchUser(userId);
     await switchAttemptUser(userId);
     await switchSetsUser(userId);
+    await switchWritingUser(userId);
     useSession.setState({ status: 'signedIn', userId, email: session?.user.email ?? null });
     if (supabase) {
       void startSync(supabaseRemote(supabase));
@@ -71,6 +73,7 @@ async function applySession(session: Session | null): Promise<void> {
     await switchUser(null);
     await switchAttemptUser(null);
     await switchSetsUser(null);
+    await switchWritingUser(null);
     // The exam focus and onboarding belong to the account; the theme stays with the device.
     useSettings.setState({ targetExam: null, examDate: null, onboarded: false });
     useSession.setState({ status: 'signedOut', userId: null, email: null });

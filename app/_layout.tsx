@@ -142,7 +142,11 @@ function RootStack() {
       >
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="train" options={{ title: 'Word order' }} />
-        <Stack.Screen name="write" options={{ title: 'Writing studio' }} />
+        <Stack.Screen name="write" options={{ title: 'Free writing studio' }} />
+        <Stack.Screen name="writing/index" options={{ title: 'Writing prep', ...OWN_HEADING }} />
+        <Stack.Screen name="writing/[type]" options={{ title: 'Writing', ...OWN_HEADING }} />
+        {/* The editor names its task in the header; it has no heading of its own. */}
+        <Stack.Screen name="writing/practice/[taskId]" options={{ title: 'Writing' }} />
         <Stack.Screen name="vocab" options={{ title: 'Vocabulary', ...OWN_HEADING }} />
         <Stack.Screen name="sets/index" options={{ title: 'My sets', ...OWN_HEADING }} />
         <Stack.Screen name="sets/[id]" options={{ title: 'Set', ...OWN_HEADING }} />

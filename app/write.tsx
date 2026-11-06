@@ -1,14 +1,13 @@
-import { useRouter } from 'expo-router';
 import React, { useCallback, useState } from 'react';
 import { TextInput, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Screen } from '../src/ui/Screen';
-import { RULES } from '../src/grammar/rules';
 import { activeProvider } from '../src/feedback/claudeCoach';
 import type { WritingFeedback } from '../src/feedback/types';
 import { WRITING_TASKS, type WritingExam } from '../src/content/writingTasks';
 import { useSettings } from '../src/profile/settings';
-import { Button, Card, Divider, Label, Txt, s } from '../src/ui/primitives';
+import { Button, Card, Label, Txt, s } from '../src/ui/primitives';
+import { FeedbackView } from '../src/ui/writing/FeedbackView';
 import { useTheme } from '../src/ui/theme';
 
 /**
@@ -23,7 +22,6 @@ import { useTheme } from '../src/ui/theme';
 
 export default function Write() {
   const t = useTheme();
-  const router = useRouter();
   const insets = useSafeAreaInsets();
 
   const target = useSettings((st) => st.targetExam);
@@ -159,60 +157,7 @@ export default function Write() {
       />
 
       {/* Feedback */}
-      {feedback ? (
-        <View style={{ gap: t.space(3) }}>
-          <Divider />
-          <View style={s.rowBetween}>
-            <Label>
-              {feedback.corrections.length
-                ? `${feedback.corrections.length} thing${feedback.corrections.length === 1 ? '' : 's'} to fix`
-                : 'Nothing flagged'}
-            </Label>
-            <Txt variant="label" color={t.c.textFaint}>
-              {provider.label}
-            </Txt>
-          </View>
-
-          {feedback.corrections.map((c, i) => (
-            <Card key={i}>
-              <View style={[s.row, { gap: t.space(2), flexWrap: 'wrap' }]}>
-                <Txt
-                  variant="body"
-                  color={t.c.accent}
-                  style={{ textDecorationLine: 'line-through' }}
-                >
-                  {c.original}
-                </Txt>
-                <Txt variant="body" color={t.c.textFaint}>
-                  →
-                </Txt>
-                <Txt variant="heading" color={t.c.success}>
-                  {c.suggestion}
-                </Txt>
-              </View>
-              <Txt variant="body" color={t.c.textMuted} style={{ marginTop: t.space(2.5) }}>
-                {c.explanation}
-              </Txt>
-              {c.ruleId ? (
-                <Button
-                  tone="ghost"
-                  label={`Rule: ${RULES[c.ruleId].da}`}
-                  onPress={() => router.push(`/rule/${c.ruleId}` as never)}
-                  style={{ marginTop: t.space(3) }}
-                />
-              ) : null}
-            </Card>
-          ))}
-
-          {feedback.notes.map((n, i) => (
-            <Card key={`n${i}`} tone="sunken">
-              <Txt variant="body" color={t.c.textMuted}>
-                {n}
-              </Txt>
-            </Card>
-          ))}
-        </View>
-      ) : null}
+      {feedback ? <FeedbackView feedback={feedback} providerLabel={provider.label} /> : null}
     </Screen>
   );
 }
