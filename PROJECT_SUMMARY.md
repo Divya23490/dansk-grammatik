@@ -127,6 +127,7 @@ The noun, adjective, verb, comma, spelling and vocabulary trainers follow the sa
 | `src/vocabSets/*.ts` | Vocabulary sets: store (tombstones, newer-wins merge), Supabase sync, deck matching by any word form, set words as flashcards, suggested meanings |
 | `app/exam/[paperId]/result.tsx`, `review.tsx` | Marked attempt: score, grade and each answer with its question and option text; "Review with the text" lays the paper out with your answers, the key (marked in cloze and 2B texts) and the DA/EN explanations |
 | `src/exam/review.ts`, `src/ui/exam/Explanation.tsx` | Per-item review model (given/key text, why, why-not for each wrong option, where a misplaced 2B paragraph belongs) and its panel |
+| `app/exam/guesses.tsx`, `src/content/guesses2026.ts`, `guesses2026Words.ts` | "November 2026 guesses": per-task forecast for the next PD3 sitting (what came up, pattern with counts, likely topics, tips, DA/EN cheat sheets) plus most-likely and revision word lists; counts from the private papers, no official text |
 | `src/content/exams/explanations.ts` | Validator for the answer explanations: every item covered in both languages, wrong-option letters match the key, quotes found in the text |
 | `src/ui/exam/SelectionCapture.web.tsx` | Web-only text selection in reading papers → "Add to set" pill (native file is a pass-through) |
 | `src/ui/vocab/AddToSetSheet.tsx` | Add or edit a set word: deck match, suggested meaning, source sentence, set picker |
