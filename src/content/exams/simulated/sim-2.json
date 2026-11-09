@@ -696,38 +696,68 @@
         "n": 1,
         "section": "Herregårdenes historie",
         "prompt": "Hvorfor kunne borgmurene ikke længere beskytte borgene omkring år 1500?",
-        "key": "Kanoner (og krudt) (blev almindelige)"
+        "key": "Kanoner (og krudt) (blev almindelige)",
+        "why": {
+          "da": "I »Herregårdenes historie« står der, at kanoner og krudt blev almindelige omkring år 1500, så murene ikke længere kunne modstå et angreb. Det er nok at svare »kanoner«.",
+          "en": "In 'Herregårdenes historie' the text says cannons and gunpowder became common around 1500, so walls could no longer withstand an attack. 'Kanoner' is enough.",
+          "quote": "Kanoner og krudt blev almindelige i Europa"
+        }
       },
       {
         "n": 2,
         "section": "Herregårdenes historie",
         "prompt": "Hvad blev det arbejde kaldt, som fæstebønderne skulle udføre gratis på herregårdens jord?",
-        "key": "Hoveri"
+        "key": "Hoveri",
+        "why": {
+          "da": "Se afsnittet om fæstebønderne. Det gratis arbejde på herregårdens jord havde et særligt navn. Svar med ét ord: »hoveri«.",
+          "en": "See the part about the tenant farmers. The unpaid work on the manor's land had a special name. Answer with one word: 'hoveri'.",
+          "quote": "Dette arbejde blev kaldt hoveri"
+        }
       },
       {
         "n": 3,
         "section": "Herregårdenes historie",
         "prompt": "Gjaldt stavnsbåndet for en 38-årig mand, da det blev indført i 1733? Svar ’ja’ eller ’nej’.",
         "key": "Nej",
-        "paraphrased": true
+        "paraphrased": true,
+        "why": {
+          "da": "Under »Stavnsbåndet« står der, at loven i 1733 kun gjaldt for mænd mellem 14 og 36 år. En mand på 38 var for gammel, så svaret er »nej«. Først senere blev grænsen hævet til 40 år.",
+          "en": "Under 'Stavnsbåndet' the text says that in 1733 the law only applied to men aged 14 to 36. A 38-year-old was too old, so the answer is 'nej'. The limit was raised to 40 only later.",
+          "quote": "I første omgang gjaldt stavnsbåndet for mænd mellem 14 og 36 år"
+        }
       },
       {
         "n": 4,
         "section": "Fem slotte, der er et besøg værd",
         "prompt": "Hvad skulle skibene betale ud for Helsingør, når de sejlede gennem Øresund?",
-        "key": "Sundtold(en)"
+        "key": "Sundtold(en)",
+        "why": {
+          "da": "I afsnittet om Kronborg står der, at alle skibe skulle stoppe ud for Helsingør og betale en afgift til kongen. Svar »Sundtold« eller »Sundtolden«.",
+          "en": "In the Kronborg part the text says all ships had to stop off Helsingør and pay a toll to the king. Answer 'Sundtold' or 'Sundtolden'.",
+          "quote": "betale Sundtolden til den danske konge"
+        }
       },
       {
         "n": 5,
         "section": "Fem slotte, der er et besøg værd",
         "prompt": "Hvad er der i Slotskirken på Frederiksborg Slot, som er fra 1610?",
-        "key": "(Et berømt) orgel"
+        "key": "(Et berømt) orgel",
+        "why": {
+          "da": "Under Frederiksborg Slot står der, at Slotskirken rummer et berømt orgel fra 1610. Svar »et orgel«.",
+          "en": "Under Frederiksborg Slot the text says the castle church holds a famous organ from 1610. Answer 'et orgel' (an organ).",
+          "quote": "rummer et berømt orgel fra 1610"
+        }
       },
       {
         "n": 6,
         "section": "Fem slotte, der er et besøg værd",
         "prompt": "Hvilke materialer brugte arkitekterne, da de byggede nye dele på ruinen af Koldinghus?",
-        "key": "Træ/stål/glas"
+        "key": "Træ/stål/glas",
+        "why": {
+          "da": "Under »Koldinghus« står der, hvad arkitekterne byggede de nye dele i. Skriv de tre materialer: træ, stål og glas. Ét eller flere af dem tæller.",
+          "en": "Under 'Koldinghus' the text says what the architects built the new parts in. Write the three materials: wood, steel and glass. One or more of them counts.",
+          "quote": "valgte arkitekterne at bygge de nye dele i træ, stål og glas"
+        }
       },
       {
         "n": 7,
@@ -737,7 +767,12 @@
         "also": [
           "shelterplads",
           "shelterplads på Hvidsholm"
-        ]
+        ],
+        "why": {
+          "da": "Se listen over overnatningsmuligheder i den praktiske information. Kun Hvidsholm har en shelterplads, der er gratis. Svar »Hvidsholm«.",
+          "en": "See the list of places to stay in the practical information. Only Hvidsholm has a shelter site that is free. Answer 'Hvidsholm'.",
+          "quote": "Hvidsholm: shelterplads i parken med plads til 12 personer, gratis og uden booking"
+        }
       },
       {
         "n": 8,
@@ -747,7 +782,12 @@
         "also": [
           "10 %",
           "10%"
-        ]
+        ],
+        "why": {
+          "da": "I afsnittet om Herregårdspasset står der, at man får rabat i caféerne. Svar »10 procent« (eller 10 %).",
+          "en": "The part about the Herregårdspas says you get a discount in the cafés. Answer '10 procent' (or 10 %).",
+          "quote": "Desuden får man 10 procent rabat i herregårdenes caféer."
+        }
       },
       {
         "n": 9,
@@ -756,7 +796,12 @@
         "key": "(Hver) onsdag og lørdag",
         "also": [
           "(Hver) onsdag(e) og lørdag(e)"
-        ]
+        ],
+        "why": {
+          "da": "Under Lindholt Herregård står der, hvornår de guidede ture er. Svar med to ugedage: »onsdag og lørdag«.",
+          "en": "Under Lindholt Herregård the text says when the guided tours are. Answer with two weekdays: 'onsdag og lørdag'.",
+          "quote": "Turene foregår hver onsdag og lørdag kl. 14"
+        }
       },
       {
         "n": 10,
@@ -765,7 +810,12 @@
         "key": "(At sætte deres) segl (på breve og dokumenter)",
         "also": [
           "(Til) (at) sætte segl (på breve/dokumenter)"
-        ]
+        ],
+        "why": {
+          "da": "I nyheden om ringen fra voldgraven bliver det forklaret, hvad en signetring er. Svar »til at sætte segl på breve og dokumenter«; »segl« er det vigtige ord.",
+          "en": "The news item about the ring from the moat explains what a signet ring is. Answer 'to put their seal on letters and documents'; 'segl' (seal) is the key word.",
+          "quote": "adelsmænd brugte til at sætte deres segl på breve og dokumenter"
+        }
       },
       {
         "n": 11,
@@ -780,19 +830,34 @@
           "flagermus(ene) har unger",
           "flagermus(ene) er fredede",
           "flagermusene (er) fløjet/flyver (videre) til (deres) vinterkvarter"
-        ]
+        ],
+        "why": {
+          "da": "Se nyheden »Flagermus udskyder nyt tag«. Der bor en koloni flagermus på loftet, og de må ikke forstyrres, mens de har unger. Det er nok at svare »flagermus (på loftet)«.",
+          "en": "See the news item 'Flagermus udskyder nyt tag'. A colony of bats lives in the loft, and they must not be disturbed while they have young. 'Flagermus (på loftet)' is enough.",
+          "quote": "en koloni af den sjældne bredøret flagermus har slået sig ned på loftet"
+        }
       },
       {
         "n": 12,
         "section": "Nyt fra slotte og herregårde",
         "prompt": "Hvor mange forskellige sorter roser er der plantet i rosenhaven på Bøgholm Slot?",
-        "key": "140"
+        "key": "140",
+        "why": {
+          "da": "I nyheden om Bøgholm Slots rosenhave står der to tal: 1.200 roser og 140 sorter. Spørgsmålet gælder sorter, så svaret er 140.",
+          "en": "The news item on Bøgholm Slot's rose garden gives two numbers: 1,200 roses and 140 varieties. The question asks for varieties, so the answer is 140.",
+          "quote": "over 1.200 nye roser i 140 forskellige sorter"
+        }
       },
       {
         "n": 13,
         "section": "Livet på herregården i dag",
         "prompt": "Hvad arbejdede Karen Rosenkilde som, før hun overtog Hvidsholm?",
-        "key": "Dyrlæge"
+        "key": "Dyrlæge",
+        "why": {
+          "da": "Karen Rosenkilde fortæller, at hun arbejdede som dyrlæge i Aarhus i 12 år, før hun overtog Hvidsholm. Svar »dyrlæge«.",
+          "en": "Karen Rosenkilde says she worked as a vet in Aarhus for 12 years before taking over Hvidsholm. Answer 'dyrlæge' (vet).",
+          "quote": "Inden da havde jeg arbejdet som dyrlæge i Aarhus i 12 år"
+        }
       },
       {
         "n": 14,
@@ -801,7 +866,12 @@
         "key": "(Lukket) (hele) anden sal (af)",
         "also": [
           "(Lukket) (hele) 2. sal (af)"
-        ]
+        ],
+        "why": {
+          "da": "Karen fortæller, at det er dyrt at varme hovedbygningen op, og derfor har de lukket anden sal af om vinteren. Svar »lukket anden sal (af)« eller bare »anden sal«.",
+          "en": "Karen says the main building is expensive to heat, so they have closed off the second floor in winter. Answer 'closed off the second floor' or just 'anden sal'.",
+          "quote": "Derfor har vi lukket hele anden sal af fra november til marts"
+        }
       },
       {
         "n": 15,
@@ -810,7 +880,12 @@
         "key": "(Om der) spøger (på herregården)",
         "also": [
           "spøgelse(r)"
-        ]
+        ],
+        "why": {
+          "da": "Amira Haddad fortæller, at børnene altid spørger, om der spøger på herregården. Svar »om der spøger« eller »spøgelser«.",
+          "en": "Amira Haddad says the children always ask whether the manor is haunted. Answer 'om der spøger' or 'spøgelser' (ghosts).",
+          "quote": "Børnene spørger altid om det samme: om der spøger på herregården."
+        }
       }
     ]
   },
@@ -935,7 +1010,22 @@
               "Hun mener, at det er vigtigere at se på, hvad de unge bruger tiden til, end på hvor meget tid de bruger.",
               "Hun mener, at den overser, at brugen af sociale medier generelt styrker de unges sociale liv."
             ],
-            "correct": "B"
+            "correct": "B",
+            "why": {
+              "da": "Maja Kjeldsen siger, at tiden i sig selv ikke siger meget; det afgørende er, hvad de unge laver. Det er det samme som at se på, hvad tiden bruges til.",
+              "en": "Maja Kjeldsen says time in itself says little; what matters is what young people do. That is the same as looking at what the time is used for.",
+              "quote": "Det afgørende er, hvad de laver, og hvordan de har det bagefter"
+            },
+            "whyNot": {
+              "A": {
+                "da": "Hun kritiserer, at debatten næsten kun handler om antallet af timer. Hun siger ikke, at timerne bliver undervurderet.",
+                "en": "She criticises the debate for being almost only about the number of hours. She doesn't say the hours are underestimated."
+              },
+              "C": {
+                "da": "For bredt: Kun den aktive brug kan »i mange tilfælde« styrke det sociale liv, mens den passive brug hænger sammen med mistrivsel.",
+                "en": "Too broad: only active use can 'in many cases' strengthen social life, while passive use is linked to poor well-being."
+              }
+            }
           },
           {
             "prompt": "Hvorfor lagde Emil Sørensen en af sine apps tilbage på telefonen?",
@@ -944,7 +1034,22 @@
               "Fordi han havde fået sværere ved at sove og koncentrere sig om at læse uden den.",
               "Fordi han ikke fik at vide, hvad vennerne aftalte, når han ikke var på."
             ],
-            "correct": "C"
+            "correct": "C",
+            "why": {
+              "da": "Emil opdagede, at vennerne havde planlagt en sommerhustur i en gruppe, uden at han havde set noget af det. Han gik altså glip af deres aftaler.",
+              "en": "Emil found out his friends had planned a summer-house trip in a group without him seeing any of it. So he was missing out on their plans.",
+              "quote": "mine venner havde lavet en gruppe, hvor de planlagde en tur i sommerhus, og jeg havde ikke set noget af det"
+            },
+            "whyNot": {
+              "A": {
+                "da": "Vennerne var ikke sure. Emil siger: »De havde bare glemt, at jeg ikke var på.«",
+                "en": "The friends were not angry. Emil says: 'They had just forgotten I wasn't on.'"
+              },
+              "B": {
+                "da": "Det er omvendt: Uden de sociale medier sov han bedre og fik læst mere.",
+                "en": "It is the other way round: without social media he slept better and read more."
+              }
+            }
           },
           {
             "prompt": "Hvilket af følgende udsagn er i overensstemmelse med det, Maja Kjeldsen siger om regler for brug af mobiltelefoner?",
@@ -953,7 +1058,22 @@
               "Reglerne virker kun, hvis det er lærerne og forældrene, der sørger for, at de bliver overholdt.",
               "Det er bedst, når hver enkelt ung selv bestemmer, hvornår telefonen skal lægges væk."
             ],
-            "correct": "A"
+            "correct": "A",
+            "why": {
+              "da": "Maja Kjeldsen advarer mod at tro, at forbud alene kan løse problemet, fordi de unge også skal lære at bruge de sociale medier fornuftigt.",
+              "en": "Maja Kjeldsen warns against thinking bans alone can solve the problem, because young people also need to learn to use social media sensibly.",
+              "quote": "Hun advarer dog mod at tro, at forbud alene kan løse problemet."
+            },
+            "whyNot": {
+              "B": {
+                "da": "Teksten siger, at det på skolerne faktisk er eleverne selv, der sørger for, at reglerne bliver overholdt.",
+                "en": "The text says that at the schools it is actually the pupils themselves who make sure the rules are kept."
+              },
+              "C": {
+                "da": "Hun siger det modsatte: Løsninger, som den enkelte skal klare alene, holder sjældent, og hun anbefaler fælles aftaler.",
+                "en": "She says the opposite: solutions each person must manage alone rarely last, and she recommends shared agreements."
+              }
+            }
           }
         ],
         "points": 2
@@ -1112,7 +1232,44 @@
           "G",
           "D"
         ],
-        "points": 2
+        "points": 2,
+        "why": [
+          {
+            "da": "Før hullet står tanken bag reformen: mere tid skulle give mere læring. »Sådan gik det imidlertid ikke« viser, at det ikke skete. Efter hullet henviser »Den udvikling« til de trætte og umotiverede elever.",
+            "en": "Before the gap is the idea behind the reform: more time would mean more learning. 'Sådan gik det imidlertid ikke' says it didn't happen. After the gap 'Den udvikling' refers to the tired, unmotivated pupils.",
+            "quote": "Sådan gik det imidlertid ikke."
+          },
+          {
+            "da": "Før hullet står der, at de yngste i indskolingen ikke skal have lektier. »De ældre elever« fortsætter med de andre klasser. Efter hullet forklarer »Det betyder i praksis« kravet om meningsfulde lektier.",
+            "en": "Before the gap the youngest pupils get no homework. 'De ældre elever' continues with the other classes. After the gap 'Det betyder i praksis' explains the rule that homework must be meaningful.",
+            "quote": "Til gengæld skal lektierne være meningsfulde"
+          },
+          {
+            "da": "»Hun« er Lise Andersen, som lige har talt positivt om ændringen; »dog« indleder en indvending. Efter hullet henviser »Den bekymring« til hendes bekymring for SFO'en, og SFO'en bliver nævnt igen.",
+            "en": "'Hun' is Lise Andersen, who has just spoken positively about the change; 'dog' introduces a reservation. After the gap 'Den bekymring' refers to her worry about the after-school club, which is mentioned again.",
+            "quote": "hun er bekymret for, om tiden dér bliver brugt fornuftigt"
+          },
+          {
+            "da": "»Han« er Thomas Riis, som lige har talt. Han nævner de elever, der ikke får hjælp hjemmefra, og efter hullet står der: »Det var netop disse elever«.",
+            "en": "'Han' is Thomas Riis, who has just spoken. He names pupils who get no help at home, and after the gap the text says: 'Det var netop disse elever' (it was exactly these pupils).",
+            "quote": "de elever, der ikke får hjælp hjemmefra"
+          },
+          {
+            "da": "Afsnittet runder forsøget af og ender med eleverne. Efter hullet bekræfter »I 4.B er der i hvert fald ingen tvivl«, at eleverne allerede har besluttet sig.",
+            "en": "The paragraph sums up the trial and ends with the pupils. After the gap 'I 4.B er der i hvert fald ingen tvivl' confirms that the pupils have already made up their minds.",
+            "quote": "Men hvis det står til eleverne, er sagen allerede afgjort."
+          }
+        ],
+        "whyNotExtra": {
+          "B": {
+            "da": "Afsnittet siger, at de ældste elever heller ikke får lektier, men teksten beskriver bagefter, hvordan de ældre elever stadig får meningsfulde lektier.",
+            "en": "This paragraph says the oldest pupils won't get homework either, but the text then describes how older pupils still get meaningful homework."
+          },
+          "F": {
+            "da": "Afsnittet modsiger Thomas Riis, som siger, at fraværet er faldet.",
+            "en": "This paragraph contradicts Thomas Riis, who says absence has gone down."
+          }
+        }
       },
       {
         "kind": "cloze",
@@ -1225,7 +1382,26 @@
               "løsninger",
               "årsager"
             ],
-            "correct": "D"
+            "correct": "D",
+            "why": {
+              "da": "Boligpriserne er en grund til, at flere pendler langt. Forbindelsen er »årsag til«, og »en af de vigtigste« kræver flertal: »årsager«.",
+              "en": "House prices are a reason more people commute far. The collocation is 'årsag til', and 'en af de vigtigste' needs the plural: 'årsager'.",
+              "quote": "En af de vigtigste årsager til udviklingen er boligpriserne"
+            },
+            "whyNot": {
+              "A": {
+                "da": "Høje boligpriser er ikke en fordel; de forklarer udviklingen.",
+                "en": "High house prices are not an advantage; they explain the trend."
+              },
+              "B": {
+                "da": "»betingelser« betyder krav eller vilkår og hedder »betingelser for«; det passer ikke til en grund.",
+                "en": "'betingelser' means conditions/terms and takes 'for'; it doesn't express a cause."
+              },
+              "C": {
+                "da": "Boligpriserne er ikke en løsning, og det hedder »løsninger på«, ikke »til«.",
+                "en": "House prices are not a solution, and it is 'løsninger på', not 'til'."
+              }
+            }
           },
           {
             "options": [
@@ -1234,7 +1410,26 @@
               "også",
               "dermed"
             ],
-            "correct": "A"
+            "correct": "A",
+            "why": {
+              "da": "Der er en modsætning: Familierne flytter ud, men arbejdspladserne flytter ikke med. »dog« (men) står efter verbet i hovedsætningen.",
+              "en": "There is a contrast: families move out, but the jobs don't move with them. 'dog' (however) stands after the verb in the main clause.",
+              "quote": "Arbejdspladserne bliver dog ikke flyttet med."
+            },
+            "whyNot": {
+              "B": {
+                "da": "»derfor« betyder, at det følger af, at familierne flytter; men det er ikke grunden til, at jobbene bliver i byen.",
+                "en": "'derfor' would mean it follows from families moving; but that is not why the jobs stay in the city."
+              },
+              "C": {
+                "da": "»også ikke« er ikke korrekt dansk; man siger »heller ikke«. Og der er ikke noget andet, som heller ikke flyttes.",
+                "en": "'også ikke' isn't correct Danish; you say 'heller ikke'. And nothing else is said not to move."
+              },
+              "D": {
+                "da": "»dermed« betyder »som følge af det«. Men at jobbene bliver i byen, er ikke en følge af, at familierne flytter ud. Det er en modsætning, og den kræver »dog«.",
+                "en": "'dermed' means 'as a result'. But the jobs staying in the city is not a result of families moving out. It is a contrast, and that needs 'dog'."
+              }
+            }
           },
           {
             "options": [
@@ -1243,7 +1438,26 @@
               "over",
               "af"
             ],
-            "correct": "C"
+            "correct": "C",
+            "why": {
+              "da": "Fast udtryk: noget »går ud over« noget = skader det. Lang pendling skader søvn, motion og familieliv.",
+              "en": "Fixed expression: something 'går ud over' something = harms it. Long commuting harms sleep, exercise and family life.",
+              "quote": "lang pendling kan gå ud over både søvnen, motionen og familielivet"
+            },
+            "whyNot": {
+              "A": {
+                "da": "»gå ud med« betyder at date nogen eller at fortælle noget offentligt. Sætningen skal sige, at pendling skader søvnen, og det udtrykker kun »gå ud over«.",
+                "en": "'gå ud med' means to date someone or to make something public. The sentence must say that commuting harms sleep, and only 'gå ud over' expresses that."
+              },
+              "B": {
+                "da": "»gå ud fra« betyder at regne med eller antage. Pendling kan ikke antage noget; sætningen skal sige, at pendling skader søvn, motion og familieliv.",
+                "en": "'gå ud fra' means to assume. Commuting cannot assume anything; the sentence must say that commuting harms sleep, exercise and family life."
+              },
+              "D": {
+                "da": "»gå ud af« betyder at forlade et sted, fx et rum. Pendling forlader ikke søvnen; sætningen skal sige, at pendling skader den.",
+                "en": "'gå ud af' means to leave a place, e.g. a room. Commuting doesn't leave sleep; the sentence must say that commuting harms it."
+              }
+            }
           },
           {
             "options": [
@@ -1252,7 +1466,26 @@
               "således",
               "dermed"
             ],
-            "correct": "B"
+            "correct": "B",
+            "why": {
+              "da": "Afsnittet før handler om dem, der oplever transporten som en belastning; »Andre ... derimod« viser modsætningen: de ser den som et frirum.",
+              "en": "The previous paragraph is about those who find commuting a burden; 'Andre ... derimod' shows the contrast: they see it as free time.",
+              "quote": "Andre ser derimod transporttiden som et frirum."
+            },
+            "whyNot": {
+              "A": {
+                "da": "»altså« opsummerer eller drager en konklusion, men her kommer et modsat synspunkt.",
+                "en": "'altså' sums up or concludes, but here an opposite view follows."
+              },
+              "C": {
+                "da": "»således« betyder »på den måde« eller »derfor« og markerer ikke en modsætning.",
+                "en": "'således' means 'in this way' or 'thus' and doesn't mark a contrast."
+              },
+              "D": {
+                "da": "»dermed« betyder »som følge af det«, men synspunktet følger ikke af det før; det er det modsatte.",
+                "en": "'dermed' means 'as a result', but this view doesn't follow from the previous one; it is the opposite."
+              }
+            }
           },
           {
             "options": [
@@ -1261,7 +1494,26 @@
               "gives",
               "løses"
             ],
-            "correct": "D"
+            "correct": "D",
+            "why": {
+              "da": "Man »løser en opgave«. Her står verbet i passiv efter »kan«: opgaver »kan løses«.",
+              "en": "In Danish you 'løse en opgave' (do/solve a task). Here the verb is passive after 'kan': tasks 'kan løses'.",
+              "quote": "mange opgaver sagtens kan løses uden at man er på kontoret"
+            },
+            "whyNot": {
+              "A": {
+                "da": "Man bruger ikke en opgave; man udfører eller løser den. Sætningen handler om, at arbejdet kan gøres hjemmefra, og det hedder »opgaver kan løses«.",
+                "en": "You don't 'use' a task; you carry it out or solve it. The sentence is about work that can be done from home, and Danish says 'opgaver kan løses'."
+              },
+              "B": {
+                "da": "Man »tager en opgave«, når man siger ja til at gøre den. Men sætningen handler om, hvor arbejdet bliver gjort, og så hedder det »løse en opgave«.",
+                "en": "You \"tage en opgave\" when you agree to take a task on. But the sentence is about where the work gets done, and for that Danish says \"løse en opgave\"."
+              },
+              "C": {
+                "da": "»opgaver gives« betyder, at nogen deler dem ud; det handler ikke om at udføre dem hjemmefra.",
+                "en": "'opgaver gives' means someone hands them out; it isn't about doing them from home."
+              }
+            }
           },
           {
             "options": [
@@ -1270,7 +1522,26 @@
               "hindring",
               "belastning"
             ],
-            "correct": "B"
+            "correct": "B",
+            "why": {
+              "da": "Sætningen efter forklarer, at sygeplejersker og andre ikke kan arbejde hjemmefra. Hjemmearbejde er altså ikke en mulighed for alle.",
+              "en": "The next sentence explains that nurses and others cannot work from home. So working from home is not an option for everyone.",
+              "quote": "Hjemmearbejde er dog ikke en mulighed for alle."
+            },
+            "whyNot": {
+              "A": {
+                "da": "Sætningen efter handler om, at sygeplejersker og andre slet ikke kan arbejde hjemme. Det handler om, hvem der har muligheden, ikke om fordele og ulemper.",
+                "en": "The next sentence is about nurses and others who cannot work from home at all. The point is who has the option, not its advantages and drawbacks."
+              },
+              "C": {
+                "da": "»en hindring« er noget, der står i vejen; teksten taler om, at nogle ikke kan få hjemmearbejde, ikke at det hindrer dem.",
+                "en": "'hindring' (an obstacle) stands in the way; the text says some people can't have home working, not that it hinders them."
+              },
+              "D": {
+                "da": "»en belastning« (en byrde) giver den modsatte mening; hjemmearbejde beskrives som en lettelse.",
+                "en": "'belastning' (a burden) gives the opposite meaning; home working is described as a relief."
+              }
+            }
           },
           {
             "options": [
@@ -1279,7 +1550,26 @@
               "for",
               "til"
             ],
-            "correct": "C"
+            "correct": "C",
+            "why": {
+              "da": "Fast udtryk: »stå for« en del af noget = være ansvarlig for/udgøre den del. Transporten står for en stor del af udledningen.",
+              "en": "Fixed expression: 'stå for' a share of something = account for it. Transport accounts for a large share of emissions.",
+              "quote": "transportsektoren står for en stor del af Danmarks udledning af CO2"
+            },
+            "whyNot": {
+              "A": {
+                "da": "»stå med« betyder at have noget (fx et problem); det betyder ikke »udgøre«.",
+                "en": "'stå med' means to be left with something (e.g. a problem); it doesn't mean 'account for'."
+              },
+              "B": {
+                "da": "»stå over« betyder at springe over, fx en tur eller et måltid. Sætningen skal sige, at transporten udgør en stor del af udledningen, og det hedder »stå for«.",
+                "en": "'stå over' means to skip, e.g. a turn or a meal. The sentence must say that transport makes up a large share of emissions, and that is 'stå for'."
+              },
+              "D": {
+                "da": "»stå til« bruges fx i »stå til rådighed«; det betyder ikke »udgøre«.",
+                "en": "'stå til' is used e.g. in 'stå til rådighed'; it doesn't mean 'account for'."
+              }
+            }
           },
           {
             "options": [
@@ -1288,7 +1578,26 @@
               "forlænge",
               "udvide"
             ],
-            "correct": "A"
+            "correct": "A",
+            "why": {
+              "da": "Målet er, at folk kan arbejde tæt på, hvor de bor. Så skal pendlingen blive mindre: »mindske« betyder at gøre mindre.",
+              "en": "The goal is for people to work close to where they live. So commuting must go down: 'mindske' means to reduce.",
+              "quote": "Hvis man for alvor vil mindske pendlingen"
+            },
+            "whyNot": {
+              "B": {
+                "da": "»øge« (gøre større) er det modsatte af, hvad eksperterne vil.",
+                "en": "'øge' (increase) is the opposite of what the experts want."
+              },
+              "C": {
+                "da": "»forlænge« (gøre længere) er også det modsatte; jobs tæt på hjemmet giver kortere pendling.",
+                "en": "'forlænge' (lengthen) is also the opposite; jobs near home mean shorter commutes."
+              },
+              "D": {
+                "da": "»udvide« (gøre større/bredere) er det modsatte af målet.",
+                "en": "'udvide' (expand) is the opposite of the goal."
+              }
+            }
           }
         ],
         "example": {

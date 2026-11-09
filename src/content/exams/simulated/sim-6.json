@@ -455,20 +455,35 @@
         "key": "(På grund af de) kraftige strømforhold",
         "also": [
           "(fordi der er) stærk strøm"
-        ]
+        ],
+        "why": {
+          "da": "Under \"Grenen – hvor to have mødes\": badning ved spidsen er forbudt på grund af de kraftige strømforhold. \"Kraftige strømforhold\" eller \"stærk strøm\" er nok.",
+          "en": "Under \"Grenen – hvor to have mødes\": swimming at the tip is banned because of the strong currents. \"Kraftige strømforhold\" or \"stærk strøm\" is enough.",
+          "quote": "badning ved spidsen strengt forbudt på grund af de kraftige strømforhold"
+        }
       },
       {
         "n": 2,
         "section": "Skagen og Grenen",
         "prompt": "Hvad kan man ud over malerierne også se i Skagensmalernes Hus?",
-        "key": "(Kunstnernes egne) skitsebøger og breve"
+        "key": "(Kunstnernes egne) skitsebøger og breve",
+        "why": {
+          "da": "Under \"Skagensmalernes Hus\": \"foruden\" malerierne rummer samlingen kunstnernes skitsebøger og breve. Nævn begge: \"skitsebøger og breve\".",
+          "en": "Under \"Skagensmalernes Hus\": \"besides\" the paintings, the collection holds the artists' sketchbooks and letters. Give both: \"skitsebøger og breve\".",
+          "quote": "rummer samlingen kunstnernes egne skitsebøger og breve"
+        }
       },
       {
         "n": 3,
         "section": "Skagen og Grenen",
         "prompt": "Kan man komme op i tårnet på Den Tilsandede Kirke en tirsdag i august? Svar 'ja' eller 'nej'.",
         "key": "Ja",
-        "paraphrased": true
+        "paraphrased": true,
+        "why": {
+          "da": "Under \"Den Tilsandede Kirke\": tårnet kan bestiges på hverdage fra 1. juni til 31. august. En tirsdag i august er en hverdag i perioden, så svaret er \"ja\".",
+          "en": "Under \"Den Tilsandede Kirke\": the tower can be climbed on weekdays from 1 June to 31 August. A Tuesday in August is a weekday in that period, so the answer is \"ja\".",
+          "quote": "tårnet kan kun bestiges på hverdage i perioden fra 1. juni til 31. august"
+        }
       },
       {
         "n": 4,
@@ -477,7 +492,12 @@
         "key": "(At træde på) den sårbare vegetation",
         "also": [
           "(at) gå uden for (de afmærkede) stier(ne)"
-        ]
+        ],
+        "why": {
+          "da": "Under \"Råbjerg Mile\": i klitlandskabet skal man holde sig på stierne, så man ikke træder på den sårbare vegetation. Svar: \"at træde på vegetationen\" eller \"at gå uden for stierne\".",
+          "en": "Under \"Råbjerg Mile\": in the dunes around it you must keep to the paths so you don't step on the fragile plants. Answer: \"at træde på vegetationen\" or \"at gå uden for stierne\".",
+          "quote": "bedes man holde sig på de afmærkede stier, så man ikke træder på den sårbare vegetation"
+        }
       },
       {
         "n": 5,
@@ -486,7 +506,12 @@
         "key": "Elgene og havørnene",
         "also": [
           "elge og havørne"
-        ]
+        ],
+        "why": {
+          "da": "Under \"Lille Vildmose\": der lever flere dyr, men det er \"især\" elgene og havørnene, der tiltrækker besøgende. Begge skal nævnes.",
+          "en": "Under \"Lille Vildmose\": several animals live there, but it is \"especially\" the elks and white-tailed eagles that draw visitors. Both must be given.",
+          "quote": "det er især elgene og havørnene, der tiltrækker besøgende"
+        }
       },
       {
         "n": 6,
@@ -495,13 +520,23 @@
         "key": "(At) tilmelde sig (senest dagen før)",
         "also": [
           "(at) melde sig til (via hjemmesiden)"
-        ]
+        ],
+        "why": {
+          "da": "Under \"Ture med naturvejlederen\": turen er gratis, men man skal tilmelde sig senest dagen før. Svar: \"at tilmelde sig\".",
+          "en": "Under \"Ture med naturvejlederen\": the walk is free, but you must sign up by the day before. Answer: \"at tilmelde sig\".",
+          "quote": "det er nødvendigt at tilmelde sig senest dagen før via naturcentrets hjemmeside"
+        }
       },
       {
         "n": 7,
         "section": "Aalborg ved Limfjorden",
         "prompt": "Hvad kan man ud over at se fundene også prøve på museet ved Lindholm Høje?",
-        "key": "(At) slå mønter og væve bånd"
+        "key": "(At) slå mønter og væve bånd",
+        "why": {
+          "da": "Under \"Lindholm Høje\": i museets aktivitetsværksted kan man prøve at slå mønter og væve bånd. Begge dele skal med.",
+          "en": "Under \"Lindholm Høje\": in the museum's activity workshop you can try striking coins and weaving bands. Include both.",
+          "quote": "kan både børn og voksne prøve at slå mønter og væve bånd"
+        }
       },
       {
         "n": 8,
@@ -510,7 +545,12 @@
         "key": "(Hver) torsdag efter kl. 17",
         "also": [
           "torsdag aften"
-        ]
+        ],
+        "why": {
+          "da": "Under \"Kunsthallen Nord\": børn er altid gratis, men for alle (også voksne) er der gratis adgang hver torsdag efter kl. 17. Svar: \"torsdag efter kl. 17\".",
+          "en": "Under \"Kunsthallen Nord\": children are always free, but entry is free for everyone (adults too) every Thursday after 17:00. Answer: \"torsdag efter kl. 17\".",
+          "quote": "Hver torsdag efter kl. 17 er der desuden gratis adgang for alle"
+        }
       },
       {
         "n": 9,
@@ -520,7 +560,12 @@
         "also": [
           "(af hensyn til) naboerne",
           "(af hensyn til) de omkringboende"
-        ]
+        ],
+        "why": {
+          "da": "Under \"Jomfru Ane Gade\": kommunen har indført reglen for at mindske støjgenerne for de omkringboende. \"For at mindske støjen\" eller \"af hensyn til naboerne\" er nok.",
+          "en": "Under \"Jomfru Ane Gade\": the council made the rule to reduce noise for people living nearby. \"For at mindske støjen\" or \"af hensyn til naboerne\" is enough.",
+          "quote": "For at mindske støjgenerne for de omkringboende har kommunen indført en ordning"
+        }
       },
       {
         "n": 10,
@@ -529,20 +574,35 @@
         "key": "(Inden) udgangen af februar",
         "also": [
           "(i) februar"
-        ]
+        ],
+        "why": {
+          "da": "Under \"Aalborg Karneval\": grupper skal tilmelde sig inden udgangen af februar; det er enkeltpersoner, der kan vente til ugen før. Svar: \"inden udgangen af februar\".",
+          "en": "Under \"Aalborg Karneval\": groups must register before the end of February; it is individuals who can wait until the week before. Answer: \"inden udgangen af februar\".",
+          "quote": "skal tilmeldingen ske inden udgangen af februar"
+        }
       },
       {
         "n": 11,
         "section": "Aktiviteter og begivenheder",
         "prompt": "Hvad skal man kunne for at deltage i surfkurset?",
-        "key": "(At) svømme (mindst) 200 meter"
+        "key": "(At) svømme (mindst) 200 meter",
+        "why": {
+          "da": "Under \"Surfing ved Vesterhavet\": kurset forudsætter, at man kan svømme mindst 200 meter. Husk tallet: \"svømme 200 meter\".",
+          "en": "Under \"Surfing ved Vesterhavet\": the course requires that you can swim at least 200 metres. Include the number: \"svømme 200 meter\".",
+          "quote": "det forudsætter, at man kan svømme mindst 200 meter"
+        }
       },
       {
         "n": 12,
         "section": "Aktiviteter og begivenheder",
         "prompt": "En 16-årig dreng vil fiske fra en mole. Skal han have fisketegn? Svar 'ja' eller 'nej'.",
         "key": "Nej",
-        "paraphrased": true
+        "paraphrased": true,
+        "why": {
+          "da": "Under \"Lystfiskeri\": fisketegn kræves af alle mellem 18 og 65 år, og unge under 18 er fritaget. En 16-årig skal altså ikke have fisketegn: \"nej\".",
+          "en": "Under \"Lystfiskeri\": a fishing licence is required for everyone aged 18 to 65, and under-18s are exempt. So a 16-year-old does not need one: \"nej\".",
+          "quote": "Børn og unge under 18 år samt personer over 65 år er fritaget for kravet"
+        }
       },
       {
         "n": 13,
@@ -552,7 +612,12 @@
         "also": [
           "(fordi) der ofte er udsolgt"
         ],
-        "paraphrased": true
+        "paraphrased": true,
+        "why": {
+          "da": "Under \"Færgen til Læsø\": i juli og august er færgen ofte fuldt booket med biler flere dage i forvejen. Svar: \"færgen er ofte fuldt booket\".",
+          "en": "Under \"Færgen til Læsø\": in July and August the ferry is often fully booked for cars several days ahead. Answer: \"færgen er ofte fuldt booket\".",
+          "quote": "i juli og august er færgen ofte fuldt booket med biler flere dage i forvejen"
+        }
       },
       {
         "n": 14,
@@ -561,13 +626,23 @@
         "key": "Sengelinned og håndklæder",
         "also": [
           "(at) leje sengelinned og håndklæder (i receptionen)"
-        ]
+        ],
+        "why": {
+          "da": "Under \"Overnatning\": hytterne har køkken, men man skal selv have sengelinned og håndklæder med (eller leje dem). Nævn begge.",
+          "en": "Under \"Overnatning\": the cabins have a kitchen, but you must bring your own bed linen and towels (or rent them). Give both.",
+          "quote": "man skal selv medbringe sengelinned og håndklæder eller leje dem i receptionen"
+        }
       },
       {
         "n": 15,
         "section": "Transport og overnatning",
         "prompt": "Hvad skal man gøre for at have sin cykel med i lokaltoget en lørdag i juni?",
-        "key": "Købe en cykelbillet og reservere plads (på forhånd)"
+        "key": "Købe en cykelbillet og reservere plads (på forhånd)",
+        "why": {
+          "da": "Under \"Tog og bus\": en lørdag i juni er i weekenden i perioden maj–september, så man skal købe en cykelbillet og reservere plads. Begge dele skal med.",
+          "en": "Under \"Tog og bus\": a Saturday in June is a weekend in the May–September period, so you must buy a bike ticket and reserve a place. Include both.",
+          "quote": "skal man købe en cykelbillet og reservere plads på forhånd"
+        }
       }
     ]
   },
@@ -676,7 +751,22 @@
               "Han følte sig efterhånden som en del af fællesskabet på arbejdspladsen.",
               "Han ville tjene penge nok til at købe et hus i udkanten af Hobro."
             ],
-            "correct": "B"
+            "correct": "B",
+            "why": {
+              "da": "Tomas siger, at det afgørende ikke var lønnen, men at kollegerne inviterede ham med til fodbold og julefrokost. Han følte, at han hørte til: en del af fællesskabet.",
+              "en": "Tomas says the deciding factor was not the pay but that his colleagues invited him to football and the Christmas party. He felt he belonged: part of the community.",
+              "quote": "Det afgørende var ikke lønnen, men at mine kolleger inviterede mig med til fodbold og julefrokost"
+            },
+            "whyNot": {
+              "A": {
+                "da": "Han siger direkte, at det afgørende \"ikke var lønnen\". En lønstigning som værkfører bliver ikke nævnt som grund.",
+                "en": "He says directly that it \"was not the pay\". A pay rise as foreman is never given as the reason."
+              },
+              "C": {
+                "da": "Huset, han ville spare op til, skulle ligge \"derhjemme\" i Litauen. Huset i Hobro kom først senere og var ikke grunden til at blive.",
+                "en": "The house he was saving for was to be \"back home\" in Lithuania. The house in Hobro came later and was not why he stayed."
+              }
+            }
           },
           {
             "prompt": "Hvilket udsagn er i overensstemmelse med det, der står i teksten?",
@@ -685,7 +775,22 @@
               "Lucía Ferrer synes, at hendes kolleger var for utålmodige med hende i starten.",
               "Lucía Ferrer havde mest besvær med det fagsprog, hun skulle bruge på hospitalet."
             ],
-            "correct": "A"
+            "correct": "A",
+            "why": {
+              "da": "Lene Bisgaard siger, at de har lært at se den udenlandske arbejdskraft som en styrke frem for en nødløsning. \"En styrke\" = en fordel.",
+              "en": "Lene Bisgaard says they have learnt to see foreign workers as a strength rather than a stopgap. \"En styrke\" = an advantage.",
+              "quote": "Det har vi efterhånden lært at betragte som en styrke frem for en nødløsning"
+            },
+            "whyNot": {
+              "B": {
+                "da": "Teksten siger det modsatte: Lucía understreger, at hendes kolleger \"har været tålmodige\".",
+                "en": "The text says the opposite: Lucía stresses that her colleagues \"have been patient\"."
+              },
+              "C": {
+                "da": "Hun siger, at fagsproget \"ikke var det store problem\". Det svære var det, der ligger mellem linjerne.",
+                "en": "She says the technical language \"was not the big problem\". The hard part was what lies between the lines."
+              }
+            }
           },
           {
             "prompt": "Hvad er Lene Bisgaard og Henrik Damgaard enige om?",
@@ -694,7 +799,22 @@
               "At virksomhederne bør investere flere penge i at rekruttere medarbejdere fra udlandet.",
               "At det er vigtigt at tage sig godt af de nye i den første tid."
             ],
-            "correct": "C"
+            "correct": "C",
+            "why": {
+              "da": "Lene fortæller, at alle nye nu får en fast kollega, fordi mange ellers rejste hjem. Henrik siger, at den første tid efter ansættelsen er afgørende. Begge mener, at starten skal tages alvorligt.",
+              "en": "Lene says every newcomer now gets a set colleague because many used to go home. Henrik says the first period after hiring is crucial. Both think the start must be taken seriously.",
+              "quote": "den første tid efter ansættelsen er mindst lige så afgørende"
+            },
+            "whyNot": {
+              "A": {
+                "da": "Henrik siger det modsatte: lønnen er \"sjældent grunden til, at de bliver\". Lene siger intet om lønnen som grund til at blive.",
+                "en": "Henrik says the opposite: pay is \"rarely the reason they stay\". Lene says nothing about pay as a reason to stay."
+              },
+              "B": {
+                "da": "Henrik kritiserer netop, at virksomheder bruger store beløb på at finde folk og glemmer den første tid. Ingen af dem kræver flere penge til rekruttering.",
+                "en": "Henrik actually criticises firms for spending large sums on finding people and forgetting the first period. Neither asks for more money for recruitment."
+              }
+            }
           }
         ],
         "points": 2
@@ -837,7 +957,44 @@
           "G",
           "B"
         ],
-        "points": 2
+        "points": 2,
+        "why": [
+          {
+            "da": "Før hullet ser vi beboerne ved bordene. C fortæller, hvem der har lavet maden, og præsenterer Inger Mølgaard. Næste afsnit begynder \"fortæller hun\", og \"hun\" er Inger.",
+            "en": "Before the gap we see the residents at the tables. C says who cooked the food and introduces Inger Mølgaard. The next paragraph has \"she says\", and \"she\" is Inger.",
+            "quote": "En af dem er 68-årige Inger Mølgaard, der har været med lige fra starten"
+          },
+          {
+            "da": "Før hullet: der er nu venteliste. F giver en forklaring på succesen: prisen. Bagefter står \"Det er dog ikke kun økonomien, der trækker\", som henviser tilbage til prisen i F.",
+            "en": "Before the gap: there is now a waiting list. F gives one reason for the success: the price. Then comes \"But it is not only the money that draws people\", which points back to the price in F.",
+            "quote": "Prisen er en af forklaringerne på succesen"
+          },
+          {
+            "da": "\"Hun\" i A er sociologen Mette Vinther fra afsnittet før, og A forklarer, hvorfor måltidet hjælper mod ensomhed. Næste afsnit fortsætter med \"Samtidig peger Mette Vinther på\".",
+            "en": "\"Hun\" in A is the sociologist Mette Vinther from the paragraph before, and A explains why a meal helps against loneliness. The next paragraph goes on with \"At the same time Mette Vinther points out\".",
+            "quote": "det er lettere at tale sammen, når man har noget konkret at samles om"
+          },
+          {
+            "da": "\"Det\" i G er ordningen fra afsnittet før, hvor børnene laver desserten (\"æblekage\"). G nævner børnefamilier, og næste afsnit siger, at Christian Holm, far til to, \"er en af dem\".",
+            "en": "\"Det\" in G is the arrangement just before where children make the dessert (\"apple cake\"). G mentions families with children, and the next paragraph says Christian Holm, a father of two, \"is one of them\".",
+            "quote": "Det har fået flere børnefamilier til at komme regelmæssigt"
+          },
+          {
+            "da": "\"Han\" i B er Christian Holm fra afsnittet før, og B fortsætter med, hvordan familien er flyttet ind i afdelingen. At han hjælper i køkkenet, leder videre til listen over frivillige til sidst.",
+            "en": "\"Han\" in B is Christian Holm from the paragraph before, and B continues about the family moving into the estate. His helping in the kitchen leads on to the list of volunteers at the end.",
+            "quote": "Han er også selv begyndt at hjælpe til i køkkenet en gang om måneden"
+          }
+        ],
+        "whyNotExtra": {
+          "D": {
+            "da": "\"Derfor\" i D skal have en grund før sig, men teksten nævner aldrig sommerferien eller mangel på frivillige. Tværtimod er listen over frivillige \"allerede fuld\".",
+            "en": "\"Derfor\" in D needs a reason before it, but the text never mentions the summer holiday or a lack of volunteers. In fact the volunteer list is \"already full\"."
+          },
+          "E": {
+            "da": "E taler om \"alle tre afdelinger\", men teksten handler kun om én boligafdeling i Viborg. At de ældre sikrer sig de bedste pladser, passer heller ikke med værterne, der sørger for, at ingen sidder alene.",
+            "en": "E talks about \"all three estates\", but the text is about just one estate in Viborg. Older residents grabbing the best seats also clashes with the hosts making sure no one sits alone."
+          }
+        }
       },
       {
         "kind": "cloze",
@@ -953,7 +1110,26 @@
               "i flere tilfælde",
               "i modsat fald"
             ],
-            "correct": "C"
+            "correct": "C",
+            "why": {
+              "da": "Man har fundet sprøjtemidler i mange boringer, og nogle af dem har måttet lukkes. \"I flere tilfælde\" = nogle af gangene. Efter udtrykket kommer verbet (\"har\") på andenpladsen.",
+              "en": "Pesticides have been found in many wells, and some had to close. \"I flere tilfælde\" = in several cases. After the phrase the verb (\"har\") comes second.",
+              "quote": "i flere tilfælde har boringerne måttet lukkes"
+            },
+            "whyNot": {
+              "A": {
+                "da": "\"Til gengæld\" indleder en modvægt (noget positivt mod noget negativt). At boringer lukker, er ikke en modvægt til forureningen.",
+                "en": "\"Til gengæld\" introduces a counterweight (a plus against a minus). Wells closing is not a counterweight to pollution."
+              },
+              "B": {
+                "da": "\"På forhånd\" betyder før noget sker. Boringerne lukkes, efter at man har fundet sprøjtemidler, ikke før.",
+                "en": "\"På forhånd\" means in advance. The wells close after pesticides are found, not before."
+              },
+              "D": {
+                "da": "\"I modsat fald\" betyder \"hvis ikke\" og kræver en betingelse før. Der er ingen betingelse i sætningen.",
+                "en": "\"I modsat fald\" means \"otherwise\" and needs a condition before it. There is no condition in the sentence."
+              }
+            }
           },
           {
             "options": [
@@ -962,7 +1138,26 @@
               "udelukker",
               "fortryder"
             ],
-            "correct": "B"
+            "correct": "B",
+            "why": {
+              "da": "Stofferne er 30–50 år om at nå grundvandet, \"derfor\" regner forskerne med flere fund i fremtiden. \"Forudser\" (siger på forhånd) passer til \"vil finde\" i de kommende år.",
+              "en": "The substances take 30–50 years to reach the groundwater, \"so\" researchers expect more finds. \"Forudser\" (predict) fits \"vil finde\" in the coming years.",
+              "quote": "Forskerne forudser derfor, at man vil finde endnu flere stoffer i de kommende år"
+            },
+            "whyNot": {
+              "A": {
+                "da": "\"Afviser\" betyder, at de siger nej til tanken. Det modsiger \"derfor\": den lange tid gør flere fund sandsynlige.",
+                "en": "\"Afviser\" means they reject the idea. That contradicts \"derfor\": the long delay makes more finds likely."
+              },
+              "C": {
+                "da": "\"Udelukker\" (siger, at det ikke kan ske) er det modsatte af det, den lange nedsivning betyder.",
+                "en": "\"Udelukker\" (rule out) is the opposite of what the slow seepage implies."
+              },
+              "D": {
+                "da": "\"Fortryder\" bruges om noget, man selv har gjort. Forskerne har ikke gjort noget, og det passer ikke med en fremtid (\"vil finde\").",
+                "en": "\"Fortryder\" (regret) is about something you did yourself. The researchers did nothing, and it does not fit a future (\"vil finde\")."
+              }
+            }
           },
           {
             "options": [
@@ -971,7 +1166,26 @@
               "på samme måde",
               "i værste fald"
             ],
-            "correct": "D"
+            "correct": "D",
+            "why": {
+              "da": "At vandløb og vådområder tørrer ud, er den alvorligste følge af stort forbrug. \"I værste fald\" indleder netop det værst tænkelige resultat.",
+              "en": "Streams and wetlands drying up is the most serious result of heavy use. \"I værste fald\" (in the worst case) introduces exactly that.",
+              "quote": "i værste fald kan grundvandsspejlet falde så meget, at vandløb og vådområder tørrer ud"
+            },
+            "whyNot": {
+              "A": {
+                "da": "\"I bedste fald\" passer ikke, fordi udtørrede vandløb er en dårlig følge, ikke den bedste.",
+                "en": "\"I bedste fald\" (at best) does not fit, because dried-out streams are a bad outcome, not the best one."
+              },
+              "B": {
+                "da": "\"Til sammenligning\" kræver to ting, der sammenlignes. Sætningen beskriver bare en følge af tørke og forbrug.",
+                "en": "\"Til sammenligning\" needs two things being compared. The sentence just describes a result of drought and use."
+              },
+              "C": {
+                "da": "\"På samme måde\" henviser til noget lignende før, men der er intet parallelt eksempel at sammenligne med.",
+                "en": "\"På samme måde\" points to something similar before, but there is no parallel example."
+              }
+            }
           },
           {
             "options": [
@@ -980,7 +1194,26 @@
               "forbruget",
               "forbuddet"
             ],
-            "correct": "A"
+            "correct": "A",
+            "why": {
+              "da": "\"Gøre billedet kompliceret\" er et fast udtryk: hele situationen bliver sværere. Klimaet giver både tørke og for meget vand.",
+              "en": "\"Gøre billedet kompliceret\" is a set phrase: the whole situation gets harder. The climate brings both drought and too much water.",
+              "quote": "Klimaforandringerne gør billedet endnu mere kompliceret"
+            },
+            "whyNot": {
+              "B": {
+                "da": "Der er ikke nævnt noget \"bevis\" i teksten, som klimaet kunne gøre mere kompliceret.",
+                "en": "No \"proof\" is mentioned in the text that the climate could make more complicated."
+              },
+              "C": {
+                "da": "Resten af afsnittet handler om regnskyl og oversvømmelser, ikke om forbruget. Det er situationen, ikke forbruget, der bliver kompliceret.",
+                "en": "The rest of the paragraph is about downpours and flooding, not consumption. It is the situation, not consumption, that gets complicated."
+              },
+              "D": {
+                "da": "Forbuddet mod sprøjtemidler har intet med klimaforandringerne at gøre i afsnittet.",
+                "en": "The pesticide ban has nothing to do with climate change in this paragraph."
+              }
+            }
           },
           {
             "options": [
@@ -989,7 +1222,26 @@
               "Imens",
               "Tværtimod"
             ],
-            "correct": "C"
+            "correct": "C",
+            "why": {
+              "da": "Mens forhandlingerne trækker ud i flere år, kan forureningen sive ned. \"Imens\" = i den samme tid. Efter \"Imens\" står verbet på andenpladsen (\"kan\").",
+              "en": "While the negotiations drag on for years, the pollution can seep down. \"Imens\" = meanwhile. After \"Imens\" the verb comes second (\"kan\").",
+              "quote": "Imens kan forureningen nå at sive ned, før aftalerne er på plads"
+            },
+            "whyNot": {
+              "A": {
+                "da": "\"Bagefter\" betyder efter forhandlingerne, men sætningen siger, at forureningen siver ned \"før aftalerne er på plads\".",
+                "en": "\"Bagefter\" means after the negotiations, but the sentence says pollution seeps down \"before the agreements are in place\"."
+              },
+              "B": {
+                "da": "\"Derimod\" angiver en modsætning, men sætningen er en følge af de lange forhandlinger, ikke en modsætning.",
+                "en": "\"Derimod\" marks a contrast, but the sentence is a result of the long negotiations, not a contrast."
+              },
+              "D": {
+                "da": "\"Tværtimod\" bruges efter en benægtelse, og der er ingen benægtelse i sætningen før.",
+                "en": "\"Tværtimod\" follows a denial, and there is no denial in the sentence before."
+              }
+            }
           },
           {
             "options": [
@@ -998,7 +1250,26 @@
               "forklaring på",
               "undtagelse fra"
             ],
-            "correct": "B"
+            "correct": "B",
+            "why": {
+              "da": "Beskyttelsen skal være på plads, for at vi kan drikke vandet i fremtiden. Det er en forudsætning (betingelse). \"En forudsætning for, at\" er en fast forbindelse.",
+              "en": "Protection must be in place for us to drink the water in the future. That is a precondition. \"En forudsætning for, at\" is a set phrase.",
+              "quote": "en effektiv beskyttelse af grundvandet er en forudsætning for, at danskerne også i fremtiden kan drikke vandet"
+            },
+            "whyNot": {
+              "A": {
+                "da": "\"En følge af\" vender årsag og virkning om: beskyttelsen er ikke et resultat af, at man kan drikke vandet.",
+                "en": "\"En følge af\" reverses cause and effect: protection is not a result of being able to drink the water."
+              },
+              "C": {
+                "da": "\"En forklaring på\" forklarer noget, der allerede er sket. Sætningen handler om fremtiden (\"også i fremtiden\") og om en betingelse.",
+                "en": "\"En forklaring på\" explains something that has already happened. The sentence is about the future (\"også i fremtiden\") and a condition."
+              },
+              "D": {
+                "da": "\"En undtagelse\" er noget, der ikke følger reglen. Beskyttelsen af grundvandet er ikke en undtagelse; den er nødvendig, for at danskerne kan drikke vandet fra hanen.",
+                "en": "\"En undtagelse\" (an exception) is something that breaks the rule. Protecting the groundwater is not an exception; it is needed so that Danes can drink tap water."
+              }
+            }
           },
           {
             "options": [
@@ -1007,7 +1278,26 @@
               "derudover",
               "næsten altid"
             ],
-            "correct": "A"
+            "correct": "A",
+            "why": {
+              "da": "Sætningen giver to argumenter mod rensning: det er dyrt, og det er ikke engang sikkert, at det virker. \"Ikke engang\" forstærker det andet argument.",
+              "en": "The sentence gives two arguments against cleaning: it is costly, and it is not even certain it works. \"Ikke engang\" strengthens the second argument.",
+              "quote": "det er ikke engang sikkert, at alle stoffer kan fjernes"
+            },
+            "whyNot": {
+              "B": {
+                "da": "\"Helt sikkert\" ville sige, at rensning altid virker. Så ville konklusionen om at forhindre forureningen ikke give mening.",
+                "en": "\"Helt sikkert\" would say cleaning always works. Then the conclusion about preventing pollution would make no sense."
+              },
+              "C": {
+                "da": "\"Det er derudover sikkert\" ville påstå, at alle stoffer kan fjernes. Det går imod argumentet, for sætningen skal give endnu en grund til at undgå rensning.",
+                "en": "\"Det er derudover sikkert\" (it is moreover certain) would claim all substances can be removed. That goes against the argument, since the sentence must give another reason to avoid cleaning."
+              },
+              "D": {
+                "da": "\"Næsten altid sikkert\" er et unaturligt udtryk og ville igen sige, at rensning virker, hvilket svækker argumentet.",
+                "en": "\"Næsten altid sikkert\" is an unnatural phrase and would again say cleaning works, weakening the argument."
+              }
+            }
           },
           {
             "options": [
@@ -1016,7 +1306,26 @@
               "skjuler",
               "påpeger"
             ],
-            "correct": "D"
+            "correct": "D",
+            "why": {
+              "da": "\"Derfor\" viser, at forskerne trækker en konklusion: de påpeger (gør opmærksom på), at det bedste er at forhindre forureningen. Verbet står efter \"Derfor\" (inversion).",
+              "en": "\"Derfor\" shows the researchers draw a conclusion: they point out that prevention is best. The verb comes right after \"Derfor\" (inversion).",
+              "quote": "Derfor påpeger flere forskere, at den bedste løsning er at forhindre forureningen i at opstå"
+            },
+            "whyNot": {
+              "A": {
+                "da": "\"Bestrider\" betyder at sige imod. Det modsiger \"Derfor\", som følger af argumenterne før.",
+                "en": "\"Bestrider\" means to dispute. That contradicts \"Derfor\", which follows from the arguments before."
+              },
+              "B": {
+                "da": "\"Betvivler\" (tvivler på) passer ikke, for argumenterne før taler netop for forebyggelse.",
+                "en": "\"Betvivler\" (doubt) does not fit, because the arguments before support prevention."
+              },
+              "C": {
+                "da": "\"Skjuler\" betyder at holde noget hemmeligt. Efter \"Derfor\" kommer forskernes konklusion på argumenterne før, og den siger de højt; de skjuler den ikke.",
+                "en": "\"Skjuler\" (hide) means keeping something secret. After \"Derfor\" comes the researchers' conclusion from the arguments before, and they state it openly; they don't hide it."
+              }
+            }
           }
         ],
         "points": 1

@@ -376,87 +376,157 @@
         "n": 1,
         "section": "Domkirken og byens historie",
         "prompt": "Roskilde var engang landets vigtigste by. Hvad har ifølge teksten givet byen sit navn?",
-        "key": "(De) kilder/kilderne (der springer frem fra skrænterne)"
+        "key": "(De) kilder/kilderne (der springer frem fra skrænterne)",
+        "why": {
+          "da": "Svaret står i første afsnit om byens historie: det er kilderne ved skrænterne ned mod fjorden, der har givet byen navn. Det er nok at skrive \"kilderne\".",
+          "en": "The answer is in the first paragraph on the town's history: the springs on the slopes down to the fjord gave the town its name. \"Kilderne\" (the springs) is enough.",
+          "quote": "er det kilderne, der springer frem fra skrænterne ned mod vandet, som har givet byen sit navn"
+        }
       },
       {
         "n": 2,
         "section": "Domkirken og byens historie",
         "prompt": "Kan man følge en engelsk omvisning en onsdag i juli uden at betale ekstra? Svar 'ja' eller 'nej'.",
         "key": "Ja",
-        "paraphrased": true
+        "paraphrased": true,
+        "why": {
+          "da": "Under \"Omvisninger\": i skolernes sommerferie (juli) er der omvisning på engelsk kl. 14 hver dag, altså også onsdag, og den er med i entréen. Svaret er derfor \"ja\".",
+          "en": "Under \"Omvisninger\": in the school summer holiday (July) there is a tour in English at 14:00 every day, so also on a Wednesday, and it is included in the entrance fee. So the answer is \"ja\".",
+          "quote": "Omvisningerne varer cirka 45 minutter og er inkluderet i entréen"
+        }
       },
       {
         "n": 3,
         "section": "Domkirken og byens historie",
         "prompt": "Hvad kan man ud over selve kirken også se med en billet til domkirken?",
-        "key": "Domkirkemuseet (på kirkens øverste etage)"
+        "key": "Domkirkemuseet (på kirkens øverste etage)",
+        "why": {
+          "da": "Afsnittet om entré siger, at billetten også giver adgang til Domkirkemuseet på øverste etage. Tårnet kræver en separat billet, så det er ikke svaret. Skriv \"Domkirkemuseet\".",
+          "en": "The paragraph on the entrance fee says the ticket also gets you into the cathedral museum on the top floor. The tower needs a separate ticket, so it is not the answer. Write \"Domkirkemuseet\".",
+          "quote": "Med billetten kommer man desuden op i Domkirkemuseet på kirkens øverste etage"
+        }
       },
       {
         "n": 4,
         "section": "Domkirken og byens historie",
         "prompt": "Hvor lang tid i forvejen skal en skoleklasse med 25 elever bestille en omvisning i oktober?",
-        "key": "Mindst tre uger i forvejen"
+        "key": "Mindst tre uger i forvejen",
+        "why": {
+          "da": "I oktober er der ingen faste omvisninger (de er kun i sommerferien), og klassen er over 15 personer. Så gælder reglen under \"Omvisninger\": bestil mindst tre uger i forvejen.",
+          "en": "In October there are no fixed tours (only in the summer holiday), and the class is more than 15 people. So the rule under \"Omvisninger\" applies: book at least three weeks ahead.",
+          "quote": "skal bestille den mindst tre uger i forvejen hos kirkens kontor"
+        }
       },
       {
         "n": 5,
         "section": "Vikingeskibsmuseet og fjorden",
         "prompt": "Hvorfor sænkede man oprindeligt de fem vikingeskibe i fjorden ved Roskilde?",
-        "key": "(For) at spærre sejlrenden (og beskytte byen)"
+        "key": "(For) at spærre sejlrenden (og beskytte byen)",
+        "why": {
+          "da": "Første afsnit om Vikingeskibsmuseet siger, at skibene blev sænket for at spærre sejlrenden og beskytte byen. \"For at spærre sejlrenden\" er nok.",
+          "en": "The first paragraph on the Viking Ship Museum says the ships were sunk to block the channel and protect the town. \"For at spærre sejlrenden\" is enough.",
+          "quote": "for at spærre sejlrenden og beskytte byen mod angreb fra søsiden"
+        }
       },
       {
         "n": 6,
         "section": "Vikingeskibsmuseet og fjorden",
         "prompt": "Hvad skal alle deltagere kunne for at komme med på en sejlads i vikingeskib?",
-        "key": "(Alle deltagere skal) kunne svømme"
+        "key": "(Alle deltagere skal) kunne svømme",
+        "why": {
+          "da": "Under \"Sejlads i vikingeskib\": man behøver ingen erfaring, men alle skal kunne svømme. Svar kort: \"kunne svømme\".",
+          "en": "Under \"Sejlads i vikingeskib\": no experience is needed, but everyone must be able to swim. Answer briefly: \"kunne svømme\".",
+          "quote": "alle deltagere skal kunne svømme"
+        }
       },
       {
         "n": 7,
         "section": "Vikingeskibsmuseet og fjorden",
         "prompt": "Hvilken rabat får man på museet, hvis man køber et årskort?",
-        "key": "10 procent rabat (i museumsbutikken og på museets restaurant)"
+        "key": "10 procent rabat (i museumsbutikken og på museets restaurant)",
+        "why": {
+          "da": "Under \"Billetter og åbningstider\": med årskortet får man 10 procent rabat i butikken og på restauranten. \"10 procent rabat\" er nok; hvor man får den, må gerne stå med.",
+          "en": "Under \"Billetter og åbningstider\": the annual card gives 10 percent off in the shop and the restaurant. \"10 procent rabat\" is enough; you may add where it applies.",
+          "quote": "kortholdere får samtidig 10 procent rabat i museumsbutikken og på museets restaurant"
+        }
       },
       {
         "n": 8,
         "section": "Vikingeskibsmuseet og fjorden",
         "prompt": "Hvad skal man have gjort for at leje kajakker billigere hos Fjordpagajen?",
-        "key": "(Gennemført et) introduktionskursus (hos firmaet)"
+        "key": "(Gennemført et) introduktionskursus (hos firmaet)",
+        "why": {
+          "da": "Sidst i afsnittet om fjorden: man får 20 procent rabat på kajakker, hvis man har gennemført et introduktionskursus hos firmaet. Svar: \"et introduktionskursus\".",
+          "en": "At the end of the fjord section: you get 20 percent off kayaks if you have completed an introductory course with the company. Answer: \"et introduktionskursus\".",
+          "quote": "har man gennemført et introduktionskursus hos firmaet, kan man efterfølgende leje kajakker med 20 procent rabat"
+        }
       },
       {
         "n": 9,
         "section": "Roskilde Festival og kulturlivet",
         "prompt": "Hvad får de idrætsklubber, der sender frivillige til Roskilde Festival, til gengæld?",
-        "key": "(Et) økonomisk tilskud (for hver frivillig)"
+        "key": "(Et) økonomisk tilskud (for hver frivillig)",
+        "why": {
+          "da": "Afsnittet om de frivillige siger, at foreninger og klubber får et økonomisk tilskud for hver frivillig. Svar: \"et økonomisk tilskud\".",
+          "en": "The paragraph on the volunteers says that associations and clubs receive a financial grant for each volunteer. Answer: \"et økonomisk tilskud\".",
+          "quote": "som modtager et økonomisk tilskud for hver frivillig, de stiller med"
+        }
       },
       {
         "n": 10,
         "section": "Roskilde Festival og kulturlivet",
         "prompt": "Ahmed på 19 år har et ungdomskort. Får han halv pris i Bryggens store sal? Svar 'ja' eller 'nej'.",
         "key": "Nej",
-        "paraphrased": true
+        "paraphrased": true,
+        "why": {
+          "da": "Under \"Kulturhuset Bryggen\": ungdomskortet giver kun halv pris i den lille sal; den store sal er ikke omfattet af ordningen. Svaret er \"nej\".",
+          "en": "Under \"Kulturhuset Bryggen\": the youth card only gives half price in the small hall; the large hall is not covered by the scheme. The answer is \"nej\".",
+          "quote": "Arrangementerne i den store sal er ikke omfattet af ordningen"
+        }
       },
       {
         "n": 11,
         "section": "Roskilde Festival og kulturlivet",
         "prompt": "Hvad kan man som besøgende selv prøve på museet Ragnarock? Nævn begge.",
-        "key": "(At) indspille deres/sin egen sang og (at) lære danse (fra forskellige årtier)"
+        "key": "(At) indspille deres/sin egen sang og (at) lære danse (fra forskellige årtier)",
+        "why": {
+          "da": "Under \"Ragnarock og bydelen Musicon\" står to ting, man selv kan gøre: indspille sin egen sang og lære danse. Begge skal med.",
+          "en": "Under \"Ragnarock og bydelen Musicon\" there are two things you can do yourself: record your own song and learn dances. Both must be included.",
+          "quote": "indspille deres egen sang og lære danse fra forskellige årtier"
+        }
       },
       {
         "n": 12,
         "section": "Natur og friluftsliv",
         "prompt": "Hvad skal man selv medbringe, når man overnatter i shelterne i Boserup Skov? Nævn begge.",
-        "key": "Brænde og drikkevand"
+        "key": "Brænde og drikkevand",
+        "why": {
+          "da": "Under \"Overnatning i shelter\": der er ingen vandhaner eller brændeskur, så man skal selv have brænde og drikkevand med. Nævn begge.",
+          "en": "Under \"Overnatning i shelter\": there are no taps or woodshed, so you must bring firewood and drinking water yourself. Give both.",
+          "quote": "man skal selv medbringe brænde og drikkevand"
+        }
       },
       {
         "n": 13,
         "section": "Natur og friluftsliv",
         "prompt": "Naturskolen henvender sig ikke kun til skoler og institutioner. Hvad tilbyder den også?",
-        "key": "Guidede ture for børnefamilier (i weekenderne)"
+        "key": "Guidede ture for børnefamilier (i weekenderne)",
+        "why": {
+          "da": "Under \"Boserup Skov\": i weekenderne arrangerer naturvejlederne guidede ture for børnefamilier. Svar: \"guidede ture for børnefamilier\".",
+          "en": "Under \"Boserup Skov\": at weekends the nature guides run guided walks for families with children. Answer: \"guidede ture for børnefamilier\".",
+          "quote": "naturvejlederne arrangerer guidede ture for børnefamilier"
+        }
       },
       {
         "n": 14,
         "section": "At bo og arbejde i Roskilde",
         "prompt": "Hvad kan man i Jobcaféen få hjælp til, bortset fra CV og ansøgninger?",
-        "key": "(Vejledning i at få sin) udenlandske uddannelse vurderet"
+        "key": "(Vejledning i at få sin) udenlandske uddannelse vurderet",
+        "why": {
+          "da": "I afsnittet om Jobcaféen står der, at man \"desuden\" kan få vejledning i at få sin udenlandske uddannelse vurderet. Det er nok at skrive \"udenlandsk uddannelse vurderet\".",
+          "en": "The Jobcafé paragraph says you can \"also\" get guidance on having your foreign education assessed. \"Udenlandsk uddannelse vurderet\" is enough.",
+          "quote": "få vejledning i at få sin udenlandske uddannelse vurderet af de danske myndigheder"
+        }
       },
       {
         "n": 15,
@@ -466,7 +536,12 @@
         "paraphrased": true,
         "also": [
           "(Fordi) ventetiden (ofte) er (mellem) fem og/til ti år"
-        ]
+        ],
+        "why": {
+          "da": "Under \"Bolig\": ventetiden er ofte fem til ti år, og \"derfor\" opfordrer Fjordbo folk til at skrive sig op i god tid. Svar: \"lang ventetid\" eller \"ventetiden er fem til ti år\".",
+          "en": "Under \"Bolig\": the waiting time is often five to ten years, and \"therefore\" Fjordbo urges people to sign up early. Answer: \"lang ventetid\" or \"ventetiden er fem til ti år\".",
+          "quote": "ventetiden til de mest efterspurgte afdelinger i midtbyen ofte mellem fem og ti år"
+        }
       }
     ]
   },
@@ -541,7 +616,22 @@
               "Han savnede at kunne se, hvad hans tid i skolen førte til.",
               "Hans venner var begyndt på en erhvervsuddannelse som elektriker."
             ],
-            "correct": "B"
+            "correct": "B",
+            "why": {
+              "da": "Yusuf siger, at han savnede at kunne se, hvad han brugte sin tid på. Det er det samme som B: han savnede at se, hvad tiden i skolen førte til.",
+              "en": "Yusuf says he missed being able to see what he was spending his time on. That is what B says: he missed seeing what his time at school led to.",
+              "quote": "Jeg savnede bare at kunne se, hvad jeg brugte min tid på"
+            },
+            "whyNot": {
+              "A": {
+                "da": "Teksten siger det modsatte: \"Det var ikke, fordi jeg ikke kunne klare det faglige.\"",
+                "en": "The text says the opposite: \"It wasn't because I couldn't cope with the academic work.\""
+              },
+              "C": {
+                "da": "Vennerne er grunden til, at han begyndte i gymnasiet, ikke til at han stoppede. Der står ikke, at de blev elektrikere.",
+                "en": "His friends are the reason he started upper secondary school, not why he left. Nothing says they became electricians."
+              }
+            }
           },
           {
             "prompt": "Hvilket udsagn er i overensstemmelse med det, der står i teksten?",
@@ -550,7 +640,22 @@
               "Søren Brandt mente fra starten, at datteren traf det rigtige valg.",
               "Yusuf Demir fik en læreplads i den første virksomhed, han søgte hos."
             ],
-            "correct": "A"
+            "correct": "A",
+            "why": {
+              "da": "Mathilde siger, at man forventede, at hun skulle i gymnasiet, fordi hun havde gode karakterer. Hendes karakterer var altså gode nok til gymnasiet.",
+              "en": "Mathilde says people expected her to go to upper secondary school because she had good grades. So her grades were good enough for it.",
+              "quote": "der alligevel en forventning om, at jeg skulle i gymnasiet, fordi jeg havde gode karakterer"
+            },
+            "whyNot": {
+              "B": {
+                "da": "Søren indrømmer, at han \"i begyndelsen var skeptisk\". Han mente altså ikke fra starten, at valget var rigtigt.",
+                "en": "Søren admits he \"was sceptical at first\". So he did not think from the start that it was the right choice."
+              },
+              "C": {
+                "da": "Hans mor siger, at han skrev over tredive ansøgninger, før han fik ja. Det var altså ikke den første virksomhed.",
+                "en": "His mother says he wrote over thirty applications before he got a yes. So it was not the first company."
+              }
+            }
           },
           {
             "prompt": "Hvad er Søren Brandt og Lone Vestergaard enige om?",
@@ -559,7 +664,22 @@
               "At faglærte har bedre muligheder for at læse videre end studenter.",
               "At forældre ofte undervurderer, hvad en faglig uddannelse kan give."
             ],
-            "correct": "C"
+            "correct": "C",
+            "why": {
+              "da": "Søren siger, at datteren har forstået noget, som forældrene har svært ved at se. Lone siger, at mange forældre ser en lang uddannelse som den sikre vej, og at det skal udfordres. Begge mener, at forældre undervurderer en faglig uddannelse.",
+              "en": "Søren says his daughter understood something parents find hard to see. Lone says many parents see a long degree as the safe route and that this must be challenged. Both think parents underrate vocational training.",
+              "quote": "hun har nok forstået noget, som vi forældre har haft svært ved at se"
+            },
+            "whyNot": {
+              "A": {
+                "da": "Det er kun Lone Vestergaard, der siger, at virksomhederne skal tage et større ansvar. Søren siger intet om virksomhederne.",
+                "en": "Only Lone Vestergaard says companies must take more responsibility. Søren says nothing about companies."
+              },
+              "B": {
+                "da": "Søren siger, at faglærte har gode muligheder for at læse videre, men ikke at de er bedre end studenternes. Lone siger slet ikke noget om det.",
+                "en": "Søren says skilled workers have good chances to study further, but not that they are better than school-leavers'. Lone says nothing about it at all."
+              }
+            }
           }
         ],
         "points": 2
@@ -674,7 +794,44 @@
           "G",
           "D"
         ],
-        "points": 2
+        "points": 2,
+        "why": [
+          {
+            "da": "Før hullet står \"Men sådan blev det ikke helt.\" C forklarer, hvordan det gik: travle første måneder, men ingen rigtige venner. \"fortæller hun\" peger på Sofie, og næste afsnit begynder \"Sofie Lund er langt fra den eneste\".",
+            "en": "Before the gap: \"But it didn't quite turn out like that.\" C explains what happened: busy first months, but no real friends. \"she says\" points to Sofie, and the next paragraph begins \"Sofie Lund is far from the only one\".",
+            "quote": "Men da hverdagen kom, opdagede jeg, at jeg ikke havde nogen rigtige venner i byen"
+          },
+          {
+            "da": "\"Tallene\" i E henviser til tallene fra undersøgelsen lige før (hver femte unge mod hver tyvende ældre). E kommenterer, hvorfor de overrasker.",
+            "en": "\"Tallene\" (the figures) in E refers to the survey figures just before (one in five young people against one in twenty older people). E comments on why they are surprising.",
+            "quote": "Tallene har overrasket mange, fordi ungdommen normalt opfattes som den periode i livet, hvor man har flest venner"
+          },
+          {
+            "da": "\"Han\" i A er psykologen Henrik Mortensen fra afsnittet før. A nævner de sociale medier, og afsnittet efter fortsætter: \"de sociale medier ikke kan stå alene som forklaring\".",
+            "en": "\"Han\" in A is the psychologist Henrik Mortensen from the paragraph before. A brings up social media, and the next paragraph continues: \"social media cannot be the only explanation\".",
+            "quote": "Han mener, at de sociale medier spiller en rolle"
+          },
+          {
+            "da": "\"Det\" i G er presset for at præstere og den manglende tid til fællesskaber fra afsnittet før. Bagefter kommer \"Vendepunktet kom\", som forudsætter, at vi lige har hørt om Sofies svære tid.",
+            "en": "\"Det\" in G is the pressure to perform and lack of time for social life from the paragraph before. Then comes \"Vendepunktet kom\" (the turning point came), which assumes we have just heard about Sofie's hard time.",
+            "quote": "Det oplevede Sofie Lund også"
+          },
+          {
+            "da": "\"Den erfaring\" i D er Sofies erfaring med, at det er nemmere at tale sammen, når man laver noget konkret. Afsnittet efter begynder \"Han understreger samtidig\", og \"han\" er Henrik Mortensen fra D.",
+            "en": "\"Den erfaring\" (that experience) in D is Sofie's experience that talking is easier when you do something concrete together. The next paragraph begins \"He also stresses\", and \"he\" is Henrik Mortensen from D.",
+            "quote": "Den erfaring kan Henrik Mortensen genkende"
+          }
+        ],
+        "whyNotExtra": {
+          "B": {
+            "da": "B siger, at Sofie flyttede hjem til Thisted efter en måned. Det passer ikke med teksten, hvor hun stadig bor i Aarhus efter to år og bliver frivillig i en forening der.",
+            "en": "B says Sofie moved back to Thisted after a month. That contradicts the text, where she still lives in Aarhus after two years and volunteers in an association there."
+          },
+          "F": {
+            "da": "\"Den metode\" i F henviser til en metode, Henrik Mortensen har brugt med klassekammerater, men sådan en metode bliver aldrig nævnt i teksten.",
+            "en": "\"Den metode\" (that method) in F refers to a method Henrik Mortensen used with classmates, but no such method is ever mentioned in the text."
+          }
+        }
       },
       {
         "kind": "cloze",
@@ -784,7 +941,26 @@
               "undtagelse",
               "målsætning"
             ],
-            "correct": "C"
+            "correct": "C",
+            "why": {
+              "da": "\"For fem år siden\" står i kontrast til \"men i dag er det helt almindeligt\". Dengang var en ret uden kød altså sjælden: en undtagelse.",
+              "en": "\"Five years ago\" contrasts with \"but today it is quite normal\". Back then a dish without meat was rare: an exception.",
+              "quote": "For fem år siden ville det have været en undtagelse, at der ikke var kød i hovedretten"
+            },
+            "whyNot": {
+              "A": {
+                "da": "En \"nødvendighed\" er noget, der skal være sådan. Så ville sætningen sige, at retter uden kød var påkrævet for fem år siden. Men kontrasten til \"i dag er det helt almindeligt\" viser, at sådan en ret var sjælden dengang.",
+                "en": "A \"nødvendighed\" (necessity) is something that has to be. Then the sentence would say meatless dishes were required five years ago. But the contrast with \"today it is quite normal\" shows such a dish was rare back then."
+              },
+              "B": {
+                "da": "\"Selvfølge\" er det modsatte: det ville betyde, at det var normalt dengang, men \"men i dag er det helt almindeligt\" viser, at det er nyt.",
+                "en": "\"Selvfølge\" (matter of course) is the opposite: it would mean it was normal then, but \"but today it is quite normal\" shows it is new."
+              },
+              "D": {
+                "da": "En \"målsætning\" er et mål for fremtiden. Sætningen handler om, hvordan det var, ikke om et mål.",
+                "en": "A \"målsætning\" is a goal for the future. The sentence is about how things were, not about a goal."
+              }
+            }
           },
           {
             "options": [
@@ -793,7 +969,26 @@
               "tvivler på",
               "frygter"
             ],
-            "correct": "B"
+            "correct": "B",
+            "why": {
+              "da": "Køkkenchefen fremhæver sin egen erfaring: hun påpeger (gør opmærksom på), at nøglen er god smag. Verbet passer med en at-sætning med en positiv påstand.",
+              "en": "The head chef stresses her own experience: she points out that the key is good taste. The verb fits a that-clause with a positive claim.",
+              "quote": "Hun påpeger, at nøglen er at lave mad, der smager godt i sig selv"
+            },
+            "whyNot": {
+              "A": {
+                "da": "\"Benægter\" betyder at sige, at noget ikke er sandt. Men hun går ind for at lave mad, der smager godt.",
+                "en": "\"Benægter\" means to deny something is true. But she is in favour of making food that tastes good."
+              },
+              "C": {
+                "da": "\"Tvivler på\" passer ikke: hun er sikker på sin metode og har \"ikke fået nogen klager\".",
+                "en": "\"Tvivler på\" (doubts) does not fit: she is confident in her approach and has \"had no complaints\"."
+              },
+              "D": {
+                "da": "\"Frygter\" bruges om noget negativt, man er bange for. At nøglen er god mad, er ikke noget at frygte.",
+                "en": "\"Frygter\" (fears) is used about something bad. That good food is the key is nothing to fear."
+              }
+            }
           },
           {
             "options": [
@@ -802,7 +997,26 @@
               "en undtagelse fra",
               "en del af"
             ],
-            "correct": "D"
+            "correct": "D",
+            "why": {
+              "da": "Bagefter står der, at næsten hver tredje dansker spiser mindre kød. Kantinens udvikling er altså en del af en bredere tendens.",
+              "en": "Next it says that almost one in three Danes eat less meat. So the canteen's change is part of a wider trend.",
+              "quote": "Udviklingen er en del af en bredere tendens i samfundet"
+            },
+            "whyNot": {
+              "A": {
+                "da": "\"I modstrid med\" betyder, at udviklingen går imod tendensen. Men undersøgelsen viser, at den går i samme retning.",
+                "en": "\"I modstrid med\" means the change goes against the trend. But the survey shows it goes the same way."
+              },
+              "B": {
+                "da": "\"Uafhængig af\" passer ikke, for resten af afsnittet viser netop sammenhængen mellem kantinen og samfundet.",
+                "en": "\"Uafhængig af\" (independent of) does not fit, because the rest of the paragraph shows exactly the link between the canteen and society."
+              },
+              "C": {
+                "da": "\"En undtagelse fra\" er det modsatte: kantinen følger tendensen, den er ikke en undtagelse.",
+                "en": "\"En undtagelse fra\" is the opposite: the canteen follows the trend, it is not an exception."
+              }
+            }
           },
           {
             "options": [
@@ -811,7 +1025,26 @@
               "derfor",
               "altså"
             ],
-            "correct": "B"
+            "correct": "B",
+            "why": {
+              "da": "\"Ellers\" betyder her \"ganske vist / egentlig\" og varsler en modsætning: maden har haft dårligt ry, \"men den forestilling er ved at ændre sig\".",
+              "en": "\"Ellers\" here means \"admittedly / actually\" and signals a contrast: the food has had a bad reputation, \"but that idea is changing\".",
+              "quote": "Plantebaseret mad har ellers længe haft ry for at være kedelig og dyr"
+            },
+            "whyNot": {
+              "A": {
+                "da": "\"Nemlig\" forklarer det, der står lige før. Det dårlige ry er ikke en forklaring på, at udledningen falder.",
+                "en": "\"Nemlig\" explains what was just said. The bad reputation does not explain the lower emissions."
+              },
+              "C": {
+                "da": "\"Derfor\" angiver en følge, men det dårlige ry er ikke en følge af klimafordelene i afsnittet før.",
+                "en": "\"Derfor\" marks a consequence, but the bad reputation is not a result of the climate benefits in the paragraph before."
+              },
+              "D": {
+                "da": "\"Altså\" drager en konklusion. Sætningen konkluderer ikke noget; den indleder en modsætning med \"men\".",
+                "en": "\"Altså\" draws a conclusion. The sentence concludes nothing; it sets up a contrast with \"men\"."
+              }
+            }
           },
           {
             "options": [
@@ -820,7 +1053,26 @@
               "i takt med at",
               "selv om"
             ],
-            "correct": "C"
+            "correct": "C",
+            "why": {
+              "da": "Forestillingen ændrer sig samtidig med, at kokkene bliver dygtigere: to ting udvikler sig sammen. \"I takt med at\" udtrykker netop det.",
+              "en": "The idea changes as cooks get better: two things develop together. \"I takt med at\" (as / in step with) expresses exactly that.",
+              "quote": "i takt med at kokke og fødevarevirksomheder er blevet langt dygtigere"
+            },
+            "whyNot": {
+              "A": {
+                "da": "\"På trods af at\" udtrykker en modsætning, men dygtigere kokke er en grund til ændringen, ikke en hindring.",
+                "en": "\"På trods af at\" (despite) expresses a contrast, but better cooks are a reason for the change, not an obstacle."
+              },
+              "B": {
+                "da": "\"Medmindre\" betyder \"hvis ikke\" og indleder en betingelse. Men at kokkene er blevet dygtigere, er ikke en betingelse; det er noget, der allerede er sket, og som forklarer ændringen.",
+                "en": "\"Medmindre\" means \"unless\" and introduces a condition. But the cooks having become more skilful is not a condition; it has already happened, and it explains the change."
+              },
+              "D": {
+                "da": "\"Selv om\" er indrømmende (modsætning). Det passer ikke, fordi kokkenes dygtighed forklarer ændringen.",
+                "en": "\"Selv om\" (even though) is concessive. It does not fit, because the cooks' skill explains the change."
+              }
+            }
           },
           {
             "options": [
@@ -829,7 +1081,26 @@
               "drivkræfter",
               "garantier"
             ],
-            "correct": "A"
+            "correct": "A",
+            "why": {
+              "da": "Pris og tilgængelighed holder folk tilbage: \"Hvis den vegetariske ret er dyrere ..., vælger de fleste stadig kødet.\" Det er barrierer. \"Barrierer for, at\" er en fast forbindelse.",
+              "en": "Price and availability hold people back: \"If the vegetarian dish is dearer ..., most still choose meat.\" Those are barriers. \"Barrierer for, at\" is a common collocation.",
+              "quote": "Prisen og tilgængeligheden er stadig de største barrierer for, at flere vælger de plantebaserede alternativer"
+            },
+            "whyNot": {
+              "B": {
+                "da": "\"Argumenter for\" ville betyde grunde til at vælge plantemad, men en høj pris får folk til at vælge kødet.",
+                "en": "\"Argumenter for\" would mean reasons to choose plant food, but a high price makes people choose meat."
+              },
+              "C": {
+                "da": "\"Drivkræfter\" er det, der skubber en udvikling frem. Næste sætning viser, at pris og tilgængelighed bremser den.",
+                "en": "\"Drivkræfter\" are what push a change forward. The next sentence shows that price and availability slow it down."
+              },
+              "D": {
+                "da": "\"Garantier\" er noget, der sikrer et resultat. Men næste sætning viser, at pris og tilgængelighed holder folk tilbage: er retten dyrere, vælger de fleste kødet. Det er altså forhindringer, ikke garantier.",
+                "en": "\"Garantier\" (guarantees) are things that ensure a result. But the next sentence shows that price and availability hold people back: if the dish costs more, most choose meat. So they are obstacles, not guarantees."
+              }
+            }
           },
           {
             "options": [
@@ -838,7 +1109,26 @@
               "Ikke desto mindre",
               "Tilsammen"
             ],
-            "correct": "D"
+            "correct": "D",
+            "why": {
+              "da": "Skoler, plejehjem og hospitaler lægges sammen: tilsammen serverer de mad for hundredtusindvis. Der er ingen modsætning til sætningen før, så et samlende ord passer.",
+              "en": "Schools, care homes and hospitals are added up: together they serve hundreds of thousands. There is no contrast with the sentence before, so a summing-up word fits.",
+              "quote": "Tilsammen serverer skoler, plejehjem og hospitaler hver dag mad til hundredtusindvis af danskere"
+            },
+            "whyNot": {
+              "A": {
+                "da": "\"Tværtimod\" bruges efter en benægtelse. Sætningen før benægter ikke noget.",
+                "en": "\"Tværtimod\" (on the contrary) follows a denial. The sentence before denies nothing."
+              },
+              "B": {
+                "da": "\"Til gengæld\" angiver en modvægt eller fordel mod en ulempe. Sætningen forklarer bare, hvorfor køkkenerne er vigtige.",
+                "en": "\"Til gengæld\" (on the other hand) sets a plus against a minus. The sentence just explains why the kitchens matter."
+              },
+              "C": {
+                "da": "\"Ikke desto mindre\" angiver en modsætning, men sætningen støtter det, der står før.",
+                "en": "\"Ikke desto mindre\" (nevertheless) marks a contrast, but the sentence supports what comes before."
+              }
+            }
           },
           {
             "options": [
@@ -847,7 +1137,26 @@
               "udelukke",
               "forsinke"
             ],
-            "correct": "B"
+            "correct": "B",
+            "why": {
+              "da": "Gode erfaringer med plantemad kan føre til, at folk laver den derhjemme. \"Det kan betyde, at\" = \"det kan føre til, at\".",
+              "en": "Good experiences with plant food can lead people to cook it at home. \"Det kan betyde, at\" = \"it can mean / lead to\".",
+              "quote": "kan det på sigt betyde, at de også begynder at lave den slags mad derhjemme"
+            },
+            "whyNot": {
+              "A": {
+                "da": "\"Forhindre\" er det modsatte: gode erfaringer forhindrer ikke folk i at lave maden.",
+                "en": "\"Forhindre\" (prevent) is the opposite: good experiences do not stop people cooking the food."
+              },
+              "C": {
+                "da": "\"Udelukke\" (gøre umuligt) er også det modsatte af den positive pointe.",
+                "en": "\"Udelukke\" (rule out) is also the opposite of the positive point."
+              },
+              "D": {
+                "da": "\"Forsinke\" passer ikke: gode erfaringer får ikke ændringen til at gå langsommere.",
+                "en": "\"Forsinke\" (delay) does not fit: good experiences do not slow the change down."
+              }
+            }
           }
         ],
         "points": 1

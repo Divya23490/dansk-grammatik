@@ -10,6 +10,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { describe, expect, it } from 'vitest';
 import type { ReadingPaper } from './types';
+import { validateExplanations } from './explanations';
 import { validatePaper } from './validate';
 
 const ROOT = path.join(__dirname, '../../..');
@@ -41,6 +42,9 @@ describe('reading papers', () => {
   for (const p of papers.filter((x) => !only || x.id === only)) {
     it(`${p.id} is well-formed`, () => {
       expect(validatePaper(p)).toEqual([]);
+    });
+    it(`${p.id} explains every answer`, () => {
+      expect(validateExplanations(p)).toEqual([]);
     });
   }
 });

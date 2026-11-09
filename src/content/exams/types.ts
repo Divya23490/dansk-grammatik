@@ -37,6 +37,24 @@ export interface Passage {
 
 export type PaperFormat = 'current' | 'older' | 'oldest';
 
+/** A short explanation, in Danish (the exam's language) and in English. */
+export interface Explained {
+  da: string;
+  en: string;
+}
+
+/** Why an answer is right, with the words in the text that settle it. */
+export interface Why extends Explained {
+  /**
+   * Verbatim words from the text (a cloze text with the right words filled in;
+   * for 2B the text or the paragraphs). Checked against the paper.
+   */
+  quote?: string;
+}
+
+/** Why each wrong option is wrong, by letter. */
+export type WhyNot = Record<string, Explained>;
+
 export type PaperSource =
   | { kind: 'official'; year: number; term: 'summer' | 'winter'; label: string }
   /**
@@ -68,6 +86,8 @@ export interface Lf1Question {
   paraphrased?: true;
   /** A forcensur ruling voided the question: every candidate gets the point. */
   freePoint?: true;
+  /** Where the answer is found and how to put it. */
+  why?: Why;
 }
 
 export interface Lf1 {
@@ -93,6 +113,9 @@ export interface McTask {
     correct: string;
     /** Letters a forcensur ruling also accepts. */
     alsoCorrect?: string[];
+    why?: Why;
+    /** One entry per option that is not accepted. */
+    whyNot?: WhyNot;
   }[];
   points: number;
 }
@@ -106,6 +129,10 @@ export interface InsertTask {
   inserts: { letter: string; text: string }[];
   /** correct[i] is the letter for gap i + 1. */
   correct: string[];
+  /** why[i]: why correct[i] belongs in gap i + 1 (the links to the text before and after it). */
+  why?: Why[];
+  /** For each paragraph that belongs nowhere: why it fits none of the gaps. */
+  whyNotExtra?: WhyNot;
   points: number;
 }
 
@@ -116,7 +143,7 @@ export interface ClozeTask {
   /** Paragraph runs contain `{ gap: n }` for 1…8 (and `{ gap: 0 }` for the worked example, if any). */
   passage: Passage;
   /** gaps[i] is gap i + 1. `alsoCorrect`: letters a forcensur ruling also accepts. */
-  gaps: { options: string[]; correct: string; alsoCorrect?: string[] }[];
+  gaps: { options: string[]; correct: string; alsoCorrect?: string[]; why?: Why; whyNot?: WhyNot }[];
   /** The worked example shown as gap 0. */
   example?: { options: string[]; correct: string };
   points: number;
