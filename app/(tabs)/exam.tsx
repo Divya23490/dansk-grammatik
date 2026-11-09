@@ -32,6 +32,13 @@ export default function ExamGuideScreen() {
       <ListGroup title="Practise for it">
         {exam === 'PD3' ? (
         <ListRow
+          title="November 2026 guesses"
+          detail="What each task is most likely to ask, from the last four years of papers: tips, likely topics, word lists and cheat sheets."
+          onPress={() => router.push('/exam/guesses' as never)}
+        />
+        ) : null}
+        {exam === 'PD3' ? (
+        <ListRow
           title="Reading papers"
           detail="Real PD3 reading papers from 2015–2024 and simulated ones, timed or as practice."
           onPress={() => router.push('/exam/papers' as never)}

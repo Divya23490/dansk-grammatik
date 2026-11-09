@@ -443,6 +443,20 @@ answers, the key and these explanations side by side.
 Simulated papers ship with the app (`src/content/exams/simulated/`) and need
 none of this.
 
+### November 2026 guesses
+
+The Exam tab's "November 2026 guesses" page (`app/exam/guesses.tsx`) forecasts
+the next PD3 sitting task by task, from the last four years of published papers.
+For each reading, writing and speaking task it shows what came up in each
+sitting, the pattern with counts, what is most likely, question types, tips and,
+for writing and speaking, a cheat sheet of DA/EN sentences. Reading and writing
+tasks also get two word lists: the most likely words (for the gap-fill, ranked
+by how often each connector, preposition and verb has been an option and the
+answer across all 17 papers) and a bigger revision list. The content is in
+`src/content/guesses2026.ts` and `src/content/guesses2026Words.ts`. It holds
+only theme titles, counts and our own analysis, never official text, so it is
+safe in the public bundle. It is labelled as forecasts, not real tasks.
+
 ### Writing prep (official tasks and learner samples)
 
 Tips, templates, graded examples and simulated tasks ship with the app
