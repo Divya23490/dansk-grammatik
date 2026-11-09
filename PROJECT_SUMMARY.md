@@ -125,6 +125,9 @@ The noun, adjective, verb, comma, spelling and vocabulary trainers follow the sa
 | `src/profile/activity.ts` | Active-days store and `computeStreak()` |
 | `src/profile/settings.ts` | Settings store, `resolveThemeMode`, date helpers |
 | `src/vocabSets/*.ts` | Vocabulary sets: store (tombstones, newer-wins merge), Supabase sync, deck matching by any word form, set words as flashcards, suggested meanings |
+| `app/exam/[paperId]/result.tsx`, `review.tsx` | Marked attempt: score, grade and each answer with its question and option text; "Review with the text" lays the paper out with your answers, the key (marked in cloze and 2B texts) and the DA/EN explanations |
+| `src/exam/review.ts`, `src/ui/exam/Explanation.tsx` | Per-item review model (given/key text, why, why-not for each wrong option, where a misplaced 2B paragraph belongs) and its panel |
+| `src/content/exams/explanations.ts` | Validator for the answer explanations: every item covered in both languages, wrong-option letters match the key, quotes found in the text |
 | `src/ui/exam/SelectionCapture.web.tsx` | Web-only text selection in reading papers → "Add to set" pill (native file is a pass-through) |
 | `src/ui/vocab/AddToSetSheet.tsx` | Add or edit a set word: deck match, suggested meaning, source sentence, set picker |
 | `src/vocab/cloze.ts`, `src/ui/vocab/GapFill.tsx` | Gap-fill vocab cards: the word cut from one of its own sentences, tap choices weighted to its other forms, typo-tolerant check |

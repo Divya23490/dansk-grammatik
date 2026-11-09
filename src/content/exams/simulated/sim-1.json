@@ -660,13 +660,23 @@
         "key": "Onsdag",
         "also": [
           "(Om) onsdagen"
-        ]
+        ],
+        "why": {
+          "da": "Se i boksen »Praktisk information« under ARoS. Ved Åbningstider står der, at museet har åbent til kl. 21 om onsdagen. Det er nok at svare »onsdag«.",
+          "en": "Look in the 'Praktisk information' box under ARoS. The opening hours say the museum is open until 9 pm on Wednesdays. 'Onsdag' is enough.",
+          "quote": "Onsdag kl. 10–21"
+        }
       },
       {
         "n": 2,
         "section": "Seværdigheder i Aarhus",
         "prompt": "Hvad kan man smage i bageriet i Den Gamle By?",
-        "key": "(Friskbagte) kringler"
+        "key": "(Friskbagte) kringler",
+        "why": {
+          "da": "Svaret står i afsnittet om Den Gamle By, hvor bageriet i den gamle købstad bliver beskrevet. Svar bare »kringler«; »friskbagte« må gerne være med.",
+          "en": "The answer is in the Den Gamle By part, where the bakery in the old market town is described. Just answer 'kringler'; 'friskbagte' may be added.",
+          "quote": "her kan man smage friskbagte kringler"
+        }
       },
       {
         "n": 3,
@@ -676,31 +686,56 @@
         "also": [
           "(at) kælke",
           "kælker"
-        ]
+        ],
+        "why": {
+          "da": "Under Moesgaard Museum står der, hvad børnene bruger det skrånende græstag til, når der er sne. Svar »kælkebakke« eller »til at kælke«.",
+          "en": "Under Moesgaard Museum the text says what children use the sloping grass roof for when there is snow. Answer 'kælkebakke' (sledging hill) or 'til at kælke'.",
+          "quote": "bruger byens børn taget som kælkebakke"
+        }
       },
       {
         "n": 4,
         "section": "Aarhus' historie",
         "prompt": "Hvad betyder navnet Aros?",
-        "key": "Åens munding"
+        "key": "Åens munding",
+        "why": {
+          "da": "Se i afsnittet »Fra vikingeby til storby«. Der står direkte, hvad navnet Aros betyder. Svar med de to ord »åens munding«.",
+          "en": "See the part 'Fra vikingeby til storby'. It says directly what the name Aros means. Answer with the two words 'åens munding' (the mouth of the river).",
+          "quote": "Byen hed dengang Aros, som betyder »åens munding«"
+        }
       },
       {
         "n": 5,
         "section": "Aarhus' historie",
         "prompt": "Hvor mange studerende havde Aarhus Universitet det første år?",
-        "key": "78 (studerende)"
+        "key": "78 (studerende)",
+        "why": {
+          "da": "Afsnittet »Universitetsbyen« fortæller om universitetets første år. Svaret er tallet 78; ordet »studerende« behøver du ikke skrive.",
+          "en": "The part 'Universitetsbyen' describes the university's first year. The answer is the number 78; you don't need to add 'studerende'.",
+          "quote": "der var kun 78 studerende det første år"
+        }
       },
       {
         "n": 6,
         "section": "Aarhus' historie",
         "prompt": "Hvor kommer marmoren på Aarhus Rådhus fra?",
-        "key": "(Fra) Norge"
+        "key": "(Fra) Norge",
+        "why": {
+          "da": "Under »Rådhuset« står der, hvad bygningen er beklædt med, og hvor det kommer fra. Svar »Norge« eller »fra Norge«.",
+          "en": "Under 'Rådhuset' the text says what the building is clad in and where it comes from. Answer 'Norge' or 'fra Norge'.",
+          "quote": "beklædt med grå marmor fra Norge"
+        }
       },
       {
         "n": 7,
         "section": "Kultur og begivenheder",
         "prompt": "Hvor mange dage varer Aarhus Festuge?",
-        "key": "Ti (dage)"
+        "key": "Ti (dage)",
+        "why": {
+          "da": "I afsnittet om Aarhus Festuge står der, hvor mange dage festivalen varer. Svar »ti« eller »ti dage«.",
+          "en": "In the part about Aarhus Festuge the text says how many days the festival lasts. Answer 'ti' or 'ti dage' (ten days).",
+          "quote": "I ti dage er der koncerter, teater, kunst, dans og gadeoptræden"
+        }
       },
       {
         "n": 8,
@@ -709,26 +744,46 @@
         "key": "(Hver gang/Når) et barn bliver født (på Aarhus Universitetshospital)",
         "also": [
           "Når der bliver født et barn"
-        ]
+        ],
+        "why": {
+          "da": "Se under Dokk1. Klokken »Gong« ringer, når et barn bliver født. Det er nok at skrive »når et barn bliver født«; hospitalets navn kan udelades.",
+          "en": "See under Dokk1. The 'Gong' bell rings when a baby is born. 'Når et barn bliver født' is enough; the hospital's name can be left out.",
+          "quote": "Den ringer, hver gang et barn bliver født på Aarhus Universitetshospital"
+        }
       },
       {
         "n": 9,
         "section": "Kultur og begivenheder",
         "prompt": "Hvad koster det at leje et par skøjter på skøjtebanen foran Dokk1?",
-        "key": "40 kr(oner)"
+        "key": "40 kr(oner)",
+        "why": {
+          "da": "Svaret står i notitsen »Skøjtebane på havnen igen i år« under Kort nyt. Adgangen er gratis, men skøjteleje koster 40 kr.",
+          "en": "The answer is in the news item 'Skøjtebane på havnen igen i år' under Kort nyt. Entry is free, but renting skates costs 40 kr.",
+          "quote": "kan man leje et par for 40 kr."
+        }
       },
       {
         "n": 10,
         "section": "Natur og fritid",
         "prompt": "Hvad må man ikke fodre dyrene i Dyrehaven med?",
-        "key": "Brød"
+        "key": "Brød",
+        "why": {
+          "da": "I afsnittet om Dyrehaven står der, at man må fodre med gulerødder og æbler, men ikke med én bestemt ting. Svar »brød«.",
+          "en": "The Dyrehaven part says you may feed the animals carrots and apples, but not one particular thing. Answer 'brød' (bread).",
+          "quote": "man må ikke give dem brød, fordi det kan gøre dem syge"
+        }
       },
       {
         "n": 11,
         "section": "Natur og fritid",
         "prompt": "Skal man betale for at bade i bassinerne i Havnebadet? Svar 'ja' eller 'nej'.",
         "key": "Nej",
-        "paraphrased": true
+        "paraphrased": true,
+        "why": {
+          "da": "Under Havnebadet står der, at der er gratis adgang til bassinerne. Man skal altså ikke betale, så svaret er »nej«. Det er kun saunaen, der koster penge.",
+          "en": "Under Havnebadet the text says there is free access to the pools. So you don't pay, and the answer is 'nej'. Only the sauna costs money.",
+          "quote": "Der er gratis adgang til alle bassinerne"
+        }
       },
       {
         "n": 12,
@@ -737,7 +792,12 @@
         "key": "90 minutter",
         "also": [
           "halvanden time"
-        ]
+        ],
+        "why": {
+          "da": "Se den sidste sætning i teksten om Havnebadet, hvor saunaen bliver beskrevet. Én booking giver adgang i 90 minutter (= halvanden time).",
+          "en": "See the last sentence of the Havnebadet text, where the sauna is described. One booking gives 90 minutes (= an hour and a half).",
+          "quote": "hver booking giver adgang i 90 minutter"
+        }
       },
       {
         "n": 13,
@@ -747,13 +807,23 @@
         "also": [
           "(hun) sang i (et) kor",
           "gik til kor"
-        ]
+        ],
+        "why": {
+          "da": "Under »Lucía fortæller« siger hun, at hun havde svært ved dansken, fordi de taler engelsk på arbejdet. Derfor meldte hun sig ind i et kor. Svar »kor« eller »hun meldte sig ind i et kor«.",
+          "en": "Under 'Lucía fortæller' she says Danish was hard because they speak English at work. So she joined a choir. Answer 'kor' or 'hun meldte sig ind i et kor' (she joined a choir).",
+          "quote": "Derfor meldte jeg mig ind i et kor."
+        }
       },
       {
         "n": 14,
         "section": "At bo og studere i Aarhus",
         "prompt": "Hvor længe stod Tomasz på venteliste til et kollegieværelse?",
-        "key": "(I) fire måneder"
+        "key": "(I) fire måneder",
+        "why": {
+          "da": "Under »Tomasz fortæller« siger han, hvor længe han stod på venteliste. Svar »fire måneder«. Pas på ikke at svare »seks uger«, som er den tid, han boede på en vens sofa.",
+          "en": "Under 'Tomasz fortæller' he says how long he was on the waiting list. Answer 'fire måneder'. Don't answer 'six weeks', which is how long he slept on a friend's sofa.",
+          "quote": "Jeg stod på venteliste i fire måneder"
+        }
       },
       {
         "n": 15,
@@ -762,7 +832,12 @@
         "key": "(Gennem/Via en) mentorordning",
         "also": [
           "mentorordningen"
-        ]
+        ],
+        "why": {
+          "da": "I afsnittet om Amira og Karim fortæller Amira, at hun gennem kommunen kom med i en mentorordning, og at det var sådan, hun fandt jobbet. Svar »mentorordning«.",
+          "en": "In the part about Amira and Karim, Amira says the municipality got her into a mentoring scheme, and that is how she found the job. Answer 'mentorordning'.",
+          "quote": "kom jeg med i en mentorordning"
+        }
       }
     ]
   },
@@ -883,7 +958,22 @@
               "Hendes pension var ikke stor nok til at betale for de rejser, hun havde planlagt.",
               "Hun manglede kontakten med kolleger og en fast struktur i hverdagen."
             ],
-            "correct": "C"
+            "correct": "C",
+            "why": {
+              "da": "Bente siger, at hun savnede at have et sted at gå hen om morgenen og kollegerne at snakke med. Det svarer til »kontakten med kolleger og en fast struktur i hverdagen«.",
+              "en": "Bente says she missed having somewhere to go in the morning and colleagues to talk to. That matches 'contact with colleagues and a fixed structure in everyday life'.",
+              "quote": "Jeg savnede at have et sted at gå hen om morgenen og kollegerne at snakke med i frokostpausen"
+            },
+            "whyNot": {
+              "A": {
+                "da": "Det er omvendt: Teksten siger, at det var Bente selv, der tog telefonen og ringede til sin tidligere chef.",
+                "en": "It is the other way round: the text says it was Bente herself who picked up the phone and called her former boss."
+              },
+              "B": {
+                "da": "Bente siger direkte, at det ikke var pengene: »min pension er fin nok«.",
+                "en": "Bente says directly that it was not the money: 'my pension is fine'."
+              }
+            }
           },
           {
             "prompt": "Hvad mener Morten Lind om de seniorer, der bliver på arbejdsmarkedet efter pensionsalderen?",
@@ -892,7 +982,22 @@
               "Det er især håndværkere, der fortsætter, fordi de er vant til at arbejde hårdt.",
               "De fleste seniorer vil gerne fortsætte, men arbejdsgiverne vil sjældent ansætte dem."
             ],
-            "correct": "A"
+            "correct": "A",
+            "why": {
+              "da": "Morten Lind siger, at de seniorer, der fortsætter, typisk har en lang uddannelse og et arbejde, der ikke er fysisk krævende. Det er det samme som svar A.",
+              "en": "Morten Lind says the seniors who carry on typically have a long education and a job that is not physically demanding. That is option A.",
+              "quote": "har typisk en lang uddannelse og et arbejde, som ikke er særlig fysisk krævende"
+            },
+            "whyNot": {
+              "B": {
+                "da": "Teksten siger det modsatte: Mange håndværkere har så ondt i ryg og skuldre, at de ikke kan arbejde længere, og der findes sjældent lettere opgaver til dem.",
+                "en": "The text says the opposite: many manual workers have such bad backs and shoulders that they cannot work longer, and lighter jobs rarely exist for them."
+              },
+              "C": {
+                "da": "Ifølge Lind er arbejdsgiverne i dag mere positive over for ældre medarbejdere end for 20 år siden. Der står ikke, at de sjældent vil ansætte dem.",
+                "en": "According to Lind, employers today are more positive towards older staff than 20 years ago. The text does not say they rarely want to hire them."
+              }
+            }
           },
           {
             "prompt": "Hvad siger Kim Thorsen om sine ældre medarbejdere?",
@@ -901,7 +1006,22 @@
               "Deres ønske om at arbejde mindre kræver mere planlægning, men det er det værd.",
               "De er sjældnere syge end de yngre, men de har svært ved at omstille sig."
             ],
-            "correct": "B"
+            "correct": "B",
+            "why": {
+              "da": "Kim Thorsen siger, at seniorerne vil arbejde færre dage, så han skal planlægge vagterne mere omhyggeligt, men at det er det hele værd.",
+              "en": "Kim Thorsen says the seniors want to work fewer days, so he has to plan the shifts more carefully, but that it is all worth it.",
+              "quote": "Det betyder, at jeg skal planlægge vagterne mere omhyggeligt end tidligere. Men det er det hele værd"
+            },
+            "whyNot": {
+              "A": {
+                "da": "Kim siger tværtimod: »Jeg har ikke ansat dem som mentorer.« De hjælper lærlingene af sig selv, men de laver de samme opgaver som alle andre.",
+                "en": "Kim says the opposite: 'I have not hired them as mentors.' They help the apprentices of their own accord, but do the same tasks as everyone else."
+              },
+              "C": {
+                "da": "Det er Morten Lind, ikke Kim, der taler om sygedage, og han siger, at forestillingen om, at ældre er mindre omstillingsparate, ikke holder.",
+                "en": "It is Morten Lind, not Kim, who talks about sick days, and he says the idea that older people adapt less well does not hold."
+              }
+            }
           }
         ],
         "points": 2
@@ -1061,7 +1181,44 @@
           "C",
           "G"
         ],
-        "points": 2
+        "points": 2,
+        "why": [
+          {
+            "da": "Før hullet siger Mette, at maden for et år siden var røget i skraldespanden. »Men i dag« viser kontrasten, og »skinken« og »risene« er de ting, hun lige har fundet. Efter hullet henviser »Den slags restemåltider« til risretten.",
+            "en": "Before the gap Mette says a year ago the food would have gone in the bin. 'Men i dag' marks the contrast, and 'skinken' and 'risene' are the things she just found. After the gap 'Den slags restemåltider' refers back to the rice dish.",
+            "quote": "Men i dag gør hun noget helt andet."
+          },
+          {
+            "da": "»Det svarer til« regner de 40 kilo pr. person om til penge for en familie. Afsnittets sidste sætning nævner klimaet, og næste afsnit fortsætter: »Klimaet er nemlig også en vigtig grund«.",
+            "en": "'Det svarer til' turns the 40 kilos per person into money for a family. The paragraph's last sentence mentions the climate, and the next paragraph continues: 'Klimaet er nemlig også en vigtig grund'.",
+            "quote": "Og så er klimaregningen ikke engang talt med."
+          },
+          {
+            "da": "»Hun« er Line Bjerre, som lige har talt om den travle hverdag. Hun nævner »to forhold« (ingen madplan og glemt mad), og efter hullet står der »Begge dele kan … løses«: madplan og en fast hylde i køleskabet.",
+            "en": "'Hun' is Line Bjerre, who has just talked about busy everyday life. She names 'to forhold' (no meal plan and forgotten food), and after the gap 'Begge dele kan … løses' answers them: a meal plan and a fixed shelf in the fridge.",
+            "quote": "Hun peger især på to forhold."
+          },
+          {
+            "da": "Før hullet nævnes to mærkninger: »bedst før« og »sidste anvendelsesdato«. »Den første« og »Den anden« forklarer dem. Fordi »bedst før« ikke betyder, at maden er farlig, har supermarkederne »derfor« tilføjet »ofte god efter«.",
+            "en": "Before the gap two labels are named: 'bedst før' and 'sidste anvendelsesdato'. 'Den første' and 'Den anden' explain them. Because 'best before' doesn't mean the food is unsafe, supermarkets have 'derfor' added 'ofte god efter'.",
+            "quote": "Den første betyder blot, at kvaliteten kan blive lidt ringere efter datoen."
+          },
+          {
+            "da": "Før hullet står der, at familien nu smider meget mindre ud. »De penge, familien har sparet« fører videre til ferien, og efter hullet siger Mette, at maden fra skraldespanden »betalte den tur«.",
+            "en": "Before the gap we learn the family now throws much less away. 'De penge, familien har sparet' leads on to the holiday, and after the gap Mette says the food from the bin 'paid for that trip'.",
+            "quote": "Sidste sommer tog de nemlig på en uges ferie i et sommerhus på Fanø."
+          }
+        ],
+        "whyNotExtra": {
+          "B": {
+            "da": "Afsnittet modsiger teksten: Der står, at projektet varede tre måneder, og at familien har vejet deres madaffald lige siden.",
+            "en": "This paragraph contradicts the text, which says the project lasted three months and the family has weighed its food waste ever since."
+          },
+          "E": {
+            "da": "»Disse tre råd« henviser til noget, der ikke står i teksten: Line Bjerre giver to råd, og der står intet om, at hun selv følger dem.",
+            "en": "'Disse tre råd' refers to something not in the text: Line Bjerre gives two tips, and nothing says she follows them herself."
+          }
+        }
       },
       {
         "kind": "cloze",
@@ -1171,7 +1328,26 @@
               "forudsætning",
               "ulempe"
             ],
-            "correct": "C"
+            "correct": "C",
+            "why": {
+              "da": "Bilen er nødvendig for at få hverdagen til at fungere, når der er langt til alt. En »forudsætning for« noget er noget, der skal være der, før det kan lade sig gøre.",
+              "en": "The car is necessary to make daily life work when everything is far away. A 'forudsætning for' something is a precondition for it.",
+              "quote": "er bilen en forudsætning for at få hverdagen til at hænge sammen"
+            },
+            "whyNot": {
+              "A": {
+                "da": "»En undtagelse« er noget, der afviger fra det normale. Men sætningen siger, at bilen er nødvendig for, at hverdagen hænger sammen; den er ikke en sjælden afvigelse. Desuden hedder det »en undtagelse fra«, ikke »for«.",
+                "en": "'Undtagelse' (exception) is something that differs from the norm. But the sentence says the car is needed to make daily life work; it is not a rare exception. Also, the phrase is 'en undtagelse fra', not 'for'."
+              },
+              "B": {
+                "da": "»En begrænsning« betyder noget, der holder en tilbage; men bilen gør hverdagen mulig, så betydningen er modsat.",
+                "en": "'Begrænsning' (a limitation) holds you back; but the car makes daily life possible, so the meaning is the opposite."
+              },
+              "D": {
+                "da": "»En ulempe« er en negativ side ved noget. Men sætningen siger, at man har brug for bilen for at få hverdagen til at hænge sammen. Det kræver et ord for en betingelse, ikke for noget dårligt.",
+                "en": "'Ulempe' (drawback) is a negative side of something. But the sentence says you need the car to make daily life work. That calls for a word meaning a condition, not something bad."
+              }
+            }
           },
           {
             "options": [
@@ -1180,7 +1356,26 @@
               "ellers",
               "endda"
             ],
-            "correct": "B"
+            "correct": "B",
+            "why": {
+              "da": "Bekymringen er en følge af de lange afstande, som lige er beskrevet, så det skal være et årsagsord. »derfor« står efter verbet »har« i hovedsætningen.",
+              "en": "The worry is a consequence of the long distances just described, so we need a word of cause and effect. 'derfor' sits after the verb 'har' in the main clause.",
+              "quote": "Mange har derfor været bekymrede for, om en elbil kan klare de lange afstande."
+            },
+            "whyNot": {
+              "A": {
+                "da": "»alligevel« betyder »trods det«, men der er ingen modsætning: De lange afstande er netop grunden til bekymringen.",
+                "en": "'alligevel' means 'even so', but there is no contrast: the long distances are exactly the reason for the worry."
+              },
+              "C": {
+                "da": "»ellers« kan betyde »hvis ikke« eller »ganske vist«. »Hvis ikke« giver ingen mening her, og sætningen skal vise, at bekymringen er en følge af de lange afstande, som lige er beskrevet. Det gør »derfor«.",
+                "en": "'ellers' can mean 'otherwise' or 'admittedly'. 'Otherwise' makes no sense here, and the sentence must show that the worry is a result of the long distances just described. That is what 'derfor' does."
+              },
+              "D": {
+                "da": "»endda« lægger noget overraskende oveni, men bekymringen er ikke en forstærkning af noget før; den er en følge.",
+                "en": "'endda' adds something surprising on top, but the worry doesn't intensify anything before; it is a consequence."
+              }
+            }
           },
           {
             "options": [
@@ -1189,7 +1384,26 @@
               "Dermed",
               "Desuden"
             ],
-            "correct": "D"
+            "correct": "D",
+            "why": {
+              "da": "Sætningen tilføjer endnu en fordel ved elbilen på landet (oplysningen om batterierne var den første). »Desuden« betyder »og så også«, og verbet kommer lige efter (inversion).",
+              "en": "The sentence adds one more advantage of the electric car in the countryside (the battery range was the first). 'Desuden' means 'besides', and the verb follows straight after (inversion).",
+              "quote": "Desuden har det vist sig, at det ofte er lettere at oplade på landet end i byen."
+            },
+            "whyNot": {
+              "A": {
+                "da": "»Derimod« markerer en modsætning, men sætningen fortsætter med noget positivt i samme retning.",
+                "en": "'Derimod' marks a contrast, but the sentence goes on with another positive point in the same direction."
+              },
+              "B": {
+                "da": "»Ellers« først i sætningen betyder »hvis ikke« (fx »Skynd dig, ellers kommer du for sent«). Her er der ingen betingelse; sætningen tilføjer en ny fordel ved elbilen på landet, og det kræver »Desuden«.",
+                "en": "'Ellers' at the start of a sentence means 'otherwise' (e.g. 'Hurry, otherwise you'll be late'). There is no condition here; the sentence adds another advantage of the electric car in the countryside, which needs 'Desuden'."
+              },
+              "C": {
+                "da": "»Dermed« betyder »som en følge af det«, men at det er let at lade op på landet er ikke en følge af bedre batterier.",
+                "en": "'Dermed' means 'as a result', but easy charging in the countryside is not a result of better batteries."
+              }
+            }
           },
           {
             "options": [
@@ -1198,7 +1412,26 @@
               "for",
               "med"
             ],
-            "correct": "A"
+            "correct": "A",
+            "why": {
+              "da": "Fast forbindelse: man er »afhængig af« noget.",
+              "en": "Fixed collocation: you are 'afhængig af' (dependent on) something.",
+              "quote": "afhængige af de offentlige ladestandere"
+            },
+            "whyNot": {
+              "B": {
+                "da": "Adjektivet »afhængig« tager altid præpositionen »af«. »Afhængig til« findes ikke på dansk.",
+                "en": "The adjective 'afhængig' always takes the preposition 'af'. 'Afhængig til' does not exist in Danish."
+              },
+              "C": {
+                "da": "»afhængig for« findes ikke; præpositionen skal være »af«.",
+                "en": "'afhængig for' doesn't exist; the preposition must be 'af'."
+              },
+              "D": {
+                "da": "»afhængig med« er forkert; det hedder »afhængig af«.",
+                "en": "'afhængig med' is wrong; it is 'afhængig af'."
+              }
+            }
           },
           {
             "options": [
@@ -1207,7 +1440,26 @@
               "Årsagen til",
               "Formålet med"
             ],
-            "correct": "C"
+            "correct": "C",
+            "why": {
+              "da": "Sætningen forklarer, hvorfor der er færre lynladere på landet: »at det er dyrt« er en grund. »Årsagen til« noget er grunden til det.",
+              "en": "The sentence explains why there are fewer fast chargers in the countryside: 'that it is expensive' is a reason. 'Årsagen til' something is its cause.",
+              "quote": "Årsagen til den skævhed er, at det er dyrt at opstille ladere"
+            },
+            "whyNot": {
+              "A": {
+                "da": "At det er dyrt, er ikke en løsning; det er en grund til problemet.",
+                "en": "Being expensive isn't a solution; it is a reason for the problem."
+              },
+              "B": {
+                "da": "Skævheden er et problem, så den har ingen »fordel«, og høje priser er ikke en fordel.",
+                "en": "The imbalance is a problem, so it has no 'advantage', and high costs are not an advantage."
+              },
+              "D": {
+                "da": "»Formålet med« betyder hensigten; ingen har ønsket skævheden, og det, der følger, er grunde, ikke et mål.",
+                "en": "'Formålet med' means the purpose; nobody intended the imbalance, and what follows are reasons, not a goal."
+              }
+            }
           },
           {
             "options": [
@@ -1216,7 +1468,26 @@
               "spilder",
               "giver"
             ],
-            "correct": "B"
+            "correct": "B",
+            "why": {
+              "da": "Fast forbindelse: man »bruger tid på« at gøre noget. Folk bruger ventetiden på at handle eller drikke kaffe.",
+              "en": "Fixed collocation: you 'bruger tid på' (spend time on) doing something. People spend the waiting time shopping or having coffee.",
+              "quote": "når folk bruger tid på at handle eller drikke en kop kaffe"
+            },
+            "whyNot": {
+              "A": {
+                "da": "»tage tid« betyder at vare længe (»det tager tid«); »tage tid på at handle« er ikke idiomatisk.",
+                "en": "'tage tid' means to take long ('det tager tid'); 'tage tid på at handle' is not idiomatic."
+              },
+              "C": {
+                "da": "»spilde tid« er negativt, men teksten siger, at det giver liv til lokalsamfundet.",
+                "en": "'spilde tid' (waste time) is negative, but the text says it brings life to the community."
+              },
+              "D": {
+                "da": "Man kan »give sig tid til« noget, men »give tid på« findes ikke på dansk. Med »tid på at« skal verbet være »bruge«.",
+                "en": "You can 'give sig tid til' something (take your time over it), but 'give tid på' does not exist in Danish. With 'tid på at' the verb must be 'bruge'."
+              }
+            }
           },
           {
             "options": [
@@ -1225,7 +1496,26 @@
               "Endvidere",
               "Ligeledes"
             ],
-            "correct": "A"
+            "correct": "A",
+            "why": {
+              "da": "Der er en modsætning: dyrere at købe, men billigere i drift. »Til gengæld« viser, at en ulempe bliver opvejet af en fordel.",
+              "en": "There is a contrast: more expensive to buy but cheaper to run. 'Til gengæld' (on the other hand) shows a drawback being balanced by an advantage.",
+              "quote": "Til gengæld er de billigere i drift"
+            },
+            "whyNot": {
+              "B": {
+                "da": "»Derfor« betyder, at det følger af den høje pris, men en høj købspris gør ikke bilen billigere i drift.",
+                "en": "'Derfor' would mean it follows from the high price, but a high purchase price doesn't make running costs lower."
+              },
+              "C": {
+                "da": "»Endvidere« tilføjer noget i samme retning, men her skifter teksten fra en ulempe til en fordel.",
+                "en": "'Endvidere' (furthermore) adds in the same direction, but here the text switches from a drawback to an advantage."
+              },
+              "D": {
+                "da": "»Ligeledes« betyder »på samme måde«, men det er det modsatte af sætningen før.",
+                "en": "'Ligeledes' means 'likewise', but this is the opposite of the previous sentence."
+              }
+            }
           },
           {
             "options": [
@@ -1234,7 +1524,26 @@
               "erstatning",
               "alternativ"
             ],
-            "correct": "D"
+            "correct": "D",
+            "why": {
+              "da": "Elbilen er ved at blive noget, man kan vælge i stedet for benzinbilen: »et alternativ til«. Ordet er intetkøn og passer til »et reelt«.",
+              "en": "The electric car is becoming something you can choose instead of a petrol car: 'et alternativ til'. The noun is neuter and fits 'et reelt'.",
+              "quote": "et reelt alternativ til benzinbilen"
+            },
+            "whyNot": {
+              "A": {
+                "da": "»et tilbud til« betyder noget, man tilbyder nogen (fx kunder); det passer ikke til en bil over for en anden bil.",
+                "en": "'et tilbud til' means an offer made to someone; it doesn't describe one car in relation to another."
+              },
+              "B": {
+                "da": "Det hedder »en modsætning«, ikke »et«, og elbilen er ikke det modsatte af benzinbilen, men et andet valg.",
+                "en": "It is 'en modsætning', not 'et', and the electric car is not the opposite of the petrol car but another choice."
+              },
+              "C": {
+                "da": "Det hedder »en erstatning« (ikke »et«), og forbindelsen er »erstatning for«, ikke »til«.",
+                "en": "It is 'en erstatning' (not 'et'), and the collocation is 'erstatning for', not 'til'."
+              }
+            }
           }
         ],
         "points": 1

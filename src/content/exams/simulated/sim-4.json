@@ -389,20 +389,35 @@
         "n": 1,
         "section": "Nationalpark Vadehavet",
         "prompt": "Turene til sort sol arrangeres af Naturcenter Marskporten. Hvad får deltagerne tilsendt, når de har tilmeldt sig?",
-        "key": "(En) sms (med oplysninger om mødestedet)"
+        "key": "(En) sms (med oplysninger om mødestedet)",
+        "why": {
+          "da": "I afsnittet \"Sort sol\" står der, at deltagerne får en sms, når tilmeldingen er registreret. Svar: (en) sms; det er fint at tilføje \"med oplysninger om mødestedet\".",
+          "en": "The part \"Sort sol\" says participants get a text message once their booking is registered. Answer: (a) text message; you may add \"with details of the meeting place\".",
+          "quote": "får deltagerne tilsendt en sms med oplysninger om mødestedet"
+        }
       },
       {
         "n": 2,
         "section": "Nationalpark Vadehavet",
         "prompt": "Hvad kan man i weekenderne låne på Naturcenter Marskporten ud over en kikkert?",
-        "key": "(En) rygsæk (med lupper, bestemmelsesbøger og net)"
+        "key": "(En) rygsæk (med lupper, bestemmelsesbøger og net)",
+        "why": {
+          "da": "Under \"Naturcenter Marskporten\" står der, at man i weekenderne ud over kikkerter kan låne en rygsæk. Svar: (en) rygsæk; indholdet (lupper, bøger og net) må gerne med.",
+          "en": "Under \"Naturcenter Marskporten\" it says that at weekends, besides binoculars, you can borrow a backpack. Answer: (a) backpack; you may add what is in it (magnifiers, books and nets).",
+          "quote": "kan man i weekenderne låne en rygsæk med lupper, bestemmelsesbøger og net"
+        }
       },
       {
         "n": 3,
         "section": "Nationalpark Vadehavet",
         "prompt": "En familie vil besøge Naturcenter Marskporten en mandag i januar. Har centret åbent? Svar 'ja' eller 'nej'.",
         "key": "Nej",
-        "paraphrased": true
+        "paraphrased": true,
+        "why": {
+          "da": "Januar er i vinterhalvåret. Der har centret kun åbent fra tirsdag til søndag, så om mandagen er der lukket. Svar: nej.",
+          "en": "January is in the winter half of the year. Then the centre is only open Tuesday to Sunday, so it is closed on Mondays. Answer: no.",
+          "quote": "I vinterhalvåret holder centret åbent fra tirsdag til søndag mellem klokken 10 og 15"
+        }
       },
       {
         "n": 4,
@@ -411,19 +426,34 @@
         "key": "(At komme op i) tårnet",
         "also": [
           "Kirkens tårn"
-        ]
+        ],
+        "why": {
+          "da": "Under \"Ribe Domkirke\" står der, at selve kirken er gratis, men at det koster penge at komme op i tårnet. Svar: (at komme op i) tårnet.",
+          "en": "Under \"Ribe Domkirke\" it says the church itself is free, but it costs money to go up the tower. Answer: (going up) the tower.",
+          "quote": "Adgangen til selve kirkerummet er gratis, mens det koster 25 kroner for voksne og 10 kroner for børn at komme op i tårnet"
+        }
       },
       {
         "n": 5,
         "section": "Ribe – Danmarks ældste by",
         "prompt": "Hvad skulle nattevægterne holde øje med i byen, dengang traditionen begyndte? Nævn begge.",
-        "key": "Brand og uro"
+        "key": "Brand og uro",
+        "why": {
+          "da": "Under \"Nattevægteren\" står der, at nattevægterne i middelalderen skulle holde øje med brand og uro. Begge ord skal med.",
+          "en": "Under \"Nattevægteren\" it says that in the Middle Ages the night watchmen had to watch out for fire and unrest. Both words are needed.",
+          "quote": "hvor nattevægterne skulle holde øje med brand og uro i byen"
+        }
       },
       {
         "n": 6,
         "section": "Ribe – Danmarks ældste by",
         "prompt": "I hvilken slags bygning ligger Ribe Byhistoriske Museum?",
-        "key": "(En) tidligere købmandsgård"
+        "key": "(En) tidligere købmandsgård",
+        "why": {
+          "da": "Under \"To museer om byens tidlige historie\" står der, at museet ligger i en tidligere købmandsgård. Svar: (en) tidligere købmandsgård; gadenavnet er ikke en slags bygning.",
+          "en": "Under \"To museer om byens tidlige historie\" it says the museum is housed in a former merchant's house. Answer: (a) former merchant's house; the street name is not a kind of building.",
+          "quote": "har til huse i en tidligere købmandsgård i Sortebrødregade"
+        }
       },
       {
         "n": 7,
@@ -432,19 +462,34 @@
         "key": "(På de dele af stranden, der er) reserveret til badende",
         "also": [
           "Uden for de afmærkede områder"
-        ]
+        ],
+        "why": {
+          "da": "Under \"Bilkørsel på stranden\" står der, at det er forbudt at køre i klitterne og på de dele af stranden, der er reserveret til badende. Svaret er den sidste del. \"Uden for de afmærkede områder\" godkendes også.",
+          "en": "Under \"Bilkørsel på stranden\" it says driving is banned in the dunes and on the parts of the beach reserved for bathers. The answer is the second part. \"Outside the marked areas\" is also accepted.",
+          "quote": "Det er forbudt at køre i klitterne og på de dele af stranden, der er reserveret til badende"
+        }
       },
       {
         "n": 8,
         "section": "Rømø",
         "prompt": "Kiteskolen Vestvind har et kursus for begyndere. Hvilket krav skal man opfylde ud over at være fyldt 12 år?",
-        "key": "(Kunne) svømme (mindst) 200 meter"
+        "key": "(Kunne) svømme (mindst) 200 meter",
+        "why": {
+          "da": "Under \"Kitesurfing og strandsejlads\" står der, at kurset kræver, at man er fyldt 12 år og kan svømme mindst 200 meter. Svar: (kunne) svømme (mindst) 200 meter.",
+          "en": "Under \"Kitesurfing og strandsejlads\" it says the course requires you to be 12 and able to swim at least 200 metres. Answer: (be able to) swim (at least) 200 metres.",
+          "quote": "og kan svømme mindst 200 meter"
+        }
       },
       {
         "n": 9,
         "section": "Rømø",
         "prompt": "Hvad bør man have med på den guidede tur gennem bunkeren ved Kongsmark? Nævn begge.",
-        "key": "(En) lommelygte og fast fodtøj"
+        "key": "(En) lommelygte og fast fodtøj",
+        "why": {
+          "da": "Under \"Bunkere fra krigens tid\" står der, at man bør medbringe en lommelygte og fast fodtøj. Begge ting skal med.",
+          "en": "Under \"Bunkere fra krigens tid\" it says you should bring a torch and sturdy shoes. Both are needed.",
+          "quote": "Deltagerne bør medbringe en lommelygte og fast fodtøj"
+        }
       },
       {
         "n": 10,
@@ -455,37 +500,67 @@
           "(Tidspunkterne for) ebbe og flod forskyder sig (med omkring en time fra dag til dag)",
           "Tidevandet forskyder sig (fra dag til dag)"
         ],
-        "paraphrased": true
+        "paraphrased": true,
+        "why": {
+          "da": "Teksten siger, at ebbe og flod forskyder sig med omkring en time fra dag til dag. Vejen er kun farbar ved lavvande, så tidspunktet ændrer sig hver dag. Man kan svare med egne ord, fx \"tidevandet kommer senere hver dag\".",
+          "en": "The text says the times of low and high tide shift by about an hour from day to day. The road can only be used at low tide, so the time changes every day. You may answer in your own words, e.g. \"the tide comes later every day\".",
+          "quote": "Da tidspunkterne for ebbe og flod forskyder sig med omkring en time fra dag til dag"
+        }
       },
       {
         "n": 11,
         "section": "Mandø og tidevandet",
         "prompt": "Hvor kan passagererne stige af traktorbussen på vej ud til Mandø?",
-        "key": "(Ved) en muslingebanke (midt på vaderne)"
+        "key": "(Ved) en muslingebanke (midt på vaderne)",
+        "why": {
+          "da": "Under \"Med traktorbussen til Mandø\" står der, at bussen gør holdt ved en muslingebanke, hvor passagererne kan stige af. Svar: (ved) en muslingebanke.",
+          "en": "Under \"Med traktorbussen til Mandø\" it says the bus stops at a mussel bank where passengers can get off. Answer: (at) a mussel bank.",
+          "quote": "Undervejs gør bussen holdt ved en muslingebanke midt på vaderne"
+        }
       },
       {
         "n": 12,
         "section": "Mandø og tidevandet",
         "prompt": "Hvad sker der med de østers, som deltagerne har samlet på østerssafarien?",
-        "key": "(De bliver) åbnet og smagt (på Mandø Kro)"
+        "key": "(De bliver) åbnet og smagt (på Mandø Kro)",
+        "why": {
+          "da": "Under \"Østerssafari på vaderne\" står der, at østersene efter turen bliver åbnet og smagt på Mandø Kro. Svar: (de bliver) åbnet og smagt.",
+          "en": "Under \"Østerssafari på vaderne\" it says that after the trip the oysters are opened and tasted at Mandø Kro. Answer: (they are) opened and tasted.",
+          "quote": "Efter turen bliver østersene åbnet og smagt på Mandø Kro"
+        }
       },
       {
         "n": 13,
         "section": "Overnatning og praktisk information",
         "prompt": "Hvor længe må man højst blive på samme sted i nationalparkens sheltere?",
-        "key": "(Højst) to nætter (i træk)"
+        "key": "(Højst) to nætter (i træk)",
+        "why": {
+          "da": "Under \"Overnatning\" står der om shelterne, at man højst må overnatte to nætter i træk på samme sted. Svar: (højst) to nætter.",
+          "en": "Under \"Overnatning\" it says about the shelters that you may stay at most two nights in a row in the same place. Answer: (at most) two nights.",
+          "quote": "Man må højst overnatte to nætter i træk på samme sted"
+        }
       },
       {
         "n": 14,
         "section": "Overnatning og praktisk information",
         "prompt": "Hvilken transport kan man bruge gratis, hvis man har købt Vadehavskortet?",
-        "key": "(Køre gratis med) de regionale busser"
+        "key": "(Køre gratis med) de regionale busser",
+        "why": {
+          "da": "Under \"Vadehavskortet\" står der, at man kan køre gratis med de regionale busser. Til traktorbussen giver kortet kun 20 procent rabat, så den er ikke gratis.",
+          "en": "Under \"Vadehavskortet\" it says you can travel free on the regional buses. For the tractor bus the card only gives a 20 per cent discount, so it is not free.",
+          "quote": "kan også køre gratis med de regionale busser mellem Ribe, Rømø og Skærbæk"
+        }
       },
       {
         "n": 15,
         "section": "Overnatning og praktisk information",
         "prompt": "Hvilke gratis materialer kan man få udleveret på turistbureauerne i Ribe og Havneby?",
-        "key": "Tidevandstabeller / kort over vandreruter (og cykelruter)"
+        "key": "Tidevandstabeller / kort over vandreruter (og cykelruter)",
+        "why": {
+          "da": "Under \"Turistbureauer\" står der, at man gratis kan få tidevandstabeller og kort over vandreruter og cykelruter. Det er nok at nævne den ene af tingene, men begge er også rigtigt.",
+          "en": "Under \"Turistbureauer\" it says you can get free tide tables and maps of walking and cycling routes. Naming one of them is enough, but both is also right.",
+          "quote": "kan turistbureauerne udlevere gratis tidevandstabeller og kort over vandreruter og cykelruter"
+        }
       }
     ]
   },
@@ -584,7 +659,22 @@
               "Hendes datter havde opfordret hende til at følge drømmen fra ungdommen.",
               "Forandringer på jobbet fik hende til at forfølge en gammel drøm."
             ],
-            "correct": "C"
+            "correct": "C",
+            "why": {
+              "da": "Hendes afdeling blev lagt sammen med en anden, og hun fik tilbudt færre timer. Det fik hende til at gøre noget, hun havde drømt om siden ungdommen. Det svarer til C.",
+              "en": "Her department was merged with another and she was offered fewer hours. That made her do something she had dreamt of since she was young. That matches C.",
+              "quote": "Men da omstruktureringen kom, tænkte jeg, at hvis jeg ikke gjorde det nu, så ville jeg aldrig gøre det"
+            },
+            "whyNot": {
+              "A": {
+                "da": "Hun siger det modsatte: Det var ikke, fordi hun var utilfreds; hun havde gode kolleger og en fornuftig løn.",
+                "en": "She says the opposite: it was not because she was unhappy; she had good colleagues and a decent salary."
+              },
+              "B": {
+                "da": "Datteren nævnes kun for at vise, at nogle medstuderende er yngre end hende. Der står intet om, at datteren opfordrede hende.",
+                "en": "The daughter is only mentioned to show that some fellow students are younger than her. Nothing says the daughter encouraged her."
+              }
+            }
           },
           {
             "prompt": "Hvilket udsagn er i overensstemmelse med det, der står i teksten?",
@@ -593,7 +683,22 @@
               "Tariq Hamdan fik af sin læge at vide, at han skulle tage en uddannelse.",
               "Tariq Hamdan synes, at matematikken er den sværeste del af uddannelsen."
             ],
-            "correct": "A"
+            "correct": "A",
+            "why": {
+              "da": "Som voksenlærling får Tariq en løn, der ligger tæt på den, han havde som truckfører. \"Tæt på\" betyder \"næsten det samme\".",
+              "en": "As an adult apprentice Tariq earns a wage close to what he had as a forklift driver. \"Close to\" means \"almost the same\".",
+              "quote": "får en løn, der ligger tæt på den, han havde som truckfører"
+            },
+            "whyNot": {
+              "B": {
+                "da": "Lægen sagde kun, at han ikke kunne blive ved med at løfte tunge varer. Valget af uddannelse var hans egen løsning.",
+                "en": "The doctor only said he could not keep lifting heavy goods for many more years. Choosing to study was his own solution."
+              },
+              "C": {
+                "da": "Han siger, at det sværeste ikke har været det faglige, men at finde tid til lektierne. Matematikken nævnes kun som det, han sidder med om aftenen.",
+                "en": "He says the hardest part has not been the subject matter but finding time for homework. Maths is only mentioned as what he works on in the evenings."
+              }
+            }
           },
           {
             "prompt": "Hvad er Lone Bisgaard og Henrik Mølgaard enige om?",
@@ -602,7 +707,22 @@
               "Voksne studerende er bedre end de unge til at overholde afleveringsfrister.",
               "Voksne har lært mere på jobbet, end de selv tror."
             ],
-            "correct": "C"
+            "correct": "C",
+            "why": {
+              "da": "Mølgaard siger, at mange voksne undervurderer, hvad de har lært i arbejdslivet, og Lone \"kan genkende\" det: hun opdagede først som studerende, hvor meget hun havde lært.",
+              "en": "Mølgaard says many adults underestimate what they have learnt at work, and Lone \"recognises\" this: only as a student did she realise how much she had learnt.",
+              "quote": "Mange voksne undervurderer, hvor meget de har lært gennem deres arbejdsliv"
+            },
+            "whyNot": {
+              "A": {
+                "da": "Mølgaard vil have uddannelsesstederne til at tilbyde flere deltidsforløb, men ingen af dem siger, at voksne bør tage uddannelsen på deltid. Lone siger slet ikke noget om det.",
+                "en": "Mølgaard wants institutions to offer more part-time courses, but neither says adults should study part-time. Lone says nothing about it at all."
+              },
+              "B": {
+                "da": "Det er kun Lone, der siger, at hun er bedre til afleveringsfrister end mange unge. Mølgaard siger ikke noget om frister.",
+                "en": "Only Lone says she is better at deadlines than many younger students. Mølgaard says nothing about deadlines."
+              }
+            }
           }
         ],
         "points": 2
@@ -729,7 +849,44 @@
           "B",
           "E"
         ],
-        "points": 2
+        "points": 2,
+        "why": [
+          {
+            "da": "Før hullet samler naboerne underskrifter mod fældningen. D fortæller resultatet: \"Protesterne virkede\". Efter hullet kaldes det hele \"Sagen fra Nordås\".",
+            "en": "Before the gap the neighbours collect signatures against the felling. D gives the outcome: \"The protests worked\". After the gap the whole story is called \"the case from Nordås\".",
+            "quote": "Protesterne virkede. Kommunen afslog ansøgningen"
+          },
+          {
+            "da": "Før hullet handler det om skygge og varme. A tilføjer en ny fordel med \"også\": træerne opsuger regnvand. Efter hullet peger \"Den evne\" og \"skybrud\" tilbage på evnen til at opsuge vand.",
+            "en": "Before the gap it is about shade and heat. A adds another benefit with \"also\": trees soak up rainwater. After the gap \"That ability\" and \"cloudbursts\" point back to absorbing water.",
+            "quote": "Den evne bliver mere og mere værdifuld, efterhånden som klimaforandringerne giver flere og kraftigere skybrud"
+          },
+          {
+            "da": "Før hullet er der en lang række fordele. G vender det med \"Men selv om fordelene er velkendte\": træerne fældes alligevel. Efter hullet forklarer \"Problemet er\", hvorfor fældning er et tab.",
+            "en": "Before the gap there is a long list of benefits. G turns this round with \"But although the benefits are well known\": trees are still cut down. After the gap \"The problem is\" explains why felling is a loss.",
+            "quote": "Men selv om fordelene er velkendte, bliver der stadig fældet mange træer i de danske byer"
+          },
+          {
+            "da": "B begynder med \"Derfor\": fordi gamle træer ikke kan erstattes, laver kommunerne en træpolitik om at registrere træerne. Efter hullet kommer et eksempel (\"for eksempel\") fra Nordås, der har registreret alle vejtræer.",
+            "en": "B opens with \"Derfor\" (therefore): because old trees cannot be replaced, councils adopt a tree policy to register them. After the gap comes an example (\"for eksempel\") from Nordås, which has registered all its street trees.",
+            "quote": "I Nordås Kommune har man for eksempel registreret alle vejtræer"
+          },
+          {
+            "da": "E beskriver de hårde forhold for bytræer: vejsalt, lidt plads til rødderne og sammenpresset jord. Efter hullet står \"Det er netop de forhold\", og kommunen giver nu træerne mere plads og jord, der ikke presses sammen.",
+            "en": "E describes the harsh conditions for city trees: road salt, little room for roots and compacted soil. After the gap comes \"It is exactly those conditions\", and the council now gives trees more room and soil that is not compacted.",
+            "quote": "Det er netop de forhold, kommunen nu vil forbedre"
+          }
+        ],
+        "whyNotExtra": {
+          "C": {
+            "da": "\"Det har han dog fortrudt\" peger på en mand, der har gjort noget, han nu fortryder, men ingen i teksten har plantet eller bevaret et træ, han fortryder. Klager over, at træet tager lyset, passer heller ikke til tekstens positive syn på træerne.",
+            "en": "\"He has regretted it\" refers to a man who did something he now regrets, but no one in the text planted or kept a tree he regrets. Complaints about a tree blocking the light also go against the text's positive view of trees."
+          },
+          "F": {
+            "da": "F siger, at forureningen er steget, efter vejtræerne blev plantet. Det modsiger teksten, hvor træerne opfanger støv og partikler. Nye målinger og træer plantet i 1990'erne nævnes heller ikke.",
+            "en": "F says pollution has risen since the street trees were planted. That contradicts the text, where trees capture dust and particles. New measurements and trees planted in the 1990s are never mentioned either."
+          }
+        }
       },
       {
         "kind": "cloze",
@@ -833,7 +990,26 @@
               "forudsætning",
               "undtagelse"
             ],
-            "correct": "A"
+            "correct": "A",
+            "why": {
+              "da": "\"En tendens i den modsatte retning\" betyder en udvikling den anden vej: før lå cykeltrafikken stille eller faldt, nu stiger den. \"Tendens\" passer med \"retning\".",
+              "en": "\"En tendens i den modsatte retning\" means a trend the other way: cycling used to be flat or falling, now it is rising. \"Tendens\" (trend) goes with \"retning\" (direction).",
+              "quote": "Men de seneste tal viser en tydelig tendens i den modsatte retning"
+            },
+            "whyNot": {
+              "B": {
+                "da": "\"En barriere\" er en forhindring; tallene viser en stigning, ikke en forhindring.",
+                "en": "\"En barriere\" is an obstacle; the figures show a rise, not an obstacle."
+              },
+              "C": {
+                "da": "\"En forudsætning\" er en betingelse for, at noget andet kan ske. Tallene viser ikke en betingelse, men en udvikling, og \"i den modsatte retning\" passer kun til et ord om udvikling som \"tendens\".",
+                "en": "\"En forudsætning\" is a precondition for something else to happen. The figures do not show a condition but a development, and \"i den modsatte retning\" (in the opposite direction) only fits a word for a development like \"tendens\"."
+              },
+              "D": {
+                "da": "\"En undtagelse\" passer ikke, for teksten siger, at lignende tal kendes fra flere andre byer. Det er en generel udvikling.",
+                "en": "\"En undtagelse\" (an exception) does not fit, since similar figures are known from several other cities. It is a general development."
+              }
+            }
           },
           {
             "options": [
@@ -842,7 +1018,26 @@
               "en følge af",
               "en trussel mod"
             ],
-            "correct": "C"
+            "correct": "C",
+            "why": {
+              "da": "Forskeren nævner derefter årsagerne (elcykler og cykelstier). Udviklingen er altså en følge af flere forhold, dvs. de forårsager den.",
+              "en": "The researcher then names the causes (e-bikes and cycle paths). So the development is a result of several factors: they cause it.",
+              "quote": "er udviklingen en følge af flere forhold på én gang"
+            },
+            "whyNot": {
+              "A": {
+                "da": "\"Udviklingen er en hindring for flere forhold\" ville betyde, at flere cyklister bremser noget. Men forskeren forklarer bagefter, hvad der skaber udviklingen: elcykler og cykelstier.",
+                "en": "\"Udviklingen er en hindring for flere forhold\" would mean that more cycling holds something back. But the researcher then explains what causes the development: e-bikes and cycle paths."
+              },
+              "B": {
+                "da": "\"Et alternativ til\" betyder et andet valg; udviklingen er ikke et alternativ til forholdene, den skyldes dem.",
+                "en": "\"Et alternativ til\" means another choice; the development is not an alternative to the factors, it is caused by them."
+              },
+              "D": {
+                "da": "\"Udviklingen er en trussel mod flere forhold\" ville betyde, at flere cyklister skader noget. Men forskeren forklarer bagefter, hvad der skaber udviklingen: elcykler og cykelstier.",
+                "en": "\"Udviklingen er en trussel mod flere forhold\" would mean that more cycling harms something. But the researcher then explains what causes the development: e-bikes and cycle paths."
+              }
+            }
           },
           {
             "options": [
@@ -851,7 +1046,26 @@
               "frygter",
               "påpeger"
             ],
-            "correct": "D"
+            "correct": "D",
+            "why": {
+              "da": "Efter citatet står verbet før subjektet (\"påpeger hun\"). Hun gør opmærksom på fakta om elcykler og cykelstier, og \"påpege\" betyder netop at gøre opmærksom på.",
+              "en": "After the quote the verb comes before the subject (\"påpeger hun\"). She draws attention to facts about e-bikes and cycle paths, and \"påpege\" means point out.",
+              "quote": "som gør turen både hurtigere og sikrere,\" påpeger hun"
+            },
+            "whyNot": {
+              "A": {
+                "da": "\"Beklager\" betyder, at man er ked af noget, men hun fortæller om positive ting.",
+                "en": "\"Beklager\" (regrets) means being sorry about something, but she describes positive things."
+              },
+              "B": {
+                "da": "\"Benægter\" betyder at sige, at noget ikke er sandt; hun bekræfter tværtimod udviklingen.",
+                "en": "\"Benægter\" (denies) means saying something is not true; she confirms the development."
+              },
+              "C": {
+                "da": "\"Frygter\" bruges om noget negativt, man er bange for; bedre cykelstier er ikke noget at frygte.",
+                "en": "\"Frygter\" (fears) is for something bad you are afraid of; better cycle paths are nothing to fear."
+              }
+            }
           },
           {
             "options": [
@@ -860,7 +1074,26 @@
               "en undskyldning for",
               "en ulempe ved"
             ],
-            "correct": "B"
+            "correct": "B",
+            "why": {
+              "da": "Bad og omklædning gør det muligt for folk med lang vej at cykle. Faciliteterne er en betingelse, så der står \"en forudsætning for, at\" de lader bilen stå.",
+              "en": "Showers and changing rooms make it possible for people with a long commute to cycle. The facilities are a condition, so: \"en forudsætning for, at\" they leave the car at home.",
+              "quote": "er den slags faciliteter en forudsætning for, at især de medarbejdere, der bor langt fra arbejdspladsen, lader bilen stå"
+            },
+            "whyNot": {
+              "A": {
+                "da": "\"En hindring for\" siger det modsatte: faciliteterne hjælper folk til at cykle, de hindrer det ikke.",
+                "en": "\"En hindring for\" says the opposite: the facilities help people cycle, they do not stop them."
+              },
+              "C": {
+                "da": "\"En undskyldning for\" bruges om en dårlig grund til at gøre noget; at lade bilen stå er ikke noget, man undskylder.",
+                "en": "\"En undskyldning for\" is an excuse for something; leaving the car at home is not something to excuse."
+              },
+              "D": {
+                "da": "\"En ulempe ved\" er negativt; bad og omklædning er en fordel, ikke en ulempe.",
+                "en": "\"En ulempe ved\" (a drawback of) is negative; showers and changing rooms are an advantage."
+              }
+            }
           },
           {
             "options": [
@@ -869,7 +1102,26 @@
               "barrierer",
               "rettigheder"
             ],
-            "correct": "C"
+            "correct": "C",
+            "why": {
+              "da": "\"Dog\" og \"overvinde\" viser, at der kommer problemer: utrygge skoleveje, manglende cykelstier og vejret. Det man overvinder, er barrierer.",
+              "en": "\"Dog\" (however) and \"overvinde\" (overcome) show problems follow: unsafe school routes, missing paths and the weather. What you overcome is barriers.",
+              "quote": "Der er dog stadig barrierer at overvinde"
+            },
+            "whyNot": {
+              "A": {
+                "da": "Man overvinder ikke fordele, og de næste sætninger handler om problemer.",
+                "en": "You do not overcome advantages, and the following sentences are about problems."
+              },
+              "B": {
+                "da": "\"Traditioner\" passer ikke: afsnittet handler om forhindringer, ikke om skikke.",
+                "en": "\"Traditioner\" (traditions) does not fit: the paragraph is about obstacles, not customs."
+              },
+              "D": {
+                "da": "\"Rettigheder\" (rights) er ikke noget, man overvinder, og passer ikke til problemerne, der følger.",
+                "en": "\"Rettigheder\" (rights) are not something you overcome, and do not match the problems that follow."
+              }
+            }
           },
           {
             "options": [
@@ -878,7 +1130,26 @@
               "På samme måde",
               "For eksempel"
             ],
-            "correct": "B"
+            "correct": "B",
+            "why": {
+              "da": "Først en negativ ting (cyklisterne forsvinder om vinteren), så en positiv modsætning (nogle kommuner fastholder dem). \"Til gengæld\" markerer den modsætning; bagefter står verbet før subjektet.",
+              "en": "First something negative (cyclists disappear in winter), then a positive contrast (some councils keep them). \"Til gengæld\" (on the other hand) marks that contrast; the verb then comes before the subject.",
+              "quote": "Til gengæld er de kommuner, der prioriterer snerydning og saltning af cykelstierne, langt bedre til at fastholde cyklisterne hele året"
+            },
+            "whyNot": {
+              "A": {
+                "da": "\"Med andre ord\" gentager det samme på en ny måde, men sætningen siger noget nyt og modsat.",
+                "en": "\"Med andre ord\" (in other words) restates the same thing, but the sentence says something new and contrasting."
+              },
+              "C": {
+                "da": "\"På samme måde\" viser lighed, men der er en modsætning mellem fald og fastholdelse.",
+                "en": "\"På samme måde\" (similarly) shows likeness, but there is a contrast between the decline and keeping cyclists."
+              },
+              "D": {
+                "da": "\"For eksempel\" ville gøre sætningen til et eksempel på faldet, men den handler om det modsatte.",
+                "en": "\"For eksempel\" would make the sentence an example of the decline, but it is about the opposite."
+              }
+            }
           },
           {
             "options": [
@@ -887,7 +1158,26 @@
               "til dels",
               "ikke alene"
             ],
-            "correct": "D"
+            "correct": "D",
+            "why": {
+              "da": "\"Ikke alene ... men også\" er et fast par: cyklen er god for både klima og sundhed. \"Men også\" senere i sætningen kræver \"ikke alene\".",
+              "en": "\"Ikke alene ... men også\" (not only ... but also) is a fixed pair: cycling is good for both the climate and health. \"Men også\" later in the sentence needs \"ikke alene\".",
+              "quote": "Cyklen er ikke alene god for klimaet, men også for folkesundheden"
+            },
+            "whyNot": {
+              "A": {
+                "da": "\"Tværtimod\" bruges til at modsige noget før, og det passer ikke sammen med \"men også\".",
+                "en": "\"Tværtimod\" (on the contrary) contradicts something earlier and does not go with \"men også\"."
+              },
+              "B": {
+                "da": "\"Næsten aldrig\" ville sige, at cyklen ikke er god for klimaet, og det modsiger teksten.",
+                "en": "\"Næsten aldrig\" (almost never) would say cycling is not good for the climate, which contradicts the text."
+              },
+              "C": {
+                "da": "\"Til dels\" (delvist) svækker udsagnet og danner ikke par med \"men også\".",
+                "en": "\"Til dels\" (partly) weakens the statement and does not pair with \"men også\"."
+              }
+            }
           },
           {
             "options": [
@@ -896,7 +1186,26 @@
               "forhindring",
               "beklagelse"
             ],
-            "correct": "A"
+            "correct": "A",
+            "why": {
+              "da": "Kommunerne vil have flere borgere op på cyklen inden for ti år. Det er et mål, og udtrykket er \"gøre det til en målsætning at ...\".",
+              "en": "Councils want many more people cycling within ten years. That is a goal, and the phrase is \"gøre det til en målsætning at ...\" (make it a goal to ...).",
+              "quote": "flere kommuner nu har gjort det til en målsætning at få langt flere borgere op på cyklen"
+            },
+            "whyNot": {
+              "B": {
+                "da": "\"En undtagelse\" er noget, der sjældent sker, eller som ikke følger reglen. Kommunerne vil have langt flere på cyklen inden for ti år; det er et mål, ikke en undtagelse.",
+                "en": "\"En undtagelse\" (an exception) is something that rarely happens or breaks the rule. The councils want far more people cycling within ten years; that is a goal, not an exception."
+              },
+              "C": {
+                "da": "\"En forhindring\" er noget, der står i vejen; kommunerne vil fremme cyklingen, ikke forhindre den.",
+                "en": "\"En forhindring\" is something in the way; councils want to promote cycling, not obstruct it."
+              },
+              "D": {
+                "da": "\"En beklagelse\" betyder, at man er ked af noget; det passer ikke til en positiv plan.",
+                "en": "\"En beklagelse\" (a regret) does not fit a positive plan."
+              }
+            }
           }
         ],
         "points": 1

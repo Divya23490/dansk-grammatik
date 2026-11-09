@@ -97,7 +97,19 @@ export async function loadPaper(id: string): Promise<ReadingPaper> {
 
   const cached = await readJson<{ updatedAt: string; paper: ReadingPaper }>(paperKey(id));
   const index = await readJson<IndexedPaper[]>(INDEX_KEY);
-  const current = index?.find((p) => p.id === id)?.updatedAt;
+  let current = index?.find((p) => p.id === id)?.updatedAt;
+  // The cached index can be older than the paper (a page opened straight from a
+  // link never refreshes it), so ask for this one paper's version: a tiny query
+  // that keeps a re-uploaded paper (new explanations, a fixed typo) from going stale.
+  if (cached && supabase) {
+    try {
+      const { data } = await supabase.from('exam_papers').select('updated_at').eq('id', id).maybeSingle();
+      const row = data as { updated_at: string } | null;
+      if (row?.updated_at) current = row.updated_at;
+    } catch {
+      // Offline: fall back to what the cached index says.
+    }
+  }
   if (cached && (!current || cached.updatedAt === current)) return cached.paper;
 
   if (!supabase) throw new Error('Accounts aren’t set up for this copy of the app.');

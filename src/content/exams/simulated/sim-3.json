@@ -743,7 +743,12 @@
         "n": 1,
         "section": "Frivillighed før og nu",
         "prompt": "Hvilket år fik danskerne ret til at danne foreninger uden tilladelse fra staten?",
-        "key": "(I) 1849"
+        "key": "(I) 1849",
+        "why": {
+          "da": "Svaret står i afsnittet \"En lang tradition\": grundloven fra 1849 gav danskerne ret til at danne foreninger uden statens tilladelse. Det er nok at skrive årstallet.",
+          "en": "The answer is in the part \"En lang tradition\": the constitution of 1849 gave Danes the right to form associations without the state's permission. The year on its own is enough.",
+          "quote": "Med grundloven fra 1849 fik danskerne ret til at danne foreninger uden at skulle have tilladelse fra staten"
+        }
       },
       {
         "n": 2,
@@ -752,7 +757,12 @@
         "key": "38 (%)",
         "also": [
           "38%"
-        ]
+        ],
+        "why": {
+          "da": "Se tabellen under \"Frivillighed i tal\". I rækken for 16-29 år står der 38 % i kolonnen for andelen, der har arbejdet frivilligt. Skriv 38 eller 38 %; tallet 11 er timer pr. måned og er forkert.",
+          "en": "Look at the table under \"Frivillighed i tal\". In the row for 16-29 year-olds the share who volunteered is 38 %. Write 38 or 38 %; the 11 is hours per month and is wrong.",
+          "quote": "16-29 år 38 % 11 timer"
+        }
       },
       {
         "n": 3,
@@ -761,69 +771,126 @@
         "key": "10.000 (kr.)",
         "also": [
           "10.000 kroner"
-        ]
+        ],
+        "why": {
+          "da": "Under \"Frivillig Fredag\" står der, at prisen består af et diplom og 10.000 kr. Spørgsmålet handler kun om pengene, så svaret er 10.000 (kr.).",
+          "en": "Under \"Frivillig Fredag\" it says the prize is a diploma and 10,000 kroner. The question only asks about the money, so the answer is 10,000 (kroner).",
+          "quote": "Prisen består af et diplom og 10.000 kr., som vinderen kan give videre til sin forening"
+        }
       },
       {
         "n": 4,
         "section": "Frivilligcenter Nordås",
         "prompt": "Hvilken dag i ugen har Frivilligcenter Nordås åbent om aftenen?",
         "key": "(Om) onsdag(en)",
-        "also": ["Onsdage"]
+        "also": [
+          "Onsdage"
+        ],
+        "why": {
+          "da": "Se tabellen med åbningstider. Kun onsdag er centret åbent til kl. 19, med åben vejledning kl. 16-19. De andre dage lukker det kl. 15 eller tidligere. Svar: onsdag.",
+          "en": "Look at the opening-hours table. Only on Wednesday is the centre open until 7 pm, with drop-in advice from 4 to 7 pm. On the other days it closes at 3 pm or earlier. Answer: Wednesday.",
+          "quote": "Onsdag 10.00-19.00 Åben vejledning for nye frivillige kl. 16-19"
+        }
       },
       {
         "n": 5,
         "section": "Frivilligcenter Nordås",
         "prompt": "Hvor længe skal man mindst have haft kørekort for at kunne blive chauffør i Seniorbussen?",
-        "key": "(I mindst) fem år"
+        "key": "(I mindst) fem år",
+        "why": {
+          "da": "I jobopslaget \"Chauffør til Seniorbussen\" står kravet: kørekort i mindst fem år. Svar: fem år.",
+          "en": "The job ad \"Chauffør til Seniorbussen\" states the requirement: a driving licence for at least five years. Answer: five years.",
+          "quote": "For at blive chauffør skal man have haft kørekort i mindst fem år"
+        }
       },
       {
         "n": 6,
         "section": "Frivilligcenter Nordås",
         "prompt": "Kan foreninger få hjælp hos Frivilligcenter Nordås til at søge penge hos fonde? Svar 'ja' eller 'nej'.",
         "key": "Ja",
-        "paraphrased": true
+        "paraphrased": true,
+        "why": {
+          "da": "Under \"Det tilbyder vi\" står der hjælp til foreninger med ansøgninger til fonde. At søge penge hos fonde er det samme, så svaret er ja.",
+          "en": "Under \"Det tilbyder vi\" the centre lists help for associations with applications to foundations. Applying to foundations for money is the same thing, so the answer is yes.",
+          "quote": "Hjælp til foreninger med fundraising og ansøgninger til fonde og puljer"
+        }
       },
       {
         "n": 7,
         "section": "Frivillige fortæller",
         "prompt": "Hvilket fag spørger eleverne oftest Amira om i lektiecaféen?",
-        "key": "Matematik"
+        "key": "Matematik",
+        "why": {
+          "da": "Amira siger, at de fleste elever spørger om matematik. Dansk og engelsk hjælper hun \"også\" med, så de er ikke svaret.",
+          "en": "Amira says most pupils ask about maths. She \"also\" helps with Danish and English, so those are not the answer.",
+          "quote": "De fleste elever spørger om matematik"
+        }
       },
       {
         "n": 8,
         "section": "Frivillige fortæller",
         "prompt": "Hvad gør Bent og Erling som det første, når de ses om tirsdagen?",
-        "key": "(De spiller) skak"
+        "key": "(De spiller) skak",
+        "why": {
+          "da": "Bent fortæller, at de \"først\" spiller skak og \"bagefter\" går en tur til havnen. Det første er altså skak.",
+          "en": "Bent says they \"first\" play chess and \"afterwards\" walk down to the harbour. So the first thing is chess.",
+          "quote": "Først spiller vi skak"
+        }
       },
       {
         "n": 9,
         "section": "Frivillige fortæller",
         "prompt": "Hvor mange drenge er der på det fodboldhold, som Jonas træner?",
-        "key": "22 (drenge)"
+        "key": "22 (drenge)",
+        "why": {
+          "da": "Jonas fortæller, at der er 22 drenge på holdet. Tallet tre er antallet af trænere, og fem år var sønnens alder.",
+          "en": "Jonas says there are 22 boys on the team. Three is the number of coaches, and five was his son's age.",
+          "quote": "Der er 22 drenge på holdet"
+        }
       },
       {
         "n": 10,
         "section": "Frivillig i idræt og kultur",
         "prompt": "Hvor mange weekender brugte de frivillige på at renovere Nordås Boldklubs klubhus?",
-        "key": "Seks (weekender)"
+        "key": "Seks (weekender)",
+        "why": {
+          "da": "Under \"Nyt fra Nordås Boldklub\" står der, at de 35 frivillige brugte seks weekender. Svar: seks (weekender). 35 er antallet af frivillige.",
+          "en": "Under \"Nyt fra Nordås Boldklub\" it says the 35 volunteers spent six weekends. Answer: six (weekends). 35 is the number of volunteers.",
+          "quote": "som brugte seks weekender på at rive ned og bygge op igen"
+        }
       },
       {
         "n": 11,
         "section": "Frivillig i idræt og kultur",
         "prompt": "Hvor mange vagter skal man tage som frivillig på Engfestivalen for at få adgang til alle festivalens dage?",
-        "key": "Tre (vagter)"
+        "key": "Tre (vagter)",
+        "why": {
+          "da": "I teksten om Engfestivalen står der, at tre vagter giver et armbånd til alle dage. Én vagt giver kun adgang den dag, man har vagt.",
+          "en": "The text about Engfestivalen says three shifts give a wristband for all days. One shift only gives entry on the day of the shift.",
+          "quote": "Tager du tre vagter, får du et armbånd, der giver adgang til alle festivalens dage"
+        }
       },
       {
         "n": 12,
         "section": "Frivillig i idræt og kultur",
         "prompt": "Hvilken bygning viser Egnsmuseets frivillige guider rundt i om søndagen i sommerhalvåret?",
-        "key": "(Den gamle) vandmølle(n)"
+        "key": "(Den gamle) vandmølle(n)",
+        "why": {
+          "da": "Under \"Egnsmuseets frivillige guider\" står der, at guiderne om søndagen fra maj til september viser rundt i den gamle vandmølle. Svar: (den gamle) vandmølle.",
+          "en": "Under \"Egnsmuseets frivillige guider\" it says that on Sundays from May to September the guides show people round the old water mill. Answer: (the old) water mill.",
+          "quote": "Hver søndag fra maj til september viser de rundt i den gamle vandmølle ved åen"
+        }
       },
       {
         "n": 13,
         "section": "Praktisk information til frivillige",
         "prompt": "Hvor gamle er de børn, som reglerne om børneattest gælder for?",
-        "key": "Under 15 (år)"
+        "key": "Under 15 (år)",
+        "why": {
+          "da": "Under \"Børneattest\" står der, at reglen gælder for kontakt med børn under 15 år. Svar: under 15 (år). Husk \"under\"; kun \"15\" er ikke det samme.",
+          "en": "Under \"Børneattest\" it says the rule covers contact with children under 15. Answer: under 15 (years). Keep \"under\"; just \"15\" is not the same.",
+          "quote": "skal have direkte kontakt med børn under 15 år"
+        }
       },
       {
         "n": 14,
@@ -832,13 +899,23 @@
         "key": "150 (kr.)",
         "also": [
           "150 kroner"
-        ]
+        ],
+        "why": {
+          "da": "Kursustabellen viser 150 kr. for førstehjælp. Rabatten på 50 % gælder kun medlemsforeninger, så uden medlemskab er prisen den fulde: 150 kr.",
+          "en": "The course table shows 150 kroner for first aid. The 50 % discount is only for member associations, so without it the price is the full 150 kroner.",
+          "quote": "Førstehjælp for frivillige Lørdag den 4. oktober 9.00-15.00 150 kr."
+        }
       },
       {
         "n": 15,
         "section": "Praktisk information til frivillige",
         "prompt": "Hvad kan nye frivillige på Café Mødestedet få, hvis de gerne vil øve sig i dansk?",
-        "key": "(En) sprogmakker"
+        "key": "(En) sprogmakker",
+        "why": {
+          "da": "I afsnittet om Café Mødestedet står der, at nye frivillige, der vil øve sig i dansk, kan få en sprogmakker. Svar: (en) sprogmakker.",
+          "en": "The part about Café Mødestedet says new volunteers who want to practise Danish can get a language buddy (sprogmakker). Answer: (a) sprogmakker.",
+          "quote": "Nye frivillige, der gerne vil øve sig i dansk, kan få en sprogmakker"
+        }
       }
     ]
   },
@@ -959,7 +1036,22 @@
               "Hendes arbejdsdage er blevet mere varierede, end de var før.",
               "Programmet blev taget i brug i hele afdelingen, uden at medarbejderne blev spurgt."
             ],
-            "correct": "B"
+            "correct": "B",
+            "why": {
+              "da": "Karina Lund siger, at ingen dage længere ligner hinanden. Det betyder, at arbejdet er blevet mere varieret.",
+              "en": "Karina Lund says no two days are alike any more. That means her work has become more varied.",
+              "quote": "Der er ikke længere to dage, der ligner hinanden"
+            },
+            "whyNot": {
+              "A": {
+                "da": "Hun siger det modsatte: programmet laver ikke flere fejl end hende, men andre fejl.",
+                "en": "She says the opposite: the program does not make more mistakes than she did, just different ones."
+              },
+              "C": {
+                "da": "Forkert: hun understreger, at medarbejderne blev inddraget fra begyndelsen, og at de selv besluttede, hvilke opgaver programmet skulle overtage.",
+                "en": "Wrong: she stresses that staff were involved from the start and decided themselves which tasks the program would take over."
+              }
+            }
           },
           {
             "prompt": "Hvad er ifølge Lene Dahl Kristensen den vigtigste forklaring på, at nogle arbejdspladser får gavn af kunstig intelligens?",
@@ -968,7 +1060,22 @@
               "At medarbejderne er yngre og derfor hurtigere til at lære teknologien.",
               "At medarbejderne har været med til at bestemme, hvordan programmet skal bruges."
             ],
-            "correct": "C"
+            "correct": "C",
+            "why": {
+              "da": "Forskeren siger, at forskellen ligger i, om medarbejderne har haft indflydelse på, hvordan programmet bruges. Det er det samme som at være med til at bestemme.",
+              "en": "The researcher says the difference lies in whether staff have had a say in how the program is used. That is the same as helping to decide.",
+              "quote": "Forskellen ligger i, om medarbejderne har haft indflydelse på, hvordan programmet skal bruges i deres daglige arbejde"
+            },
+            "whyNot": {
+              "A": {
+                "da": "Det er det, mange ledere tror, men forskeren siger, at hun ikke ser den store forskel på teknologierne.",
+                "en": "That is what many managers believe, but the researcher says she sees little difference between the technologies."
+              },
+              "B": {
+                "da": "Forskeren siger, at det heller ikke er alderen, der afgør det. Nogle af de mest positive var tæt på pension.",
+                "en": "The researcher says age does not decide it either. Some of the most positive staff were close to retirement."
+              }
+            }
           },
           {
             "prompt": "Hvad er Lene Dahl Kristensen bekymret for?",
@@ -977,7 +1084,22 @@
               "At nyuddannede har sværere ved at bruge de nye programmer end deres ældre kolleger.",
               "At virksomhederne allerede er begyndt at ansætte færre nyuddannede end tidligere."
             ],
-            "correct": "A"
+            "correct": "A",
+            "why": {
+              "da": "Hun er bekymret, fordi kunstig intelligens overtager de enkle rutineopgaver, som nyuddannede før lærte faget igennem.",
+              "en": "She is worried because AI is taking over the simple routine tasks that new graduates used to learn the job through.",
+              "quote": "er netop de enkle rutineopgaver, som nyuddannede tidligere fik i deres første år på arbejdsmarkedet"
+            },
+            "whyNot": {
+              "B": {
+                "da": "Teksten siger det modsatte: de nyuddannede er ofte de hurtigste til at bruge de nye programmer.",
+                "en": "The text says the opposite: new graduates are often the quickest to use the new programs."
+              },
+              "C": {
+                "da": "Hun siger, at hun endnu ikke har set tegn på, at virksomhederne ansætter færre unge.",
+                "en": "She says she has not yet seen any sign that companies are hiring fewer young people."
+              }
+            }
           }
         ],
         "points": 2
@@ -1127,7 +1249,44 @@
           "A",
           "E"
         ],
-        "points": 2
+        "points": 2,
+        "why": [
+          {
+            "da": "Afsnittet før beskriver, at det er blevet almindeligt at købe brugt. D giver tallet (seks ud af ti), og afsnittet efter sammenligner med det: \"Blandt de 18-29-årige var andelen endnu højere\". \"Andelen\" peger tilbage på D.",
+            "en": "The paragraph before says buying second-hand has become normal. D gives the figure (six in ten), and the next paragraph compares with it: \"among 18-29-year-olds the share was even higher\". \"The share\" points back to D.",
+            "quote": "Blandt de 18-29-årige var andelen endnu højere"
+          },
+          {
+            "da": "Signe har lige sagt, at det startede som en måde at spare penge på. F fortsætter med økonomien, og næste afsnit begynder med \"Alligevel er pengene ikke hele forklaringen\", som svarer direkte på F.",
+            "en": "Signe has just said it started as a way to save money. F continues with money, and the next paragraph opens \"Still, money is not the whole explanation\", which answers F directly.",
+            "quote": "Alligevel er pengene ikke hele forklaringen"
+          },
+          {
+            "da": "Før hullet fortæller Hanne Vestergaard om de mange nye, yngre kunder. B kalder det \"den store interesse\" og nævner bagsiden: opkøbere. Efter hullet står \"Det har fået nogle butikker til at hæve priserne\", hvor \"Det\" er opkøbet i B.",
+            "en": "Before the gap Hanne Vestergaard talks about the many new, younger customers. B calls this \"the great interest\" and names the downside: resellers. After the gap, \"That has made some shops raise prices\", where \"That\" is the buying-up in B.",
+            "quote": "Den store interesse har dog også en bagside"
+          },
+          {
+            "da": "Lige før står der, at en stor del af tøjet ikke kan sælges. A forklarer hvorfor (\"Det skyldes især\"): tøjet er billigt og slidt. Bagefter følger, at en tredjedel af poserne sendes videre.",
+            "en": "Just before, it says much of the clothing cannot be sold. A explains why (\"This is mainly because\"): the clothes are cheap and worn. Then we read that a third of the bags are sent on.",
+            "quote": "Det skyldes især, at mere og mere tøj bliver produceret billigt og hurtigt"
+          },
+          {
+            "da": "Før hullet står der, at brugtkøb ikke automatisk er godt for klimaet. E forklarer hvorfor: de sparede penge kan bruges på flere ting. Efter hullet er Signe \"enig i\" det og siger, at det bedste køb er det, man ikke foretager.",
+            "en": "Before the gap: buying second-hand is not automatically good for the climate. E explains why: the money saved may be spent on more things. After the gap Signe \"agrees\" and says the best purchase is the one you don't make.",
+            "quote": "Det afgørende er altså ikke, om man køber brugt, men om man samlet set køber mindre"
+          }
+        ],
+        "whyNotExtra": {
+          "C": {
+            "da": "C passer ikke med teksten: Hanne Vestergaards butik tager stadig imod poser med tøj og har sat skilte op om, hvilket tøj folk skal aflevere. Ingen butik stopper med tøj.",
+            "en": "C contradicts the text: Hanne Vestergaard's shop still receives bags of clothes and has put up signs about which clothes to hand in. No shop stops taking clothes."
+          },
+          "G": {
+            "da": "G taler om \"de to forskere bag undersøgelsen\" og om kvinder, men teksten nævner hverken forskere bag en undersøgelse eller kvinder. Ved hul 1 skal \"andelen\" pege tilbage på et tal, og det har G ikke.",
+            "en": "G mentions \"the two researchers behind the survey\" and women, but the text mentions neither. At gap 1, \"the share\" must refer back to a figure, and G has none."
+          }
+        }
       },
       {
         "kind": "cloze",
@@ -1243,7 +1402,26 @@
               "risikoen",
               "årsagen"
             ],
-            "correct": "C"
+            "correct": "C",
+            "why": {
+              "da": "\"Øge risikoen for\" er et fast udtryk: mangel på søvn gør det mere sandsynligt at blive syg. Sygdomme er noget negativt, så det må være en risiko.",
+              "en": "\"Øge risikoen for\" (increase the risk of) is a fixed phrase: lack of sleep makes illness more likely. Illness is negative, so it must be a risk.",
+              "quote": "øger mangel på søvn risikoen for en række sygdomme"
+            },
+            "whyNot": {
+              "A": {
+                "da": "\"Muligheden for\" bruges om noget positivt eller neutralt, ikke om at blive syg.",
+                "en": "\"Muligheden for\" (the possibility/chance of) is used for something positive or neutral, not for getting ill."
+              },
+              "B": {
+                "da": "\"Fordelen\" er noget godt, men sætningen handler om sygdomme, som er noget dårligt. Mangel på søvn kan ikke øge \"fordelen for\" sygdomme.",
+                "en": "\"Fordelen\" (the advantage) is something good, but the sentence is about diseases, which are bad. Lack of sleep cannot increase an \"advantage for\" diseases."
+              },
+              "D": {
+                "da": "Man siger \"årsagen til\", ikke \"årsagen for\", og søvnmangel øger ikke en årsag; den er selv årsagen.",
+                "en": "You say \"årsagen til\", not \"årsagen for\", and lack of sleep does not increase a cause; it is the cause."
+              }
+            }
           },
           {
             "options": [
@@ -1252,7 +1430,26 @@
               "i stedet",
               "trods alt"
             ],
-            "correct": "A"
+            "correct": "A",
+            "why": {
+              "da": "\"Blandt andet\" viser, at der kommer eksempler på, hvad forskningen har vist (diabetes og hjerte-kar-sygdomme).",
+              "en": "\"Blandt andet\" (among other things) shows that examples of what research has shown follow (diabetes and heart disease).",
+              "quote": "Forskning har blandt andet vist"
+            },
+            "whyNot": {
+              "B": {
+                "da": "\"Til gengæld\" bruges om en modsætning, men sætningen bekræfter det, der lige blev sagt om sygdomme.",
+                "en": "\"Til gengæld\" (on the other hand) signals contrast, but the sentence confirms what was just said about illness."
+              },
+              "C": {
+                "da": "\"I stedet\" betyder, at noget erstatter noget andet; der er intet, som forskningen viser i stedet for.",
+                "en": "\"I stedet\" (instead) means one thing replaces another; nothing is being replaced here."
+              },
+              "D": {
+                "da": "\"Trods alt\" betyder \"alligevel, når alt kommer til alt\" og passer ikke til at indlede eksempler.",
+                "en": "\"Trods alt\" (after all, despite everything) does not fit as a way to introduce examples."
+              }
+            }
           },
           {
             "options": [
@@ -1261,7 +1458,26 @@
               "til",
               "for"
             ],
-            "correct": "D"
+            "correct": "D",
+            "why": {
+              "da": "Det faste udtryk er \"have betydning for\" noget. Det står også i første linje: \"stor betydning for helbredet\".",
+              "en": "The fixed phrase is \"have betydning for\" (be important for). It also appears in the first line: \"stor betydning for helbredet\".",
+              "quote": "Søvnen har også stor betydning for vores psykiske trivsel"
+            },
+            "whyNot": {
+              "A": {
+                "da": "Ordet \"betydning\" tager \"for\", når man siger, hvad noget er vigtigt for. \"Betydning om\" findes ikke på dansk.",
+                "en": "The word \"betydning\" takes \"for\" when you say what something is important for. \"Betydning om\" does not exist in Danish."
+              },
+              "B": {
+                "da": "\"Betydning af\" bruges om, hvad et ord betyder, fx \"betydningen af ordet\", ikke om, hvad noget er vigtigt for.",
+                "en": "\"Betydning af\" is used for the meaning of something (\"the meaning of the word\"), not for what something matters to."
+              },
+              "C": {
+                "da": "\"Betydning til\" findes ikke på dansk. Når noget er vigtigt for noget andet, hedder det \"betydning for\".",
+                "en": "\"Betydning til\" does not exist in Danish. When something matters for something else, it is \"betydning for\"."
+              }
+            }
           },
           {
             "options": [
@@ -1270,7 +1486,26 @@
               "øge",
               "styrke"
             ],
-            "correct": "B"
+            "correct": "B",
+            "why": {
+              "da": "Næste del siger, at det bliver sværere at falde i søvn. Det blå lys må altså bremse produktionen af melatonin: \"hæmme\" betyder bremse.",
+              "en": "The next part says it becomes harder to fall asleep, so the blue light must slow down melatonin production: \"hæmme\" means inhibit.",
+              "quote": "Det blå lys fra skærmen kan hæmme kroppens produktion af søvnhormonet melatonin"
+            },
+            "whyNot": {
+              "A": {
+                "da": "\"Fremme\" betyder at hjælpe noget frem; mere søvnhormon ville gøre det lettere, ikke sværere, at sove.",
+                "en": "\"Fremme\" means promote; more sleep hormone would make sleeping easier, not harder."
+              },
+              "C": {
+                "da": "\"Øge\" betyder at gøre større; det modsiger, at det bliver sværere at falde i søvn.",
+                "en": "\"Øge\" means increase; that contradicts it becoming harder to fall asleep."
+              },
+              "D": {
+                "da": "\"Styrke\" betyder at gøre stærkere og giver samme modsætning som \"øge\".",
+                "en": "\"Styrke\" means strengthen and gives the same contradiction as \"øge\"."
+              }
+            }
           },
           {
             "options": [
@@ -1279,7 +1514,26 @@
               "selvom",
               "eftersom"
             ],
-            "correct": "C"
+            "correct": "C",
+            "why": {
+              "da": "Der er en modsætning: hjernen holdes i gang, selv om vi burde slappe af. \"Selvom\" er en underordnende konjunktion, så ledsætningen har ordstillingen \"vi egentlig burde\".",
+              "en": "There is a contrast: the brain is kept busy even though we ought to relax. \"Selvom\" is a subordinating conjunction, so the clause has the order \"vi egentlig burde\".",
+              "quote": "holder sociale medier og nyheder hjernen i gang, selvom vi egentlig burde slappe af"
+            },
+            "whyNot": {
+              "A": {
+                "da": "\"Fordi\" giver en årsag, men at vi burde slappe af, er ikke grunden til, at hjernen holdes i gang.",
+                "en": "\"Fordi\" gives a reason, but our need to relax is not why the brain is kept busy."
+              },
+              "B": {
+                "da": "\"Medmindre\" betyder \"hvis ikke\" og indleder en betingelse. Men \"vi egentlig burde slappe af\" er ikke en betingelse; det er en modsætning til, at hjernen holdes i gang, og det kræver \"selvom\".",
+                "en": "\"Medmindre\" means \"unless\" and introduces a condition. But \"we really ought to relax\" is not a condition; it contrasts with the brain being kept busy, which needs \"selvom\"."
+              },
+              "D": {
+                "da": "\"Eftersom\" betyder \"fordi\" og har samme problem: det er ikke en årsag, men en modsætning.",
+                "en": "\"Eftersom\" means \"since/because\" and has the same problem: this is a contrast, not a reason."
+              }
+            }
           },
           {
             "options": [
@@ -1288,7 +1542,26 @@
               "dermed",
               "nemlig"
             ],
-            "correct": "D"
+            "correct": "D",
+            "why": {
+              "da": "Sætningen forklarer, hvorfor man skal have faste sengetider: kroppen har et indre ur. \"Nemlig\" bruges netop til en forklaring på det, der lige er sagt.",
+              "en": "The sentence explains why fixed bedtimes help: the body has an inner clock. \"Nemlig\" is used exactly for explaining what was just said.",
+              "quote": "Kroppen har nemlig et indre ur"
+            },
+            "whyNot": {
+              "A": {
+                "da": "\"Alligevel\" udtrykker en modsætning, men sætningen støtter rådet før den.",
+                "en": "\"Alligevel\" (still, anyway) signals a contrast, but the sentence supports the advice before it."
+              },
+              "B": {
+                "da": "\"Derimod\" bruges om en modsætning til noget andet; her er der ingen modsætning.",
+                "en": "\"Derimod\" (by contrast) marks a contrast; there is none here."
+              },
+              "C": {
+                "da": "\"Dermed\" angiver en følge, men det indre ur er ikke en følge af rådet; det er grunden til det.",
+                "en": "\"Dermed\" (thereby) marks a result, but the inner clock is not a result of the advice; it is the reason for it."
+              }
+            }
           },
           {
             "options": [
@@ -1297,7 +1570,26 @@
               "derfor",
               "ligeledes"
             ],
-            "correct": "A"
+            "correct": "A",
+            "why": {
+              "da": "Mange tror noget, men det er kun delvist rigtigt. \"Imidlertid\" (dog, men) markerer den modsætning.",
+              "en": "Many people believe something, but it is only partly true. \"Imidlertid\" (however) marks this contrast.",
+              "quote": "Det er imidlertid kun delvist rigtigt"
+            },
+            "whyNot": {
+              "B": {
+                "da": "\"Desuden\" tilføjer noget ekstra; her retter sætningen den tro, der står før.",
+                "en": "\"Desuden\" (moreover) adds something; here the sentence corrects the belief before it."
+              },
+              "C": {
+                "da": "\"Derfor\" angiver en følge, men det følger ikke af folks tro, at den kun er delvist rigtig.",
+                "en": "\"Derfor\" (therefore) marks a consequence, but being only partly true does not follow from people believing it."
+              },
+              "D": {
+                "da": "\"Ligeledes\" betyder \"på samme måde\" og passer ikke, når der er en modsætning.",
+                "en": "\"Ligeledes\" (likewise) does not fit where there is a contrast."
+              }
+            }
           },
           {
             "options": [
@@ -1306,7 +1598,26 @@
               "konsekvens",
               "undtagelse"
             ],
-            "correct": "B"
+            "correct": "B",
+            "why": {
+              "da": "Lægen skal finde årsagen, før problemerne kan behandles effektivt. Det er altså en betingelse: \"en forudsætning\".",
+              "en": "The doctor must find the cause before the problems can be treated effectively. That is a precondition: \"en forudsætning\".",
+              "quote": "For at kunne behandle problemerne effektivt er det en forudsætning, at lægen først finder årsagen til dem"
+            },
+            "whyNot": {
+              "A": {
+                "da": "\"En ulempe\" er noget negativt; at lægen finder årsagen, er ikke en ulempe.",
+                "en": "\"En ulempe\" (a disadvantage) is negative; the doctor finding the cause is not a drawback."
+              },
+              "C": {
+                "da": "\"En konsekvens\" kommer efter noget, men at finde årsagen sker \"først\", før behandlingen.",
+                "en": "\"En konsekvens\" (a consequence) comes after something, but finding the cause happens \"first\", before treatment."
+              },
+              "D": {
+                "da": "\"En undtagelse\" er noget, der afviger fra reglen. Sætningen skal sige, hvad der skal være på plads, før behandlingen kan virke (\"For at kunne ... er det en ___\"), og det er en betingelse, ikke en undtagelse.",
+                "en": "\"En undtagelse\" (an exception) is something that departs from the rule. The sentence must say what has to be in place before treatment can work (\"In order to ... it is a ___\"), and that is a condition, not an exception."
+              }
+            }
           }
         ],
         "points": 1

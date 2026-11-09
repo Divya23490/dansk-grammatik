@@ -1,10 +1,11 @@
 import { useLocalSearchParams, useRouter } from 'expo-router';
-import React from 'react';
+import React, { useMemo } from 'react';
 import { ActivityIndicator, Pressable, View } from 'react-native';
 import { PART_NAMES, type ReadingPaper } from '../../../src/content/exams/types';
 import { bestTotal, setSelfMark, useAttempts, type Attempt } from '../../../src/exam/attemptStore';
-import { gradeFor, isPassingGrade, scorePart, type ItemResult } from '../../../src/exam/grade';
+import { gradeFor, isPassingGrade, scorePart } from '../../../src/exam/grade';
 import { usePaper } from '../../../src/exam/papers';
+import { reviewItems, type ReviewItem } from '../../../src/exam/review';
 import { formatDuration } from '../../../src/ui/exam/Clock';
 import { Button, Card, Label, Txt, s } from '../../../src/ui/primitives';
 import { Screen } from '../../../src/ui/Screen';
@@ -43,6 +44,16 @@ function Result({ paper, attempt }: { paper: ReadingPaper; attempt: Attempt }) {
   const total = bestTotal(attempts, paper.id);
   const other = attempt.part === 'lf1' ? 'lf2' : 'lf1';
   const grade = total ? gradeFor(paper.gradeTable, total.points) : null;
+  const items = useMemo(() => reviewItems(paper, attempt), [paper, attempt]);
+  const review = (item?: ReviewItem) =>
+    router.push({
+      pathname: '/exam/[paperId]/review',
+      params: {
+        paperId: paper.id,
+        attempt: attempt.id,
+        ...(item ? { item: item.id, ...(item.task >= 0 ? { task: String(item.task) } : {}) } : {}),
+      },
+    } as never);
 
   return (
     <Screen contentContainerStyle={{ padding: t.space(4), paddingBottom: t.space(12), gap: t.space(4) }}>
@@ -101,7 +112,10 @@ function Result({ paper, attempt }: { paper: ReadingPaper; attempt: Attempt }) {
         </Card>
       )}
 
-      <Txt variant="title">Your answers</Txt>
+      <View style={[s.rowBetween, { gap: t.space(3), flexWrap: 'wrap' }]}>
+        <Txt variant="title">Your answers</Txt>
+        <Button label="Review with the text" onPress={() => review()} style={{ paddingVertical: t.space(2.5) }} />
+      </View>
       {attempt.part === 'lf1' ? (
         <Txt variant="body" color={t.c.textMuted} style={{ lineHeight: 22, marginTop: -t.space(2) }}>
           The answer key is a guide, and the censor may accept other answers. If your answer says the same as the key in
@@ -109,8 +123,8 @@ function Result({ paper, attempt }: { paper: ReadingPaper; attempt: Attempt }) {
         </Txt>
       ) : null}
       <View style={{ gap: t.space(2) }}>
-        {score.items.map((item) => (
-          <ItemRow key={item.id} item={item} paper={paper} attempt={attempt} />
+        {items.map((item) => (
+          <ItemRow key={item.id} item={item} paper={paper} attempt={attempt} onOpen={() => review(item)} />
         ))}
       </View>
 
@@ -124,10 +138,26 @@ function Result({ paper, attempt }: { paper: ReadingPaper; attempt: Attempt }) {
   );
 }
 
-function ItemRow({ item, paper, attempt }: { item: ItemResult; paper: ReadingPaper; attempt: Attempt }) {
+/** "B · Rejsen var lang" — the letter and what it stands for, shortened for a long paragraph. */
+const spell = (letter: string, text?: string) => {
+  if (!letter) return '—';
+  if (!text) return letter;
+  return `${letter} · ${text.length > 140 ? `${text.slice(0, 137).trimEnd()}…` : text}`;
+};
+
+function ItemRow({
+  item,
+  paper,
+  attempt,
+  onOpen,
+}: {
+  item: ReviewItem;
+  paper: ReadingPaper;
+  attempt: Attempt;
+  onOpen: () => void;
+}) {
   const t = useTheme();
   const lf1 = attempt.part === 'lf1';
-  const prompt = lf1 ? paper.lf1.questions.find((q) => `q${q.n}` === item.id)?.prompt : undefined;
   const override = attempt.selfMarks[item.id];
 
   return (
@@ -147,30 +177,36 @@ function ItemRow({ item, paper, attempt }: { item: ItemResult; paper: ReadingPap
           {`${item.points}/${item.max}${item.selfMarked ? ' · marked by you' : ''}`}
         </Label>
       </View>
-      {prompt ? (
+      {item.prompt ? (
         <Txt variant="body" color={t.c.textMuted} style={{ fontSize: 14, lineHeight: 20 }}>
-          {prompt}
+          {item.prompt}
         </Txt>
       ) : null}
-      <Txt variant="body" style={{ fontSize: 15 }}>
-        {`Your answer: ${item.given.trim() || '—'}`}
+      <Txt variant="body" style={{ fontSize: 15, lineHeight: 21 }}>
+        {`Your answer: ${lf1 ? item.given.trim() || '—' : spell(item.given, item.givenText)}`}
       </Txt>
       {!item.correct || lf1 ? (
-        <Txt variant="body" style={{ fontSize: 15 }}>
-          {`${lf1 ? 'Rettenøgle' : 'Right answer'}: ${item.key}`}
+        <Txt variant="body" style={{ fontSize: 15, lineHeight: 21 }}>
+          {lf1 ? `Rettenøgle: ${item.key}` : `Right answer: ${spell(item.key, item.keyText)}`}
         </Txt>
       ) : null}
-      {lf1 && item.given.trim() ? (
-        <Pressable
-          accessibilityRole="button"
-          onPress={() => setSelfMark(paper, attempt.id, item.id, override === undefined ? !item.correct : null)}
-          style={{ alignSelf: 'flex-start', marginTop: t.space(1) }}
-        >
+      <View style={[s.row, { gap: t.space(4), marginTop: t.space(1), flexWrap: 'wrap' }]}>
+        {lf1 && item.given.trim() ? (
+          <Pressable
+            accessibilityRole="button"
+            onPress={() => setSelfMark(paper, attempt.id, item.id, override === undefined ? !item.correct : null)}
+          >
+            <Txt variant="label" color={t.c.accent}>
+              {override !== undefined ? 'Undo my marking' : item.correct ? 'Mark as wrong' : 'Mark as right'}
+            </Txt>
+          </Pressable>
+        ) : null}
+        <Pressable accessibilityRole="link" onPress={onOpen}>
           <Txt variant="label" color={t.c.accent}>
-            {override !== undefined ? 'Undo my marking' : item.correct ? 'Mark as wrong' : 'Mark as right'}
+            See it in the text ›
           </Txt>
         </Pressable>
-      ) : null}
+      </View>
     </View>
   );
 }

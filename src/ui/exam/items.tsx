@@ -87,11 +87,23 @@ export function Lf1Item({
   practice,
   checked,
   onCheck,
-}: { q: Lf1Question; value: string; onChange: (v: string) => void } & PracticeProps) {
+  ok: okOverride,
+  note,
+  highlight,
+}: {
+  q: Lf1Question;
+  value: string;
+  onChange: (v: string) => void;
+  /** Reviewing a handed-in attempt: right or wrong as scored, including the learner's own marking. */
+  ok?: boolean;
+  /** Replaces the hint under a wrong answer. */
+  note?: string;
+  highlight?: boolean;
+} & PracticeProps) {
   const t = useTheme();
-  const ok = !!q.freePoint || matchesKey(value, q.key, q.also);
+  const ok = okOverride ?? (!!q.freePoint || matchesKey(value, q.key, q.also));
   return (
-    <ItemCard>
+    <ItemCard highlight={highlight}>
       <Txt variant="body" style={{ lineHeight: 23 }}>
         <Txt variant="heading">{`${q.n}.  `}</Txt>
         {q.prompt}
@@ -100,7 +112,7 @@ export function Lf1Item({
         value={value}
         onChangeText={onChange}
         editable={!checked}
-        placeholder="Dit svar"
+        placeholder={checked ? 'No answer' : 'Dit svar'}
         placeholderTextColor={t.c.textFaint}
         autoCapitalize="none"
         autoCorrect={false}
@@ -123,7 +135,7 @@ export function Lf1Item({
       {practice && checked ? (
         <Verdict ok={ok}>
           {`Rettenøgle: ${q.key}`}
-          {!ok ? '\nThe key is a guide — if your answer says the same thing, you can count it on the result screen.' : ''}
+          {!ok ? `\n${note ?? 'The key is a guide — if your answer says the same thing, you can count it on the result screen.'}` : ''}
         </Verdict>
       ) : null}
     </ItemCard>
@@ -137,6 +149,7 @@ export function OptionList({
   value,
   onSelect,
   correct,
+  alsoCorrect,
   locked,
   inline,
 }: {
@@ -145,6 +158,8 @@ export function OptionList({
   onSelect: (letter: string) => void;
   /** Shown once revealed: the right letter. */
   correct?: string;
+  /** Other letters a ruling also accepts, shown as right too. */
+  alsoCorrect?: string[];
   locked?: boolean;
   /** Short options (single words) sit in a wrapping row. */
   inline?: boolean;
@@ -155,9 +170,11 @@ export function OptionList({
       {options.map((opt, i) => {
         const letter = letterOf(i);
         const picked = value === letter;
-        const isRight = correct === letter;
-        const bg = correct ? (isRight ? t.c.successSoft : picked ? t.c.accentSoft : t.c.bg) : picked ? t.c.accentSoft : t.c.bg;
-        const border = correct ? (isRight ? t.c.success : picked ? t.c.accent : t.c.border) : picked ? t.c.accent : t.c.border;
+        const isRight = !!correct && (correct === letter || !!alsoCorrect?.includes(letter));
+        // Once the key is shown, a wrong pick turns warning so it can't pass for the answer.
+        const pickedWrong = !!correct && picked && !isRight;
+        const bg = isRight ? t.c.successSoft : pickedWrong ? t.c.warningSoft : picked ? t.c.accentSoft : t.c.bg;
+        const border = isRight ? t.c.success : pickedWrong ? t.c.warning : picked ? t.c.accent : t.c.border;
         return (
           <Pressable
             key={letter}
@@ -165,7 +182,7 @@ export function OptionList({
             disabled={locked}
             accessibilityRole="radio"
             accessibilityState={{ selected: picked }}
-            accessibilityLabel={`${letter}: ${opt}`}
+            accessibilityLabel={`${letter}: ${opt}${correct && isRight ? ', right answer' : ''}${pickedWrong ? ', your answer' : ''}`}
             style={({ pressed }) => ({
               flexDirection: 'row',
               gap: t.space(2.5),
@@ -229,6 +246,7 @@ export function ChoiceItem({
         onSelect={onSelect}
         locked={checked}
         correct={practice && checked ? correct : undefined}
+        alsoCorrect={alsoCorrect}
         inline={inline}
       />
       {practice && !checked ? <CheckButton onPress={onCheck} disabled={!value} /> : null}
@@ -238,7 +256,7 @@ export function ChoiceItem({
             ? alsoCorrect?.length
               ? `Also accepted: ${[correct, ...alsoCorrect].join(', ')}.`
               : null
-            : `The answer is ${[correct, ...(alsoCorrect ?? [])].join(' or ')}.`}
+            : `${value ? '' : 'No answer. '}The answer is ${[correct, ...(alsoCorrect ?? [])].join(' or ')}.`}
         </Verdict>
       ) : null}
     </ItemCard>
@@ -287,6 +305,7 @@ export function InsertPicker({
           const taken = usedElsewhere.has(l);
           const reveal = practice && checked;
           const isRight = reveal && l === correct;
+          const pickedWrong = reveal && on && !isRight;
           return (
             <Pressable
               key={l}
@@ -301,8 +320,8 @@ export function InsertPicker({
                 paddingVertical: t.space(1.5),
                 borderRadius: t.radius.sm,
                 borderWidth: 1.5,
-                borderColor: isRight ? t.c.success : on ? t.c.accent : t.c.border,
-                backgroundColor: isRight ? t.c.successSoft : on ? t.c.accentSoft : t.c.bg,
+                borderColor: isRight ? t.c.success : pickedWrong ? t.c.warning : on ? t.c.accent : t.c.border,
+                backgroundColor: isRight ? t.c.successSoft : pickedWrong ? t.c.warningSoft : on ? t.c.accentSoft : t.c.bg,
                 opacity: taken && !on ? 0.3 : 1,
               }}
             >
@@ -312,7 +331,7 @@ export function InsertPicker({
         })}
       </View>
       {practice && !checked ? <CheckButton onPress={onCheck} disabled={!value} /> : null}
-      {practice && checked ? <Verdict ok={value === correct}>{value === correct ? null : `The answer is ${correct}.`}</Verdict> : null}
+      {practice && checked ? <Verdict ok={value === correct}>{value === correct ? null : `${value ? '' : 'No answer. '}The answer is ${correct}.`}</Verdict> : null}
     </ItemCard>
   );
 }
