@@ -151,7 +151,7 @@ const PD3: ExamGuide = {
     },
   ],
   published:
-    'SIRI publishes one sample paper per section (reading 2023, writing 2022, oral May–June 2024). Papers from November–December 2024 and from 2025 are not public, so this app does not guess at them.',
+    'SIRI publishes one sample paper per section (reading 2023, writing 2022, oral May–June 2024). Papers from November–December 2024 and from 2025 are not public, so they are not in the app. The “November 2026 guesses” page forecasts the next sitting from the published patterns, clearly labelled as forecasts.',
 };
 
 const PD2: ExamGuide = {
