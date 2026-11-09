@@ -147,8 +147,76 @@ export function checkText(text: string): Correction[] {
     }
   }
 
+  // ── Closed-list spelling: the learner's own recurring errors ────────────
+  for (const rule of SPELLING_RULES) {
+    const re = new RegExp(`(?<![\\p{L}])(?:${rule.pattern})(?![\\p{L}])`, 'giu');
+    let m: RegExpExecArray | null;
+    while ((m = re.exec(text))) {
+      const original = m[0];
+      out.push({
+        start: m.index,
+        end: m.index + original.length,
+        original,
+        suggestion: matchCase(original, rule.fix(m)),
+        explanation: rule.explanation,
+        severity: 'error',
+      });
+    }
+  }
+
   return out.sort((a, b) => a.start - b.start);
 }
+
+/** Capitalise the suggestion when the original started with a capital. */
+function matchCase(original: string, suggestion: string): string {
+  const first = original.charAt(0);
+  return first !== first.toLowerCase()
+    ? suggestion.charAt(0).toUpperCase() + suggestion.slice(1)
+    : suggestion;
+}
+
+const MODALS = ['kan', 'skal', 'vil', 'må', 'kunne', 'skulle', 'ville'];
+
+/**
+ * Whole-word misspellings seen repeatedly in the learner's own mails. Each is
+ * an exact token (or modal + "har"), so a match is never a guess.
+ */
+const SPELLING_RULES: {
+  pattern: string;
+  fix: (m: RegExpExecArray) => string;
+  explanation: string;
+}[] = [
+  {
+    pattern: 'kollegere',
+    fix: () => 'kolleger',
+    explanation:
+      '"kollega" has the plural "kolleger" (definite "kollegerne") — there is no extra -e.',
+  },
+  {
+    pattern: 'arbejdeplads(\\p{L}*)',
+    fix: (m) => `arbejdsplads${m[1].toLowerCase()}`,
+    explanation:
+      'The compound is "arbejdsplads": "arbejde" joins "plads" with the linking -s-, not -e (as in "arbejdstid", "arbejdsgiver").',
+  },
+  {
+    pattern: 'tinger',
+    fix: () => 'ting',
+    explanation:
+      '"ting" is the same in singular and plural: "mange ting", definite "tingene". "tinger" is not a word.',
+  },
+  {
+    pattern: 'svart',
+    fix: () => 'svar',
+    explanation:
+      'The noun is "svar" (plural "svar", definite "svaret"). "svart" is not Danish — perhaps you meant "svaret" ("the answer").',
+  },
+  {
+    pattern: `(${MODALS.join('|')})\\s+har`,
+    fix: (m) => `${m[1].toLowerCase()} have`,
+    explanation:
+      'A modal verb (kan, skal, vil, må, kunne, skulle, ville) is followed by the infinitive, so "har" becomes "have": "Jeg kan have…", "Vi skulle have…".',
+  },
+];
 
 export const offlineProvider: FeedbackProvider = {
   id: 'offline-rules',

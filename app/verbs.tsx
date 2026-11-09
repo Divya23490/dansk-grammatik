@@ -1,13 +1,16 @@
 import React, { useCallback, useState } from 'react';
-import { useActivity } from '../src/profile/activity';
-import { Pressable, View } from 'react-native';
+import { View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { VERB_RULES } from '../src/grammar/verbRules';
 import type { VerbQuestion } from '../src/grammar/verbExercise';
 import { nextVerbQuestion, summarizeVerbs, useVerbProfile, verbRuleProgress } from '../src/profile/verbStore';
-import { Screen } from '../src/ui/Screen';
-import { Button, Card, Label, StrengthBar, Txt, s } from '../src/ui/primitives';
+import { ChoiceQuestion } from '../src/ui/ChoiceQuestion';
+import { TrainerScreen } from '../src/ui/RulesPane';
+import { StrengthBar, Txt, s } from '../src/ui/primitives';
 import { useTheme } from '../src/ui/theme';
+import { levelLabel } from '../src/profile/mastery';
+import { currentLevelNow } from '../src/profile/levelStore';
+import { LevelUpNotice } from '../src/ui/LevelBadge';
 
 /**
  * The tense trainer.
@@ -26,7 +29,9 @@ export default function Verbs() {
   const stats = useVerbProfile((st) => st.stats);
   const record = useVerbProfile((st) => st.record);
 
-  const [question, setQuestion] = useState<VerbQuestion>(() => nextVerbQuestion(stats));
+  const [question, setQuestion] = useState<VerbQuestion>(() =>
+    nextVerbQuestion(stats, undefined, Date.now(), currentLevelNow('verbs')),
+  );
   const [picked, setPicked] = useState<number | null>(null);
 
   const progress = verbRuleProgress(stats);
@@ -36,14 +41,18 @@ export default function Verbs() {
     (i: number) => {
       if (picked !== null) return;
       setPicked(i);
-      record(question.ruleId, i === question.correctIndex);
-      useActivity.getState().markToday();
+      record(question.ruleId, i === question.correctIndex, { id: question.verb.id, level: question.verb.level });
     },
     [picked, question, record],
   );
 
   const advance = useCallback(() => {
-    const nxt = nextVerbQuestion(useVerbProfile.getState().stats, question.verb.id);
+    const nxt = nextVerbQuestion(
+      useVerbProfile.getState().stats,
+      question.verb.id,
+      Date.now(),
+      currentLevelNow('verbs'),
+    );
     setQuestion(nxt);
     setPicked(null);
   }, [question.verb.id]);
@@ -51,7 +60,9 @@ export default function Verbs() {
   const rule = VERB_RULES[question.ruleId];
 
   return (
-    <Screen
+    <TrainerScreen
+      rules={Object.values(VERB_RULES)}
+      activeRuleId={question.ruleId}
       contentContainerStyle={{
         padding: t.space(4),
         paddingBottom: insets.bottom + t.space(8),
@@ -60,7 +71,7 @@ export default function Verbs() {
     >
       <View>
         <Txt variant="display" style={{ fontSize: 26 }}>
-          Verb tenses
+          Verb forms
         </Txt>
         <Txt variant="body" color={t.c.textMuted} style={{ marginTop: t.space(1) }}>
           {summary.solid} of {summary.total} rules solid. Weak verbs take a suffix; strong verbs
@@ -68,15 +79,16 @@ export default function Verbs() {
         </Txt>
       </View>
 
-      <View style={{ gap: t.space(2) }}>
+      {/* One bar per rule; side by side when there is room, so the question stays on screen. */}
+      <View style={{ flexDirection: 'row', flexWrap: 'wrap', columnGap: t.space(6), rowGap: t.space(2) }}>
         {progress.map((p) => (
-          <View key={p.id} style={{ gap: t.space(1) }}>
+          <View key={p.id} style={{ gap: t.space(1), flexGrow: 1, flexBasis: 220 }}>
             <View style={s.rowBetween}>
               <Txt variant="body" color={t.c.textMuted} style={{ fontSize: 13 }}>
                 {VERB_RULES[p.id].da}
               </Txt>
               <Txt variant="label" color={t.c.textFaint}>
-                {p.level.toUpperCase()}
+                {levelLabel(p.level)}
               </Txt>
             </View>
             <StrengthBar
@@ -87,68 +99,20 @@ export default function Verbs() {
         ))}
       </View>
 
-      <Card tone="sunken">
-        <Label>{rule.da}</Label>
-        <Txt variant="title" style={{ marginTop: t.space(2) }}>
-          {question.prompt}
-        </Txt>
-      </Card>
+      <LevelUpNotice domain="verbs" />
 
-      <View style={{ gap: t.space(2.5) }}>
-        {question.options.map((opt, i) => {
-          const isCorrect = i === question.correctIndex;
-          const isPicked = i === picked;
-          const revealed = picked !== null;
-
-          const bg = !revealed
-            ? t.c.surface
-            : isCorrect
-              ? t.c.successSoft
-              : isPicked
-                ? t.c.accentSoft
-                : t.c.surface;
-          const border = !revealed
-            ? t.c.border
-            : isCorrect
-              ? t.c.success
-              : isPicked
-                ? t.c.accent
-                : t.c.border;
-
-          return (
-            <Pressable key={i} onPress={() => choose(i)} disabled={revealed}>
-              <View
-                style={{
-                  backgroundColor: bg,
-                  borderWidth: 1.5,
-                  borderColor: border,
-                  borderRadius: t.radius.md,
-                  paddingVertical: t.space(3.5),
-                  paddingHorizontal: t.space(4),
-                }}
-              >
-                <Txt variant="heading" color={revealed && isCorrect ? t.c.success : t.c.text}>
-                  {opt}
-                </Txt>
-              </View>
-            </Pressable>
-          );
-        })}
-      </View>
-
-      {picked !== null ? (
-        <View style={{ gap: t.space(3) }}>
-          <Card tone={picked === question.correctIndex ? 'success' : 'warning'}>
-            <Label color={picked === question.correctIndex ? t.c.success : t.c.warning}>
-              {picked === question.correctIndex ? 'Correct' : 'Not quite'}
-            </Label>
-            <Txt variant="body" style={{ marginTop: t.space(2), lineHeight: 22 }}>
-              {question.explanation}
-            </Txt>
-          </Card>
-          <Button label="Next" onPress={advance} />
-        </View>
-      ) : null}
-    </Screen>
+      <ChoiceQuestion
+        label={rule.da}
+        level={question.verb.level}
+        prompt={question.prompt}
+        options={question.options}
+        correctIndex={question.correctIndex}
+        picked={picked}
+        onChoose={choose}
+        explanation={question.explanation}
+        explanationEn={question.explanationEn}
+        onNext={advance}
+      />
+    </TrainerScreen>
   );
 }

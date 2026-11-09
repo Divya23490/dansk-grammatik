@@ -12,13 +12,21 @@
  * default: existing behaviour for anyone who never opens this screen.
  */
 
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import { create } from 'zustand';
-import { createJSONStorage, persist } from 'zustand/middleware';
+import { persist } from 'zustand/middleware';
 import type { Exam } from '../grammar/rules';
+import { persistOptions } from './persistOptions';
 
 /** How the app chooses light vs dark. 'system' follows the OS setting. */
 export type ThemeMode = 'system' | 'light' | 'dark';
+
+/**
+ * How grammar exercises are answered. Typing suits a keyboard; on a phone,
+ * tapping a word and then its field (or one of the options) is quicker and
+ * the on-screen keyboard doesn't cover the exercise. 'auto' decides by the
+ * room the exercise has: typing where it lays out wide, tapping where narrow.
+ */
+export type AnswerMode = 'auto' | 'tap' | 'type';
 
 interface SettingsState {
   targetExam: Exam | null;
@@ -26,6 +34,7 @@ interface SettingsState {
   examDate: string | null;
   /** Light/dark preference; 'system' defers to the OS. */
   themeMode: ThemeMode;
+  answerMode: AnswerMode;
   /**
    * Whether the first-open welcome has been completed. Persisted, so a shared
    * newcomer sees the "which exam?" prompt once and never again — while a
@@ -38,6 +47,7 @@ interface SettingsState {
   setTargetExam: (exam: Exam | null) => void;
   setExamDate: (date: string | null) => void;
   setThemeMode: (mode: ThemeMode) => void;
+  setAnswerMode: (mode: AnswerMode) => void;
   setOnboarded: (done: boolean) => void;
 }
 
@@ -47,26 +57,22 @@ export const useSettings = create<SettingsState>()(
       targetExam: null,
       examDate: null,
       themeMode: 'system',
+      answerMode: 'auto',
       onboarded: false,
       hydrated: false,
       setTargetExam: (exam) => set({ targetExam: exam }),
       setExamDate: (date) => set({ examDate: date }),
       setThemeMode: (mode) => set({ themeMode: mode }),
+      setAnswerMode: (mode) => set({ answerMode: mode }),
       setOnboarded: (done) => set({ onboarded: done }),
     }),
-    {
-      name: 'skema-settings-v1',
-      storage: createJSONStorage(() => AsyncStorage),
-      partialize: (s) => ({
-        targetExam: s.targetExam,
-        examDate: s.examDate,
-        themeMode: s.themeMode,
-        onboarded: s.onboarded,
-      }),
-      onRehydrateStorage: () => (state) => {
-        if (state) state.hydrated = true;
-      },
-    },
+    persistOptions('skema-settings-v1', (s: SettingsState) => ({
+      targetExam: s.targetExam,
+      examDate: s.examDate,
+      themeMode: s.themeMode,
+      answerMode: s.answerMode,
+      onboarded: s.onboarded,
+    })),
   ),
 );
 
@@ -84,10 +90,24 @@ export function resolveThemeMode(
   return systemScheme === 'dark' ? 'dark' : 'light';
 }
 
+/** Tap or type for this exercise: the preference, or for 'auto', by whether it has a wide layout. */
+export function resolveAnswerMode(pref: AnswerMode, wide: boolean): 'tap' | 'type' {
+  if (pref === 'tap' || pref === 'type') return pref;
+  return wide ? 'type' : 'tap';
+}
+
+/**
+ * The preference a one-tap toggle should set: the opposite of what is on
+ * screen right now. Takes the *resolved* mode, so tapping while on 'system'
+ * always visibly flips the UI (and pins an explicit choice from then on).
+ */
+export function toggledThemeMode(current: 'light' | 'dark'): ThemeMode {
+  return current === 'dark' ? 'light' : 'dark';
+}
+
 /** Format an ISO 'YYYY-MM-DD' as a short human date, e.g. "18 Sep 2026". */
 export function formatExamDate(iso: string): string {
-  const d = new Date(iso + 'T00:00:00');
-  return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+  return dateFromIso(iso).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
 }
 
 /** Today as 'YYYY-MM-DD' in local time. */
@@ -98,9 +118,44 @@ export function todayIso(now = new Date()): string {
   return `${y}-${m}-${d}`;
 }
 
+/** A Date as 'YYYY-MM-DD', read from its local date parts (never UTC). */
+export function isoFromDate(d: Date): string {
+  return todayIso(d);
+}
+
+/**
+ * Parse 'YYYY-MM-DD' into a Date at local midnight. Built from the parts
+ * rather than parsed as a string, so no engine can read it as UTC and land on
+ * the previous day for anyone west of Greenwich.
+ */
+export function dateFromIso(iso: string): Date {
+  const [y, m, d] = iso.split('-').map(Number);
+  return new Date(y, m - 1, d);
+}
+
+/**
+ * Earliest day the date picker offers: today, or the stored date if that has
+ * already passed — so a past exam still shows as itself rather than being
+ * clamped to today the moment the picker opens. ISO strings sort as dates.
+ */
+export function pickerMinIso(value: string | null, today = todayIso()): string {
+  return value && value < today ? value : today;
+}
+
+/**
+ * Whether a typed date is a real, plausible exam day. The web date input
+ * reports every keystroke while a year is being typed ("0002-06-01"), and
+ * each would otherwise be stored and synced.
+ */
+export function isPlausibleExamIso(iso: string, min: string): boolean {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(iso) || iso < min) return false;
+  const d = dateFromIso(iso);
+  return isoFromDate(d) === iso && d.getFullYear() < 2100;
+}
+
 /** Shift an ISO date by whole days, returning a new ISO date. */
 export function shiftIso(iso: string, days: number): string {
-  const d = new Date(iso + 'T00:00:00');
+  const d = dateFromIso(iso);
   d.setDate(d.getDate() + days);
   return todayIso(d);
 }
@@ -109,12 +164,17 @@ export function shiftIso(iso: string, days: number): string {
  * Whole days from now until an ISO exam date, at day granularity (the time of
  * day is ignored, so "the exam is today" reads as 0). Negative once past.
  * Matches the study planner's own day maths so the two never disagree.
+ *
+ * Both days are compared as UTC calendar dates: a span across a DST change
+ * holds a 23- or 25-hour local day, which would knock a millisecond diff of
+ * local midnights off by one.
  */
 export function daysUntil(iso: string, now = Date.now()): number {
-  const exam = new Date(iso + 'T00:00:00').getTime();
+  const [y, m, d] = iso.split('-').map(Number);
   const t = new Date(now);
-  const todayMidnight = new Date(t.getFullYear(), t.getMonth(), t.getDate()).getTime();
-  return Math.floor((exam - todayMidnight) / 86_400_000);
+  const exam = Date.UTC(y, m - 1, d);
+  const today = Date.UTC(t.getFullYear(), t.getMonth(), t.getDate());
+  return Math.round((exam - today) / 86_400_000);
 }
 
 export const EXAM_LABELS: Record<Exam, string> = {

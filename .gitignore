@@ -43,3 +43,17 @@ yarn-error.*
 # test + tooling
 coverage/
 .vitest/
+.vercel
+scripts/sources/
+.e2e-accounts.local
+
+# Official exam papers: source PDFs and their transcriptions stay local (public repo).
+# Transcriptions are served to signed-in users from Supabase instead.
+data-from-past-tests-pdf/
+content-private/
+
+# Supabase CLI state (project link, versions)
+supabase/.temp/
+
+# Learner's own writing material (own answers, classmates' texts, course papers): local only.
+more data for reference/

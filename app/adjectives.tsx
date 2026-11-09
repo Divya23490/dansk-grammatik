@@ -1,26 +1,31 @@
 import React, { useCallback, useState } from 'react';
-import { useActivity } from '../src/profile/activity';
-import { Pressable, View } from 'react-native';
+import { View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { ADJECTIVE_RULES } from '../src/grammar/adjectiveRules';
 import type { AdjectiveQuestion } from '../src/grammar/adjectiveExercise';
 import {
   adjectiveRuleProgress,
+  adjectiveQuestionLevel,
   nextAdjectiveQuestion,
   summarizeAdjectives,
   useAdjectiveProfile,
 } from '../src/profile/adjectiveStore';
-import { Screen } from '../src/ui/Screen';
-import { Button, Card, Label, StrengthBar, Txt, s } from '../src/ui/primitives';
+import { ChoiceQuestion } from '../src/ui/ChoiceQuestion';
+import { TrainerScreen } from '../src/ui/RulesPane';
+import { StrengthBar, Txt, s } from '../src/ui/primitives';
 import { useTheme } from '../src/ui/theme';
+import { levelLabel } from '../src/profile/mastery';
+import { currentLevelNow } from '../src/profile/levelStore';
+import { LevelUpNotice } from '../src/ui/LevelBadge';
 
 /**
  * The adjective-agreement trainer.
  *
  * Deliberately built as a near-twin of nouns.tsx rather than a generalised
- * "multiple choice trainer" component shared between them. The two screens
- * happen to look alike today because both domains happen to need three
- * multiple-choice rules right now — that is a coincidence of content, not a
+ * trainer shared between them; only the question itself (ChoiceQuestion, the
+ * typed answer box) is shared. The two screens happen to look alike today
+ * because both domains happen to need three typed-form rules right now —
+ * that is a coincidence of content, not a
  * structural fact the code should bet on. A forced shared abstraction would
  * need to bend the moment one domain needs a fourth rule, a different input
  * shape, or per-item (not per-rule) mastery, and untangling a premature
@@ -33,7 +38,9 @@ export default function Adjectives() {
   const stats = useAdjectiveProfile((st) => st.stats);
   const record = useAdjectiveProfile((st) => st.record);
 
-  const [question, setQuestion] = useState<AdjectiveQuestion>(() => nextAdjectiveQuestion(stats));
+  const [question, setQuestion] = useState<AdjectiveQuestion>(() =>
+    nextAdjectiveQuestion(stats, undefined, Date.now(), currentLevelNow('adjectives')),
+  );
   const [picked, setPicked] = useState<number | null>(null);
 
   const progress = adjectiveRuleProgress(stats);
@@ -43,14 +50,18 @@ export default function Adjectives() {
     (i: number) => {
       if (picked !== null) return;
       setPicked(i);
-      record(question.ruleId, i === question.correctIndex);
-      useActivity.getState().markToday();
+      record(question.ruleId, i === question.correctIndex, { id: question.adjective.id, level: adjectiveQuestionLevel(question) });
     },
     [picked, question, record],
   );
 
   const advance = useCallback(() => {
-    const nxt = nextAdjectiveQuestion(useAdjectiveProfile.getState().stats, question.adjective.id);
+    const nxt = nextAdjectiveQuestion(
+      useAdjectiveProfile.getState().stats,
+      question.adjective.id,
+      Date.now(),
+      currentLevelNow('adjectives'),
+    );
     setQuestion(nxt);
     setPicked(null);
   }, [question.adjective.id]);
@@ -58,7 +69,9 @@ export default function Adjectives() {
   const rule = ADJECTIVE_RULES[question.ruleId];
 
   return (
-    <Screen
+    <TrainerScreen
+      rules={Object.values(ADJECTIVE_RULES)}
+      activeRuleId={question.ruleId}
       contentContainerStyle={{
         padding: t.space(4),
         paddingBottom: insets.bottom + t.space(8),
@@ -75,15 +88,16 @@ export default function Adjectives() {
         </Txt>
       </View>
 
-      <View style={{ gap: t.space(2) }}>
+      {/* One bar per rule; side by side when there is room, so the question stays on screen. */}
+      <View style={{ flexDirection: 'row', flexWrap: 'wrap', columnGap: t.space(6), rowGap: t.space(2) }}>
         {progress.map((p) => (
-          <View key={p.id} style={{ gap: t.space(1) }}>
+          <View key={p.id} style={{ gap: t.space(1), flexGrow: 1, flexBasis: 220 }}>
             <View style={s.rowBetween}>
               <Txt variant="body" color={t.c.textMuted} style={{ fontSize: 13 }}>
                 {ADJECTIVE_RULES[p.id].da}
               </Txt>
               <Txt variant="label" color={t.c.textFaint}>
-                {p.level.toUpperCase()}
+                {levelLabel(p.level)}
               </Txt>
             </View>
             <StrengthBar
@@ -94,68 +108,20 @@ export default function Adjectives() {
         ))}
       </View>
 
-      <Card tone="sunken">
-        <Label>{rule.da}</Label>
-        <Txt variant="title" style={{ marginTop: t.space(2) }}>
-          {question.prompt}
-        </Txt>
-      </Card>
+      <LevelUpNotice domain="adjectives" />
 
-      <View style={{ gap: t.space(2.5) }}>
-        {question.options.map((opt, i) => {
-          const isCorrect = i === question.correctIndex;
-          const isPicked = i === picked;
-          const revealed = picked !== null;
-
-          const bg = !revealed
-            ? t.c.surface
-            : isCorrect
-              ? t.c.successSoft
-              : isPicked
-                ? t.c.accentSoft
-                : t.c.surface;
-          const border = !revealed
-            ? t.c.border
-            : isCorrect
-              ? t.c.success
-              : isPicked
-                ? t.c.accent
-                : t.c.border;
-
-          return (
-            <Pressable key={i} onPress={() => choose(i)} disabled={revealed}>
-              <View
-                style={{
-                  backgroundColor: bg,
-                  borderWidth: 1.5,
-                  borderColor: border,
-                  borderRadius: t.radius.md,
-                  paddingVertical: t.space(3.5),
-                  paddingHorizontal: t.space(4),
-                }}
-              >
-                <Txt variant="heading" color={revealed && isCorrect ? t.c.success : t.c.text}>
-                  {opt}
-                </Txt>
-              </View>
-            </Pressable>
-          );
-        })}
-      </View>
-
-      {picked !== null ? (
-        <View style={{ gap: t.space(3) }}>
-          <Card tone={picked === question.correctIndex ? 'success' : 'warning'}>
-            <Label color={picked === question.correctIndex ? t.c.success : t.c.warning}>
-              {picked === question.correctIndex ? 'Correct' : 'Not quite'}
-            </Label>
-            <Txt variant="body" style={{ marginTop: t.space(2), lineHeight: 22 }}>
-              {question.explanation}
-            </Txt>
-          </Card>
-          <Button label="Next" onPress={advance} />
-        </View>
-      ) : null}
-    </Screen>
+      <ChoiceQuestion
+        label={rule.da}
+        level={adjectiveQuestionLevel(question)}
+        prompt={question.prompt}
+        options={question.options}
+        correctIndex={question.correctIndex}
+        picked={picked}
+        onChoose={choose}
+        explanation={question.explanation}
+        explanationEn={question.explanationEn}
+        onNext={advance}
+      />
+    </TrainerScreen>
   );
 }

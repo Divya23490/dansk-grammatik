@@ -25,7 +25,18 @@ Three commitments follow from that:
 
 ## What works today
 
-- **Sætningsskema trainer** — tap-to-place word ordering across both clause
+- **Grammar path** (the landing tab) — all 102 grammar rules in the app, from
+  every trainer and drill, in one learning order: four worlds on the niveau
+  scale, themed units of at most eight lessons, a checkpoint per unit.
+  Lessons open one after another; a lesson can build on lessons elsewhere and
+  then mixes in two review questions on them. 6 of 8 passes a lesson (7 and 8
+  earn the second and third star); a unit's checkpoint (10 of 12) doubles as a
+  test-out. A passed lesson whose mastery has faded shows a crack and asks for
+  a five-question repair. The **rule book** (`/rules`) lists every rule in path
+  order, searchable, and every rule card opens from it, locked or not. The
+  order lives in `src/path/curriculum.ts`; free practice in the trainers stays
+  open to everyone.
+- **Sætningsskema trainer** — tap or type each word into its field, across both clause
   topologies, with a live preview reading your arrangement back as a sentence.
   Includes complex sentences: double objects with fixed receiver-then-thing
   order, three-way stacked adverbials (manner/place/time), and "som" relative
@@ -59,27 +70,41 @@ Three commitments follow from that:
   Fordele/Ulemper, Holdning).
 - **Ordforråd (vocabulary flashcards)** — 35 hard words and discourse
   connectors pulled from the real corpus above, each carrying the actual
-  sentence it came from rather than a bare translation. Flip-and-self-grade,
-  with the same decaying-mastery model as the grammar map (`profile/mastery.ts`
-  is shared between the two) — a word "known" once and never revisited fades
-  back to "needs review" instead of a false permanent green checkmark.
+  sentence it came from rather than a bare translation. Three card modes:
+  Danish → English, English → Danish, and gap-fill (put the word back into one
+  of its own sentences, in the form the sentence uses, by tapping or typing).
+  Grade a card *Again / Hard / Good* with the buttons, by swiping (right/left),
+  or on the web with the keys (space flips; ←/1, ↓/2, →/3 grade). Hear the word
+  read aloud, redo just the missed cards at the end of a round, and track a
+  daily goal (10–50 cards, counted from the progress log). Same decaying-mastery
+  model as the grammar map (`profile/mastery.ts` is shared between the two) — a
+  word "known" once and never revisited fades back to "needs review" instead of
+  a false permanent green checkmark.
+- **My sets (your own vocabulary)** — select a word or phrase in any reading
+  text (web) and choose **＋ Add to set** to file it, with the sentence it came
+  from, into a set of your own. A word the deck already has (in any of its
+  forms) links to that card and shares its progress; anything else becomes your
+  own card, with an English meaning suggested by DeepL from the sentence
+  (editable, never overwriting what you type). Sets are practised in the same
+  flashcard trainer (Vocabulary → *My sets*), never move your vocab niveau, and
+  sync to your account. On a phone, words are added from the set's own screen —
+  React Native text has no selection events to hook a menu into.
 - **Responsive web build** — content is capped at a comfortable reading width
   and centered, so the same screens that were designed at phone width don't
   stretch edge-to-edge on a desktop browser. `npm run build:web` produces a
   fully static export deployable to any static host.
-- **En-ord og et-ord (gender & double definiteness)** — multiple-choice, not
-  tap-to-place, because gender is a lexical fact to recognise rather than a
-  position to arrange. Three rules (en/et gender, the definite suffix,
-  double definiteness), each wrong option the specific mistake that noun
-  invites rather than an arbitrary distractor, mastery tracked per rule via
+- **En-ord og et-ord (gender & double definiteness)** — pick or type the form
+  ("en", "manden", "den unge mand") rather than arrange words, because gender is a
+  lexical fact to produce, not a position to arrange. Three rules (en/et gender, the definite suffix,
+  double definiteness), each wrong form the question knows about the specific
+  mistake that noun invites, mastery tracked per rule via
   the same shared `mastery.ts`.
-- **Adjektivets former (adjective agreement)** — the same multiple-choice
+- **Adjektivets former (adjective agreement)** — the same question
   shape, one level up: base form before an en-word, -t before an et-word, -e
   for every plural or definite phrase regardless of gender. Distractors are
   built by deduping an adjective's three real forms against whichever is
   correct, so the two deliberately irregular entries ("dansk", "lille")
-  produce a clean two-option question instead of two identical buttons —
-  no special-casing needed.
+  produce a clean two-form question — no special-casing needed.
 - **Datid og førnutid (tense)** — three rules that are genuinely different in
   kind, not just in vocabulary: the weak -ede/-te suffix choice (a leaky
   phonological pattern), strong-verb forms (pure memorisation, the verb
@@ -90,8 +115,9 @@ Three commitments follow from that:
 - **Kommaregler (comma rules)** — a different shape from every other module:
   a comma decision depends on the structure of a whole sentence, not a
   property of one word, so there is no per-word generator — the exercise
-  bank is hand-written correct/incorrect sentence pairs, and the options
-  shown are full sentences rather than single words. Scoped to three rules
+  bank is hand-written correct/incorrect sentence pairs, and the learner
+  picks the correctly punctuated sentence or, typing, puts the commas back into
+  the bare sentence. Scoped to three rules
   that are genuinely unambiguous (comma before "men" but never before "og";
   no comma before the final item in a list; commas around a non-defining
   relative clause). The contested "startkomma" — optional under the modern
@@ -124,7 +150,7 @@ Three commitments follow from that:
   are tagged FVU rather than pretending the full sætningsskema is FVU-level —
   the picker's own copy says as much, and a regression guard keeps every
   offered exam, FVU included, from ever dimming the whole map to a dead-end.
-- **App-wide "widest gap"** — the home screen's headline recommendation rolls
+- **App-wide "widest gap"** — the Today tab's headline recommendation rolls
   up every trainer, not just the word-order map. A learner solid on word order
   but shaky on verbs is now pointed at verbs, not told "you're doing great"
   and handed a word-order card that isn't their real gap. `profile/overview.ts`
@@ -133,7 +159,7 @@ Three commitments follow from that:
   so per-word vocabulary doesn't drown out the per-rule trainers. The headline
   card keeps its rich per-rule detail when word order *is* the priority, and
   hands off to the right trainer when it isn't.
-- **Exam study plan** — set your exam date and the home screen turns the
+- **Exam study plan** — set your exam date and the Today tab turns the
   cross-domain roll-up into a paced, time-bound plan: a countdown, and a
   readiness band (on-track / tight / behind / ready) with a message whose
   maths the learner can check — things not yet solid ÷ weeks left. Two
@@ -152,24 +178,37 @@ Three commitments follow from that:
   so it never flashes for a returning user), with a first-class "just show me
   everything" for people not sitting a specific exam. Same honesty as the
   settings screen: it tailors order, hides nothing, changeable anytime.
+- **Accounts that sync** — progress belongs to a signed-in account
+  (Supabase: email + password), so it follows the learner to any device and
+  survives a cleared browser. The web build is still fully static; the app
+  talks to Supabase directly, and row-level security keeps every user to
+  their own rows. See *Accounts and progress* below.
+- **Niveau 1–5, beginner to PD3** — every exercise carries a niveau, shown on
+  its card. Each trainer serves material up to the learner's niveau and moves
+  them up after 20 answers at 80% right. See *Content* below.
 - **Shareable static build** — `npm run build:web` produces a self-contained
-  `dist/` with no backend and no login; each person's progress lives in their
-  own browser, which is exactly right for handing one URL to many people.
-  `public/_redirects` + `public/vercel.json` ship SPA fallback so deep links
-  and refreshes survive on any static host.
+  `dist/`. `vercel.json` (and `public/_redirects` for Netlify) ship the SPA
+  fallback so deep links and refreshes survive.
 
 ## Architecture
 
 ```
 app/                       expo-router screens
-  index.tsx                home: grammar map + module links
+  _layout.tsx              root Stack: fonts, onboarding gate, trainers push over the tabs
+  (tabs)/_layout.tsx       bottom tabs: Today · Practise · Exam · Progress
+  (tabs)/index.tsx         Today: exam countdown + the one thing to do next
+  (tabs)/practise.tsx      every trainer, grouped by skill, with mastery bars
+  (tabs)/exam.tsx          exam guide + oral topics + writing practice
+  (tabs)/progress.tsx      overall mastery, streak, per trainer, grammar map
   train.tsx                the schema trainer
   write.tsx                writing studio
-  vocab.tsx                vocabulary flashcards
+  vocab.tsx                vocabulary flashcards (the deck, or your own sets)
+  sets/index.tsx           your vocabulary sets
+  sets/[id].tsx            one set: its words, practise, add / edit / remove
   nouns.tsx                en/et gender & double-definiteness trainer
   adjectives.tsx           adjective agreement trainer
   verbs.tsx                tense trainer (weak suffix, strong verbs, er/har)
-  comma.tsx                comma trainer (full-sentence multiple choice)
+  comma.tsx                comma trainer (put the commas back in a sentence)
   spelling.tsx             FVU spelling trainer (silent d, silent h, nogen/nogle)
   settings.tsx             exam-target picker (bias, not a filter)
   rule/[id].tsx            rule card
@@ -187,24 +226,31 @@ src/
     commaRules.ts               comma rule catalogue
     spellingRules.ts              FVU spelling rule catalogue
     analyze.ts              diagnostic engine (word order)
-    nounExercise.ts          multiple-choice question builder (nouns)
-    adjectiveExercise.ts      multiple-choice question builder (adjectives)
-    verbExercise.ts            multiple-choice question builder (verbs)
+    nounExercise.ts          question builder (nouns)
+    adjectiveExercise.ts      question builder (adjectives)
+    verbExercise.ts            question builder (verbs)
+    typedAnswer.ts           grades typed answers: option match, comma sentence, schema fields → tokens
     commaExercise.ts             packages a comma-example entry into a question
     spellingExercise.ts            packages a spelling-example entry into a question
     types.ts
   content/
-    exercises.ts           PD3 sentence bank (schema trainer)
-    nouns.ts                noun bank with hand-verified definite/wrong forms
+    levels.ts              the niveau 1–5 scale and the level-aware pool picker
+    data/*.json            the drafted banks (and verbs.json, imported — see below)
+    exercises.ts           sentence bank (schema trainer): hand-written + data/exercises.json
+    compact.ts               one-line authoring format for sentence exercises
+    nouns.ts                noun bank: hand-written + data/nouns.json
     adjectives.ts             adjective bank (base/-t/-e forms)
-    verbs.ts                   verb bank (weak/strong, past + participle + aux)
-    commaExamples.ts             hand-written correct/incorrect sentence pairs
-    spellingExamples.ts            hand-written fill-in-the-blank word pairs
+    verbs.ts                   500 verbs: data/verbs.json (forms) + data/verbs.meta.json (gloss, niveau)
+    commaExamples.ts             correct/incorrect sentence pairs
+    spellingExamples.ts            fill-in-the-blank word pairs
+    retired.ts                 retired ids and renamed rules (never reuse an id)
+    content-ids.lock.json      every id that has ever shipped
     topics.ts               oral-exam archive: TOPICS, OFFICIAL_SESSIONS, PRACTICE_TOPICS
     vocabulary.ts            hard-word bank, each entry traced to a real sentence
   profile/
     mastery.ts              shared decay/leveling math (all seven domains below)
-    store.ts                grammar learner model (zustand + AsyncStorage)
+    store.ts                grammar learner model (a view of the progress log)
+    levelStore.ts            niveau climb per trainer
     vocabStore.ts            vocabulary learner model, same mastery math
     nounStore.ts             noun-rule learner model, same mastery math
     adjectiveStore.ts         adjective-rule learner model, same mastery math
@@ -214,24 +260,69 @@ src/
     settings.ts                     target-exam preference + exam date (persisted); shared day-maths
     overview.ts                      cross-domain roll-up — the app-wide "widest gap"
     studyplan.ts                     exam date + roll-up → paced, honest readiness plan
+  vocabSets/
+    store.ts               your sets and their words; tombstones, newer-wins merge
+    sync.ts                pull / upload, as for reading-paper attempts
+    match.ts               deck lookup by any form, phrase tidying, sentence cutting
+    cards.ts               set words as flashcards (the deck's card, or your own)
+    gloss.ts               suggested English meaning, from the `gloss` function
+  sync/
+    types.ts               progress events and baselines
+    replay.ts              rebuilds all progress from the log (pure)
+    log.ts                 the signed-in user's log on this device; publishes into the stores
+    sync.ts                pull / upload / profile, retried until it succeeds
+    remote.ts              the Supabase tables, behind a small interface
+    legacy.ts              moves pre-account device progress into the first account
+  auth/
+    supabase.ts, session.ts  client, sign-in state, account actions
   feedback/
     types.ts               provider contract
     offlineRules.ts        deterministic checker
     claudeCoach.ts          AI coach — interface complete, transport stubbed
   ui/
+    SignIn.tsx               sign-in / create-account gate
     Onboarding.tsx           first-open "which exam?" welcome (shown once)
+    LevelBadge.tsx           "Niveau 3 · B1" badge and the level-up notice
     Screen.tsx              max-width wrapper — the phone→web responsive seam
+    exam/SelectionCapture.web.tsx  select text in a reading paper → "Add to set"
+    exam/Explanation.tsx     why an answer is right and the others wrong (DA/EN)
+    vocab/AddToSetSheet.tsx  add / edit a set word (deck match, meaning, set)
+    FlipCard.tsx             animated two-sided card (flashcards)
+    vocab/GapFill.tsx        gap-fill vocab card (tap or type)
+    vocab/SwipeToGrade.tsx   swipe a flashcard right/left to grade it
+    vocab/useCardKeys.ts     web keyboard shortcuts for the flashcards
+    vocab/SpeakButton.tsx    Danish read-aloud (expo-speech)
+    vocab/DailyGoal.tsx      today's cards against the daily goal
+    Snackbar.tsx             short confirmation with Undo
+supabase/
+  migrations/              numbered, additive-only schema changes
+  functions/gloss/         Edge Function: DeepL meaning for a picked-out word
     theme.ts, primitives.tsx, SchemaBoard.tsx
 ```
 
 Key design decisions and their rationale live in the header comment of each
 module.
 
-### Tap-to-place, not drag-and-drop
+### Tap or type, never drag
 
-Dragging a word across seven narrow targets on a 390pt screen is a dexterity
-test, not a grammar test, and it is unusable with a screen reader. Tap the word,
-tap its field.
+Every grammar exercise can be answered two ways, chosen in Settings ("Answering
+exercises") or with the link under each exercise. **Auto**, the default, taps
+where the exercise has a narrow layout (a phone) and types where it lays out
+wide (a desktop). Tapping: tap a word, then its field, or tap one of the
+options — quick on a phone, where the keyboard would cover half the board.
+Typing: each schema field is a text box, and other questions take the missing
+form in a box (drills and spelling list the candidate words, since their
+prompts don't name them) or, for commas, the comma-less sentence to fix — closer
+to the exam, and quick with a keyboard. `src/grammar/typedAnswer.ts` matches
+what was typed back to an option or to the board's tokens — case and spacing
+forgiven, æ/ø/å never folded — so grading, mastery and the stored events are the
+same either way. Never drag: moving a word across seven narrow targets on a
+390pt screen is a dexterity test, not a grammar test, and it is unusable with a
+screen reader.
+
+On a wide screen the schema board is drawn as the textbook's columns (wrapping
+to two lines when the columns would be too narrow) and a question sits beside
+its feedback, so the task, the answer and the explanation fit on one screen.
 
 ### The Forfelt accepts two words
 
@@ -270,6 +361,148 @@ deployable as-is to Netlify, Vercel, GitHub Pages, S3, or any static host.
 `npm run serve:web` serves that build locally to sanity-check it before
 deploying.
 
+### Analytics
+
+The production web build reports page views to Vercel Web Analytics
+(cookieless; enabled on the project's Analytics tab). `src/analytics/` loads
+Vercel's script from `/_vercel/insights/script.js` and sends one page view per
+screen under its route pattern (`/sets/[id]`, not one page per set), with query
+strings and `#` fragments removed so sign-in tokens never leave the browser.
+It is off in development and on iOS/Android. The `@vercel/analytics` package
+isn't used: its optional SvelteKit peers conflict with Vitest's Vite, and its
+build-time config comes from an env var that Metro doesn't inline.
+
+## Accounts and progress
+
+Progress is an **append-only log of events** — every answer, every niveau set
+by hand, every reset — and every stat, niveau, streak day and "seen" list is
+derived by replaying it (`src/sync/replay.ts`). Consequences:
+
+- **Two devices never overwrite each other.** They only add events; events
+  carry a client-made uuid, so a retried upload is a no-op.
+- **Works offline.** Answers are recorded locally first and uploaded later.
+- **Changing the mastery or niveau math loses nothing**: replay the same log.
+- **Two people on one browser stay separate**: each user's log is saved under
+  its own key.
+- **Progress from before accounts is kept**: the first account that signs in
+  on a device takes over that device's old saves as a starting baseline
+  (`src/sync/legacy.ts`). The old saves are never deleted.
+
+Grammar-path results go into the same log: a finished lesson or checkpoint is
+an `answer` event in the `path` domain, `itemId` the lesson or checkpoint id,
+`outcomes` its questions. Older app versions skip that domain, and no database
+change was needed. Each question in it is also logged in its own trainer's
+domain as it is answered, so path practice counts towards mastery and niveau.
+
+### Setting up Supabase (once)
+
+1. Create a project at supabase.com (the free plan needs no card).
+2. In the SQL editor, run `supabase/migrations/0001_init.sql`.
+3. Authentication → Sign In / Providers → Email: turn **Confirm email** off
+   (the built-in sender is limited to a few emails an hour; set up custom SMTP
+   before turning it back on).
+4. Put the project URL and publishable key in `.env.local` (and in the Vercel
+   project's environment variables):
+
+   ```
+   EXPO_PUBLIC_SUPABASE_URL=https://<project>.supabase.co
+   EXPO_PUBLIC_SUPABASE_PUBLISHABLE_KEY=<publishable or anon key>
+   ```
+
+   Both are public by design; row-level security is what protects the data.
+
+Schema changes go in a new numbered file in `supabase/migrations/` and only
+ever **add** — never drop or rewrite a column progress lives in.
+
+### Reading papers (official PD3 papers)
+
+The official reading papers are not in this repo or the app bundle; they are
+served from Supabase to signed-in users only. To set them up:
+
+1. In the SQL editor, run `supabase/migrations/0002_exam.sql` (the
+   `exam_papers` and `exam_attempts` tables).
+2. Add the project's **secret** key to `.env.local` — server-side only, never
+   with an `EXPO_PUBLIC_` prefix, never in Vercel:
+
+   ```
+   SUPABASE_SECRET_KEY=<secret / service-role key>
+   ```
+
+3. With the transcribed papers in `content-private/exams/` (gitignored), run
+   `npm run exam:upload`. It validates every paper, then uploads the ones that
+   changed.
+
+Every paper, official or simulated, also carries a Danish and English
+explanation for each item: why the key is right (with a quote from the text)
+and why each wrong option is wrong (`why` / `whyNot` in
+`src/content/exams/types.ts`). The content tests require them for every item
+and check each quote against the text (`src/content/exams/explanations.ts`).
+After a handed-in attempt, "Review with the text" shows the paper with your
+answers, the key and these explanations side by side.
+
+Simulated papers ship with the app (`src/content/exams/simulated/`) and need
+none of this.
+
+### Writing prep (official tasks and learner samples)
+
+Tips, templates, graded examples and simulated tasks ship with the app
+(`src/content/writing/`, all written for it and labelled illustrative). Past
+official writing tasks and real learner texts are private. Every task, simulated
+or official, can carry its own tips, word bank and graded ladder; an official
+task's ladder lives in its JSON (`examples`), so it stays private too:
+
+1. In the SQL editor, run `supabase/migrations/0004_writing.sql` (the
+   `writing_items` table). Official tasks are readable by any signed-in user;
+   learner samples only by their `owner`.
+2. In `.env.local`, next to `SUPABASE_SECRET_KEY`, set the account that may
+   read the learner samples (without it they are skipped):
+
+   ```
+   WRITING_SAMPLES_OWNER=<app account e-mail>
+   ```
+
+3. With the items in `content-private/writing/` (gitignored), run
+   `npm run writing:upload`. It validates everything, then uploads what changed.
+
+### Vocabulary sets and suggested meanings
+
+1. In the SQL editor, run `supabase/migrations/0003_vocab_sets.sql` (the
+   `vocab_sets` and `vocab_set_items` tables). Until then sets are kept on
+   the device and their upload quietly retries.
+2. For the suggested English meanings, deploy the `gloss` Edge Function with a
+   DeepL API key (the free tier is plenty; context characters aren't billed).
+   Run these in your own terminal — `supabase login` needs an interactive one:
+
+   ```
+   npx supabase login
+   npx supabase secrets set --project-ref <ref> DEEPL_API_KEY=<key>
+   npx supabase functions deploy gloss --project-ref <ref>
+   ```
+
+   The key stays in Supabase; the function only answers signed-in users.
+   Without it, adding words still works — the meaning is just typed by hand.
+
+## Content
+
+Every bank item has a stable `id`, a `level` (niveau 1–5) and, for drafted
+content, `reviewed: false` until a person has checked the Danish.
+
+- **Adding items**: append to the bank (or its `data/*.json`), then run
+  `npm run content:lock` to accept the new ids. The tests check structure
+  (genders vs. suffixes, distractors, comma pairs that differ only in commas,
+  sentence solutions that grade as correct) and print each bank's size per
+  niveau and how much is still unreviewed.
+- **Changing an item**: keep its id for a fix; give it a new id if it becomes
+  a different item.
+- **Removing an item**: move its id to `RETIRED_IDS` in `retired.ts`. An id
+  is never reused. Renaming a rule: add it to `RULE_ALIASES`, and stored
+  stats move to the new name.
+- **Verbs** are imported from basby.dk's *500 most common verbs in Danish*:
+  `node scripts/import-verbs.mjs` regenerates `data/verbs.json`; glosses and
+  niveaus live in `data/verbs.meta.json`.
+- **Sentence exercises** are written in the compact format, e.g.
+  `"F:i går | v:gik | n:jeg | a:ikke | A:på arbejde"` (see `compact.ts`).
+
 ## Wiring up the AI writing coach
 
 `src/feedback/claudeCoach.ts` is complete except for the transport. It talks to
@@ -307,6 +540,23 @@ the two most recent sessions title-only, because those source sheets are
 picture prompts with no printed answer key; `PRACTICE_TOPICS` is clearly
 separated because it was written to match the exam's question pattern rather
 than transcribed from one, and every screen that shows it says so.
+
+The **reading papers** come in two kinds. Official PD3 papers (2015–2024) are
+transcribed from the learner's own copies of the SIRI exam booklets, with the
+censor booklets' answer keys and each session's point-to-grade table. Because
+this repo is public and the web build is a static bundle, the transcriptions
+live in a gitignored folder (`content-private/`) and are served from Supabase
+only to signed-in users; each paper is labelled with its session. Simulated
+papers (`src/content/exams/simulated/`) are written for the app in the current
+format, modelled on the official ones, and are labelled as simulated wherever
+they appear. sim-1–3 turned out easier than the official papers and are listed
+as warm-ups; sim-4 on are marked `level: 'exam'` and must stay within the
+official current-format papers' range on readability (LIX), question shape and
+answer cues: `npm run exam:difficulty` measures every paper against the
+official ones (when `content-private/` is present) and fails if an exam-level
+paper falls outside. A simulated paper's content never changes once shipped —
+attempts store answers by question position — so harder papers are added under
+new ids, never written over old ones.
 
 ## Roadmap
 

@@ -100,3 +100,41 @@ describe('clean text', () => {
     expect(checkText(text)).toHaveLength(0);
   });
 });
+
+describe('closed-list spelling', () => {
+  const one = (text: string) => {
+    const r = checkText(text);
+    expect(r).toHaveLength(1);
+    expect(r[0].severity).toBe('error');
+    expect(text.slice(r[0].start, r[0].end)).toBe(r[0].original);
+    return r[0];
+  };
+
+  it('corrects the learner’s recurring misspellings', () => {
+    expect(one('Mine kollegere er søde.').suggestion).toBe('kolleger');
+    expect(one('Min arbejdeplads er stor.').suggestion).toBe('arbejdsplads');
+    expect(one('På arbejdepladsen er der travlt.').suggestion).toBe('arbejdspladsen');
+    expect(one('Der er mange tinger at gøre.').suggestion).toBe('ting');
+    expect(one('Tak for dit svart.').suggestion).toBe('svar');
+  });
+
+  it('preserves an initial capital', () => {
+    expect(one('Kollegere er vigtige.').suggestion).toBe('Kolleger');
+    expect(one('Kan har du tid?').suggestion).toBe('Kan have');
+  });
+
+  it('puts the infinitive after a modal', () => {
+    for (const modal of ['kan', 'skal', 'vil', 'må', 'kunne', 'skulle', 'ville']) {
+      const c = one(`Jeg ${modal} har en hund.`);
+      expect(c.original).toBe(`${modal} har`);
+      expect(c.suggestion).toBe(`${modal} have`);
+    }
+  });
+
+  it('matches whole words only', () => {
+    expect(checkText('Mine kolleger og tingene er fine.')).toHaveLength(0);
+    expect(checkText('Svaret kom i går. Jeg har en svartrost.')).toHaveLength(0);
+    expect(checkText('Jeg kan have en hund, og han har en kat.')).toHaveLength(0);
+    expect(checkText('Vi skal harmonisere planen.')).toHaveLength(0);
+  });
+});

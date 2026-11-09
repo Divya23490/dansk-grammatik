@@ -6,59 +6,58 @@
  * total it no longer deserves.
  */
 
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import { create } from 'zustand';
-import { createJSONStorage, persist } from 'zustand/middleware';
-import { VOCABULARY } from '../content/vocabulary';
+import { MAX_LEVEL, poolForLevel, type Level } from '../content/levels';
+import { VOCABULARY, vocabById, type VocabCategory, type VocabEntry } from '../content/vocabulary';
 import {
-  applyOutcome,
   EMPTY_STAT,
   progressFor,
   type ItemProgress,
   type ItemStat,
 } from './mastery';
+import { recordAnswer, recordReset } from '../sync/bus';
 
 interface VocabState {
   stats: Record<string, ItemStat>;
   hydrated: boolean;
 
-  /** Learner self-grades recall after flipping the card: knew it or not. */
-  record: (wordId: string, knewIt: boolean) => void;
+  /**
+   * Learner self-grades recall after flipping the card: knew it or not.
+   * `ownSet`: practised from one of the learner's own sets, which counts
+   * toward the word but never moves the vocab niveau — the learner picked
+   * these words, so how they do on them says nothing about their level.
+   */
+  record: (wordId: string, knewIt: boolean, opts?: { ownSet?: boolean }) => void;
   reset: () => void;
 }
 
-export const useVocabProfile = create<VocabState>()(
-  persist(
-    (set) => ({
-      stats: {},
-      hydrated: false,
-
-      record: (wordId, knewIt) =>
-        set((state) => {
-          const prev = state.stats[wordId] ?? { ...EMPTY_STAT };
-          return { stats: { ...state.stats, [wordId]: applyOutcome(prev, knewIt) } };
-        }),
-
-      reset: () => set({ stats: {} }),
+/** Word mastery, derived from the progress log like every other domain (see sync/log.ts). */
+export const useVocabProfile = create<VocabState>()(() => ({
+  stats: {},
+  hydrated: true,
+  record: (wordId, knewIt, opts) =>
+    recordAnswer({
+      domain: 'vocab',
+      itemId: wordId,
+      level: opts?.ownSet ? null : (vocabById(wordId)?.level ?? null),
+      outcomes: { [wordId]: knewIt },
+      correct: knewIt,
     }),
-    {
-      name: 'skema-vocab-v1',
-      storage: createJSONStorage(() => AsyncStorage),
-      partialize: (s) => ({ stats: s.stats }),
-      onRehydrateStorage: () => (state) => {
-        if (state) state.hydrated = true;
-      },
-    },
-  ),
-);
+  reset: () => recordReset('vocab'),
+}));
 
 export type VocabProgress = ItemProgress<string>;
 
 export function vocabProgress(
   stats: Record<string, ItemStat>,
   now = Date.now(),
+  level: Level = MAX_LEVEL,
 ): VocabProgress[] {
-  return VOCABULARY.map((v) => progressFor(v.id, stats[v.id] ?? EMPTY_STAT, now));
+  // The deck is the words up to the learner's niveau — plus any word they have
+  // already practised, so progress never disappears from view.
+  return VOCABULARY.filter((v) => v.level <= level || stats[v.id]?.attempts).map((v) =>
+    progressFor(v.id, stats[v.id] ?? EMPTY_STAT, now),
+  );
 }
 
 export interface VocabSummary {
@@ -70,8 +69,9 @@ export interface VocabSummary {
 export function summarizeVocab(
   stats: Record<string, ItemStat>,
   now = Date.now(),
+  level: Level = MAX_LEVEL,
 ): VocabSummary {
-  const progress = vocabProgress(stats, now);
+  const progress = vocabProgress(stats, now, level);
   return {
     mastered: progress.filter((p) => p.level === 'mastered').length,
     total: progress.length,
@@ -83,20 +83,86 @@ export function summarizeVocab(
   };
 }
 
+/** The word types a session can draw from — every category the deck actually uses. */
+export const SESSION_CATEGORIES: VocabCategory[] = ['noun', 'verb', 'adjective', 'connector'];
+
+export interface NextWordOptions {
+  /** Draw only from these word types; empty or omitted means all of them. */
+  categories?: readonly VocabCategory[];
+  /** Ids already served this session — skipped until the filtered deck runs dry. */
+  exclude?: ReadonlySet<string>;
+  /**
+   * Ignore the niveau: draw from every level, weakest-first with no bias
+   * toward any one level — for drilling a whole word type, e.g. before the exam.
+   */
+  allLevels?: boolean;
+}
+
+/**
+ * How many words of each type a learner at `level` can be served — the same
+ * set `nextWord` draws from, counted without its random niveau split.
+ */
+export function countByCategory(level: Level = MAX_LEVEL): Record<VocabCategory, number> {
+  const counts: Record<VocabCategory, number> = { connector: 0, noun: 0, verb: 0, adjective: 0, phrase: 0 };
+  for (const v of VOCABULARY) if (v.level <= level) counts[v.category]++;
+  return counts;
+}
+
 /**
  * Next word to review: weakest-first among what's due, with a bias toward
  * words never seen at all so the deck doesn't stall on day one, and never the
  * card just answered.
+ *
+ * A session narrows the deck to its chosen word types and passes the ids it
+ * has already shown, so a round of 20 is 20 different words; only once every
+ * word of those types at this niveau has been seen do repeats come back.
  */
 export function nextWord(
   stats: Record<string, ItemStat>,
   lastWordId?: string,
   now = Date.now(),
-): (typeof VOCABULARY)[number] {
-  const progress = new Map(vocabProgress(stats, now).map((p) => [p.id, p]));
+  level: Level = MAX_LEVEL,
+  { categories, exclude, allLevels }: NextWordOptions = {},
+): VocabEntry {
+  if (allLevels) level = MAX_LEVEL;
+  // Filter before the niveau split, so the split never sees an empty pool:
+  // the chosen types at or below the niveau, then minus what's been shown.
+  const ofType = categories?.length ? VOCABULARY.filter((v) => categories.includes(v.category)) : VOCABULARY;
+  const deck = ofType.some((v) => v.level <= level) ? ofType : VOCABULARY;
+  const eligible = deck.filter((v) => v.level <= level);
+  const fresh = exclude?.size ? eligible.filter((v) => !exclude.has(v.id)) : eligible;
+  const candidates = fresh.length ? fresh : eligible.length ? eligible : deck;
+  // The niveau split favours the learner's own level; with every level open
+  // there's no level to favour, so weakness alone decides.
+  const pool = allLevels ? candidates : poolForLevel(candidates, level);
+  return pickWeakest(stats, pool, lastWordId, now);
+}
 
-  const scored = VOCABULARY.map((v) => {
-    const p = progress.get(v.id)!;
+/**
+ * Next card from a fixed pool — one of the learner's own sets — with no
+ * niveau split: weakest-first, unseen words first, never the card just
+ * answered, and nothing in `exclude` until the pool runs dry.
+ */
+export function nextFromPool<T extends { id: string }>(
+  stats: Record<string, ItemStat>,
+  pool: readonly T[],
+  lastWordId?: string,
+  now = Date.now(),
+  exclude?: ReadonlySet<string>,
+): T | null {
+  if (!pool.length) return null;
+  const fresh = exclude?.size ? pool.filter((v) => !exclude.has(v.id)) : pool;
+  return pickWeakest(stats, fresh.length ? fresh : pool, lastWordId, now);
+}
+
+function pickWeakest<T extends { id: string }>(
+  stats: Record<string, ItemStat>,
+  pool: readonly T[],
+  lastWordId: string | undefined,
+  now: number,
+): T {
+  const scored = pool.map((v) => {
+    const p = progressFor(v.id, stats[v.id] ?? EMPTY_STAT, now);
     const weakness = p.attempts ? 1 - p.strength : 0.6;
     const unseenBonus = p.attempts === 0 ? 0.3 : 0;
     const repeatPenalty = v.id === lastWordId ? -1 : 0;
