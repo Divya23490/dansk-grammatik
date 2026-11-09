@@ -285,6 +285,7 @@ src/
     LevelBadge.tsx           "Niveau 3 · B1" badge and the level-up notice
     Screen.tsx              max-width wrapper — the phone→web responsive seam
     exam/SelectionCapture.web.tsx  select text in a reading paper → "Add to set"
+    exam/Explanation.tsx     why an answer is right and the others wrong (DA/EN)
     vocab/AddToSetSheet.tsx  add / edit a set word (deck match, meaning, set)
     FlipCard.tsx             animated two-sided card (flashcards)
     vocab/GapFill.tsx        gap-fill vocab card (tap or type)
@@ -430,6 +431,14 @@ served from Supabase to signed-in users only. To set them up:
 3. With the transcribed papers in `content-private/exams/` (gitignored), run
    `npm run exam:upload`. It validates every paper, then uploads the ones that
    changed.
+
+Every paper, official or simulated, also carries a Danish and English
+explanation for each item: why the key is right (with a quote from the text)
+and why each wrong option is wrong (`why` / `whyNot` in
+`src/content/exams/types.ts`). The content tests require them for every item
+and check each quote against the text (`src/content/exams/explanations.ts`).
+After a handed-in attempt, "Review with the text" shows the paper with your
+answers, the key and these explanations side by side.
 
 Simulated papers ship with the app (`src/content/exams/simulated/`) and need
 none of this.
