@@ -102,6 +102,16 @@ export interface PracticeTask {
    * fitted to the topic. Falls back to the generic template where absent.
    */
   slots?: Record<string, TaskSlotGuide>;
+  /** 3–5 English tips for this exact task: traps in the wording, ideas, what to avoid. */
+  tips?: Tip[];
+  /** 10–15 useful Danish words and phrases for the topic, with English glosses. */
+  words?: Phrase[];
+  /**
+   * Graded example answers to this task. Used by private (official) tasks,
+   * whose examples travel with the task; public simulated tasks keep theirs
+   * in the GRADED_* arrays so their ids are locked.
+   */
+  examples?: GradedAnswer[];
   /** Link to the official PDF when public, for anything the transcription loses. */
   pdfUrl?: string;
 }

@@ -8,6 +8,7 @@ import {
   type LayoutChangeEvent,
 } from 'react-native';
 import { countWords, type GradedAnswer, type OfficialExample, type PracticeTask } from '../../content/writing';
+import type { ExampleGroup } from '../../writing/exampleGroups';
 import { Card, Label, Txt, s } from '../primitives';
 import { useTheme } from '../theme';
 import { AnnotatedText, NoteList } from './AnnotatedText';
@@ -29,17 +30,11 @@ const PANEL_WIDTH = 420;
  * columns are sized to the window and scroll on their own, so a tapped
  * highlight's note comes into view without scrolling the page.
  */
-export function ExamplesSplit({
-  ladder,
-  samples,
-  official,
-}: {
-  ladder: ExampleItem[];
-  samples: ExampleItem[];
-  official: OfficialExample[];
-}) {
+export function ExamplesSplit({ group, official }: { group: ExampleGroup; official: OfficialExample[] }) {
   const t = useTheme();
   const { height: winH } = useWindowDimensions();
+  const ladder: ExampleItem[] = group.ladder.map((answer) => ({ answer, task: group.task }));
+  const samples: ExampleItem[] = group.samples.map((answer) => ({ answer, task: group.task }));
   const all = [...ladder, ...samples];
   const [activeId, setActiveId] = useState(all[0]?.answer.id ?? null);
   const [sel, setSel] = useState<number | null>(null);
@@ -83,18 +78,20 @@ export function ExamplesSplit({
     <View ref={root} onLayout={measure} style={[s.row, { gap: t.space(4), height, alignItems: 'stretch' }]}>
       {/* Left: picker, task, answer */}
       <ScrollView ref={left} style={{ flex: 1 }} contentContainerStyle={{ gap: t.space(3), paddingBottom: t.space(6) }}>
-        <PickerGroup title="Illustrative ladder · written for this app, not official grades">
-          {ladder.map((x) => (
-            <Pill key={x.answer.id} item={x} on={x.answer.id === answer.id} onPress={() => pick(x.answer.id)} />
-          ))}
-        </PickerGroup>
+        {ladder.length ? (
+          <PickerGroup title="Illustrative ladder · written for this app, not official grades">
+            {ladder.map((x) => (
+              <Pill key={x.answer.id} item={x} on={x.answer.id === answer.id} onPress={() => pick(x.answer.id)} />
+            ))}
+          </PickerGroup>
+        ) : null}
         {samples.length ? (
           <PickerGroup title="Learner samples">
             {samples.map((x) => (
               <Pill
                 key={x.answer.id}
                 item={x}
-                label={x.task?.session ?? x.task?.title ?? x.answer.author}
+                label={x.answer.author}
                 on={x.answer.id === answer.id}
                 onPress={() => pick(x.answer.id)}
               />

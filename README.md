@@ -438,7 +438,9 @@ none of this.
 
 Tips, templates, graded examples and simulated tasks ship with the app
 (`src/content/writing/`, all written for it and labelled illustrative). Past
-official writing tasks and real learner texts are private:
+official writing tasks and real learner texts are private. Every task, simulated
+or official, can carry its own tips, word bank and graded ladder; an official
+task's ladder lives in its JSON (`examples`), so it stays private too:
 
 1. In the SQL editor, run `supabase/migrations/0004_writing.sql` (the
    `writing_items` table). Official tasks are readable by any signed-in user;

@@ -30,13 +30,25 @@ describe('sim-d1 tasks', () => {
 });
 
 describe('sim-d1 graded ladder', () => {
-  it('has four bands for task 1 with unique ids', () => {
-    expect(GRADED_D1.map((g) => g.id)).toEqual(['wgr-d1-1-12', 'wgr-d1-1-7', 'wgr-d1-1-4', 'wgr-d1-1-02']);
-    expect(GRADED_D1.map((g) => g.band)).toEqual(['12', '7', '4', '02']);
+  it('has four bands for every task with unique ids', () => {
+    const ids = SIM_TASKS_D1.flatMap((t) => ['12', '7', '4', '02'].map((b) => `wgr-${t.id.slice(5)}-${b}`));
+    expect(GRADED_D1.map((g) => g.id)).toEqual(ids);
+    for (const t of SIM_TASKS_D1) {
+      expect(GRADED_D1.filter((g) => g.taskId === t.id).map((g) => g.band)).toEqual(['12', '7', '4', '02']);
+    }
     for (const g of GRADED_D1) {
-      expect(g.taskId).toBe('wsim-d1-1');
+      expect(g.id.startsWith(`wgr-${g.taskId.slice(5)}-`)).toBe(true);
       expect(g.origin).toBe('illustrative');
       expect(g.criteria.map((c) => c.criterion)).toEqual(['task', 'pragmatic', 'linguistic']);
+    }
+  });
+
+  it('gives every task 3-5 tips and 10-15 words', () => {
+    for (const t of SIM_TASKS_D1) {
+      expect(t.tips?.length, t.id).toBeGreaterThanOrEqual(3);
+      expect(t.tips?.length, t.id).toBeLessThanOrEqual(5);
+      expect(t.words?.length, t.id).toBeGreaterThanOrEqual(10);
+      expect(t.words?.length, t.id).toBeLessThanOrEqual(15);
     }
   });
 

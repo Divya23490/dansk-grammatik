@@ -108,6 +108,44 @@ export const SIM_TASKS_D2B: PracticeTask[] = [
         ],
       },
     },
+    tips: [
+      {
+        title: 'Family or society: name the main one',
+        text: '"Vurdér, om det er familiens eller samfundets ansvar" is an either/or question. You may say the responsibility is shared, but then say who carries the main part and what each side does, e.g. "Familien skal holde kontakten, men kommunen skal sikre et sikkerhedsnet."',
+      },
+      {
+        title: 'The box gives you both sides',
+        text: 'Most statements are society solutions (gratis aktiviteter, bofællesskaber, unge på plejehjem), and one is a family duty (pligt til at besøge). Comment on one of each in bullet 2, and you already have arguments for both sides of the evaluation.',
+      },
+      {
+        title: 'No family nearby? Use your neighbourhood',
+        text: 'The experience bullet also allows "dit nærområde": a neighbour, an elderly colleague or someone in your building works just as well. If old people in your home country live with their children, that comparison is a strong argument later.',
+      },
+      {
+        title: 'Living alone is not the same as being lonely',
+        text: 'One sentence that separates "at bo alene" from "at føle sig ensom" shows nuance: many elderly people live alone happily, while others feel lonely even in a care home.',
+      },
+      {
+        title: '"Ældre" never changes',
+        text: 'Used as a noun it is always "ældre": "de ældre", "en ældre dame", "mange ældre". The only extra form is the genitive "de ældres behov".',
+      },
+    ],
+    words: [
+      { da: 'ensomhed blandt ældre', en: 'loneliness among the elderly' },
+      { da: 'at føle sig ensom', en: 'to feel lonely' },
+      { da: 'et plejehjem (plejehjem)', en: 'a care home (care homes)' },
+      { da: 'et bofællesskab', en: 'a shared housing community' },
+      { da: 'et spisefællesskab', en: 'a communal dining group' },
+      { da: 'en besøgsven', en: 'a volunteer visitor' },
+      { da: 'de pårørende', en: 'the relatives (of an elderly or ill person)' },
+      { da: 'et netværk', en: 'a (social) network' },
+      { da: 'et sikkerhedsnet', en: 'a safety net' },
+      { da: 'at holde kontakten med nogen', en: 'to keep in touch with someone' },
+      { da: 'at forebygge ensomhed', en: 'to prevent loneliness' },
+      { da: 'at have pligt til at …', en: 'to have a duty to …' },
+      { da: 'at tage ansvar for …', en: 'to take responsibility for …' },
+      { da: 'at blive overset', en: 'to be overlooked' },
+    ],
   },
   {
     id: 'wsim-d2b-2',
@@ -197,6 +235,45 @@ export const SIM_TASKS_D2B: PracticeTask[] = [
         ],
       },
     },
+    tips: [
+      {
+        title: '"Først og fremmest" means choose',
+        text: 'The evaluation asks who is mainly responsible, consumers or shops. Ending with only "begge har et ansvar" dodges the question; write "Begge kan gøre noget, men først og fremmest …" and give the reason.',
+      },
+      {
+        title: 'These are suggestions, not opinions',
+        text: 'The bullet says "Kommentér et eller to af forslagene", so judge them as proposals: would it work, who pays, what could go wrong? For example, paying per kilo of food waste could make some people throw rubbish in the wrong bin.',
+      },
+      {
+        title: '"Bedst før" is not "sidste anvendelsesdato"',
+        text: '"Bedst før" means the food is usually fine after the date; "sidste anvendelsesdato" (meat, fish) is about safety. Knowing the difference makes a comment on the label suggestion precise.',
+      },
+      {
+        title: 'Leave restaurants and schools out of the evaluation',
+        text: 'The box mentions restaurants and schools, but the evaluation is only about consumers versus shops. Use those suggestions in bullet 2, and keep the evaluation on the two parties it names.',
+      },
+      {
+        title: '"I din hverdag": habits plus one example',
+        text: 'For the experience you can use the present tense for habits ("Hver uge smider vi …") and add one past example ("Sidste weekend måtte jeg smide …").',
+      },
+    ],
+    words: [
+      { da: 'et madspild', en: 'food waste (the wasting)' },
+      { da: 'et madaffald', en: 'food waste (the rubbish)' },
+      { da: 'en husholdning (husholdninger)', en: 'a household (households)' },
+      { da: 'en forbruger (forbrugere)', en: 'a consumer (consumers)' },
+      { da: 'en overskudsvare (overskudsvarer)', en: 'a surplus product' },
+      { da: 'rester (en rest)', en: 'leftovers' },
+      { da: 'en holdbarhedsdato', en: 'an expiry date' },
+      { da: 'en mærkning', en: 'a label, labelling' },
+      { da: 'et tilbud', en: 'a special offer' },
+      { da: 'spiselig', en: 'edible' },
+      { da: 'at smide mad ud', en: 'to throw food away' },
+      { da: 'at gå til spilde', en: 'to go to waste' },
+      { da: 'at handle ind', en: 'to do the shopping' },
+      { da: 'at sætte prisen ned', en: 'to reduce the price' },
+      { da: 'at opbevare maden rigtigt', en: 'to store the food properly' },
+    ],
   },
   {
     id: 'wsim-d2b-3',
@@ -286,6 +363,45 @@ export const SIM_TASKS_D2B: PracticeTask[] = [
         ],
       },
     },
+    tips: [
+      {
+        title: 'Here pros and cons really are asked',
+        text: 'Unlike "Vurdér, om …", this bullet asks "Vurdér fordele og ulemper", so weigh both sides. You still need a position at the end: which side weighs more for you, and why.',
+      },
+      {
+        title: 'Cash, card and phone',
+        text: 'The experience bullet names three ways to pay. Mention at least two and why you use them, e.g. "Jeg betaler med MobilePay, men har altid en 200-kroneseddel i pungen."',
+      },
+      {
+        title: '"Helt uden kontanter" is the key',
+        text: 'The evaluation is not about whether card payment is nice, but about cash disappearing completely. The strongest arguments are about what happens then: people without a smartphone, power cuts and IT failures, and privacy.',
+      },
+      {
+        title: 'Don\'t argue the same statement twice',
+        text: 'The tax and hacker statements in the box are ready-made pro and con arguments. If you comment on one in bullet 2, refer back to it in the evaluation ("Som nævnt …") and add something new instead of repeating it.',
+      },
+      {
+        title: '"Kontanter" is plural',
+        text: '"Kontanter" only exists in the plural ("kontanterne forsvinder"), and "at betale kontant" is the adverb. There is no "et kontant".',
+      },
+    ],
+    words: [
+      { da: 'kontanter (pl.)', en: 'cash' },
+      { da: 'at betale kontant', en: 'to pay cash' },
+      { da: 'et betalingskort', en: 'a payment card' },
+      { da: 'en pengeseddel (pengesedler)', en: 'a banknote (banknotes)' },
+      { da: 'en mønt (mønter)', en: 'a coin (coins)' },
+      { da: 'en hæveautomat', en: 'a cash machine, ATM' },
+      { da: 'et nedbrud', en: 'a breakdown, an outage' },
+      { da: 'et hackerangreb', en: 'a cyber attack' },
+      { da: 'en strømafbrydelse', en: 'a power cut' },
+      { da: 'sort arbejde', en: 'undeclared work, cash-in-hand work' },
+      { da: 'at snyde med skat', en: 'to cheat on tax' },
+      { da: 'at spore en betaling', en: 'to trace a payment' },
+      { da: 'at bevare overblikket over sit forbrug', en: 'to keep track of your spending' },
+      { da: 'at blive holdt udenfor', en: 'to be left out' },
+      { da: 'sårbar over for', en: 'vulnerable to' },
+    ],
   },
 ];
 
@@ -603,6 +719,632 @@ export const GRADED_D2B: GradedAnswer[] = [
         quote: 'Tak for læsning.',
         kind: 'style',
         note: 'An essay ends with a summary of your view, not a thank-you. Try "Alt i alt mener jeg, at …".',
+      },
+    ],
+  },
+  {
+    id: 'wgr-d2b-2-12',
+    taskId: 'wsim-d2b-2',
+    band: '12',
+    origin: 'illustrative',
+    text: p(
+      'Madspild er et problem, som alle kender, men som få tænker over i supermarkedet.',
+      'Hjemme hos os gik det især ud over brødet. Vi købte et stort rugbrød hver lørdag, men det blev ofte muggent, før vi nåede at spise det hele. Nu fryser vi det ned i skiver, så intet går til spilde.',
+      'Jeg er enig i forslaget om, at man skal planlægge ugens måltider, før man handler ind. Det sparer både mad og penge, fordi man kun køber det, man faktisk skal bruge. Til gengæld er jeg skeptisk over for at afskaffe mærkningen "bedst før". Det er bedre at lære folk, at mange varer sagtens kan spises efter datoen.',
+      'Spørgsmålet er, om det først og fremmest er forbrugernes eller butikkernes ansvar at mindske madspild. Det taler for forbrugerne, at meget af spildet sker i private hjem. Det er os selv, der bestemmer, hvad vi køber, hvordan vi opbevarer det, og om vi spiser resterne. På den anden side lokker butikkerne os med tilbud som "tag tre, betal for to". Desuden kasserer supermarkederne selv store mængder varer, der stadig er spiselige.',
+      'Når jeg vejer argumenterne op imod hinanden, mener jeg, at butikkerne har det største ansvar. De bestemmer, hvad der bliver tilbudt og i hvilke mængder, og forbrugerne følger efter. Når en butik sætter prisen ned på varer med kort holdbarhed, bliver det nemt for kunderne at gøre det rigtige.',
+      'Alt i alt kan vi alle gøre noget, men det er først og fremmest butikkerne, der skal gå forrest.',
+    ),
+    summary:
+      'Top band: a short, concrete experience, two suggestions judged with reasons, and an evaluation of about half the text that weighs consumers against shops and picks a side, in precise, natural Danish.',
+    criteria: [
+      {
+        criterion: 'task',
+        comment:
+          'The experience is brief and concrete (the rye bread that "blev ofte muggent"). Two suggestions are named and judged: agree with planning the week\'s meals, sceptical of abolishing "bedst før", each with a reason. The evaluation, from "Spørgsmålet er" to the end, is about half the text, gives arguments for both consumers and shops and answers the either/or question: "butikkerne har det største ansvar".',
+      },
+      {
+        criterion: 'pragmatic',
+        comment:
+          'One paragraph per bullet, framed by an opening and a one-line conclusion. The evaluation is signposted ("Det taler for …", "På den anden side …", "Desuden …", "Når jeg vejer argumenterne op imod hinanden …") and ends by restating the position in new words ("skal gå forrest").',
+      },
+      {
+        criterion: 'linguistic',
+        comment:
+          'Precise topic vocabulary (går til spilde, kasserer, kort holdbarhed, spiselige) and idioms ("gik det især ud over", "gå forrest"). Word order is correct throughout, including inversion after fronted elements ("Nu skærer vi", "Til gengæld er jeg") and adverbs before the verb in subordinate clauses ("fordi man kun køber").',
+      },
+    ],
+    annotations: [
+      {
+        quote: 'Hjemme hos os gik det især ud over brødet.',
+        kind: 'good',
+        note: '"gå ud over" (to affect, to suffer) is idiomatic, and the fronted place adverbial correctly triggers inversion ("gik det").',
+        ruleId: 'v2-inversion',
+      },
+      {
+        quote: 'Til gengæld er jeg skeptisk over for at afskaffe mærkningen "bedst før".',
+        kind: 'good',
+        note: 'Names the second suggestion and takes a nuanced stand; "skeptisk over for" is the right preposition.',
+        ruleId: 'v2-inversion',
+      },
+      {
+        quote: 'fordi man kun køber det, man faktisk skal bruge',
+        kind: 'good',
+        note: 'In a subordinate clause, sentence adverbs like "kun" go before the finite verb, exactly as "ikke" does.',
+        ruleId: 'ikke-regel',
+      },
+      {
+        quote: 'Det er os selv, der bestemmer, hvad vi køber, hvordan vi opbevarer det, og om vi spiser resterne.',
+        kind: 'good',
+        note: 'A cleft sentence ("Det er os selv, der …") followed by three parallel questions: a compact, varied way to build the consumer argument.',
+      },
+      {
+        quote: 'Desuden kasserer supermarkederne selv store mængder varer, der stadig er spiselige.',
+        kind: 'good',
+        note: 'The counter-argument uses a precise verb ("kassere") and a correct relative clause with "der" as subject.',
+        ruleId: 'relative-clause',
+      },
+      {
+        quote: 'mener jeg, at butikkerne har det største ansvar',
+        kind: 'good',
+        note: 'The evaluation asks "først og fremmest" consumers or shops, and this answers it with a clear choice instead of "both".',
+      },
+    ],
+  },
+  {
+    id: 'wgr-d2b-2-7',
+    taskId: 'wsim-d2b-2',
+    band: '7',
+    origin: 'illustrative',
+    text: p(
+      'Madspild er et stort problem i dag, både for økonomien og for miljøet.',
+      'I min familie vi smider tit mad ud. Vi er fire personer, og vi handler meget ind om lørdagen, fordi der er gode tilbud. Men om torsdagen er der altid grøntsager i køleskabet, som er blevet dårlige, og dem smider vi ud. Især salat og peberfrugter bliver hurtigt dårlige. Det er ærgerligt, fordi det koster mange penge.',
+      'Jeg synes, at forslaget om at planlægge ugens måltider er et god idé. Hvis man laver en madplan, man køber kun det, man skal bruge. Vi har prøvet det i min familie i en måned, og det gør sense. Jeg synes også, at supermarkeder skal give overskudsvarer gratis væk, fordi mange mennesker har ikke så mange penge til mad.',
+      'Er det forbrugernes eller butikkernes ansvar? Jeg synes, at det mest er forbrugernes ansvar, fordi det er os, der køber maden og smider den ud. Men butikkerne har også et ansvar. De har mange tilbud, og så man køber for meget. De smider også mange forskellig varer ud hver dag. Derfor synes jeg, at butikkerne skal sælge varer billigere, når datoen er tæt på.',
+      'Til sidst vil jeg sige, at forbrugerne har det største ansvar, men butikkerne skal også hjælpe.',
+    ),
+    summary:
+      'Solid middle band: all bullets answered and a side is chosen, but the evaluation is thinner and less developed than the rest, "Jeg synes" carries most sentences, and word-order and ending errors recur without blocking understanding.',
+    criteria: [
+      {
+        criterion: 'task',
+        comment:
+          'The experience (vegetables that go off by Thursday) is concrete. Two suggestions are named (madplan, overskudsvarer gratis væk) with a reason each. The evaluation is under 40 % of the text: it gives one argument for each side and chooses consumers, but the shop argument ("De har mange tilbud") is not developed, and the closing proposal about cheaper goods is not linked to the choice.',
+      },
+      {
+        criterion: 'pragmatic',
+        comment:
+          'Paragraphs follow the bullets and the conclusion restates the position. Linking is repetitive ("Jeg synes" five times, "Men", "så"), and the evaluation opens with a bare question instead of a framing sentence such as "Spørgsmålet er, om …".',
+      },
+      {
+        criterion: 'linguistic',
+        comment:
+          'Everyday vocabulary used correctly most of the time. Recurring errors: missing inversion ("I min familie vi smider", "Hvis man laver en madplan, man køber", "og så man køber"), "ikke" after the verb in a fordi-clause, en/et and an ending ("et god idé", "mange forskellig varer"), and an anglicism ("det gør sense").',
+      },
+    ],
+    annotations: [
+      {
+        quote: 'I min familie vi smider tit mad ud.',
+        kind: 'error',
+        note: 'The fronted place adverbial "I min familie" takes the first slot, so the finite verb must come before the subject.',
+        fix: 'I min familie smider vi tit mad ud.',
+        ruleId: 'v2-inversion',
+      },
+      {
+        quote: 'et god idé',
+        kind: 'error',
+        note: '"idé" is a common-gender (en) noun, so the article is "en" and the adjective has no -t.',
+        fix: 'en god idé',
+      },
+      {
+        quote: 'Hvis man laver en madplan, man køber',
+        kind: 'error',
+        note: 'A whole hvis-clause fills the front slot, so the main clause starts with the verb.',
+        fix: 'Hvis man laver en madplan, køber man',
+        ruleId: 'v2-inversion',
+      },
+      {
+        quote: 'det gør sense',
+        kind: 'error',
+        note: 'Anglicism from "it makes sense". Danish says "det giver mening".',
+        fix: 'det giver mening',
+      },
+      {
+        quote: 'fordi mange mennesker har ikke så mange penge',
+        kind: 'error',
+        note: 'In a subordinate clause (after fordi) "ikke" goes before the finite verb.',
+        fix: 'fordi mange mennesker ikke har så mange penge',
+        ruleId: 'ikke-regel',
+      },
+      {
+        quote: 'og så man køber for meget',
+        kind: 'error',
+        note: '"så" (then) here is an adverb in the front slot of the second main clause, so the verb comes before the subject.',
+        fix: 'og så køber man for meget',
+        ruleId: 'v2-inversion',
+      },
+      {
+        quote: 'mange forskellig varer',
+        kind: 'error',
+        note: 'Adjectives before a plural noun take -e.',
+        fix: 'mange forskellige varer',
+      },
+      {
+        quote: 'Men butikkerne har også et ansvar.',
+        kind: 'good',
+        note: 'Turning to the other side is what makes this an evaluation rather than a one-sided opinion; it now needs a second sentence of argument.',
+      },
+    ],
+  },
+  {
+    id: 'wgr-d2b-2-4',
+    taskId: 'wsim-d2b-2',
+    band: '4',
+    origin: 'illustrative',
+    text: p(
+      'Jeg arbejder i en bager i Vejle. Hver aften vi smider mange brød og kager ud, fordi vi kan ikke sælge dem næste dag. Mine kollegere tager nogle gange noget med hjem, men det meste kommer i skraldespanden, selvom brødet er stadig godt. Min kone siger, at jeg skal tage mere med hjem, men det er pinligt for mig. Første gang jeg så det, jeg blev meget overrasket, fordi i mit land man smider ikke mad ud. Min mor lavede altid ny mad af resterne, og vi spiste det hele.',
+      'På listen der er mange forslag. Jeg synes, at børn skal lære at lave mad af rester i skolen, fordi det er en god ting at kunne. Mange unge ved ikke, hvordan man laver mad, de køber bare pizza. Og restauranter skal have mindre portioner, fordi portionerne i Danmark er meget stor. Jeg kan ikke spise det hele, og så det bliver spild.',
+      'Jeg tror, det er forbrugernes ansvar. Det er os som køber maden, og det er os som smider den ud. Hvis alle er mere forsigtig, når man handler, er problemet løst. Butikkerne kan ikke gøre så meget.',
+      'Så madspild er dårligt for alle, og vi skal stoppe det.',
+    ),
+    summary:
+      'Pass: the shop experience is vivid and two suggestions are commented, but the evaluation is short, one-sided and even contradicts the writer\'s own bakery story; errors in word order, plurals and endings are frequent.',
+    criteria: [
+      {
+        criterion: 'task',
+        comment:
+          'The experience bullet is answered with a good example (bread thrown out at the bakery), though it is long. Two suggestions are commented with simple reasons. The evaluation is only about a fifth of the text and one-sided: it says "Butikkerne kan ikke gøre så meget" without arguing it, although the writer\'s own bakery throws out bread every night, which would have been the obvious counter-argument.',
+      },
+      {
+        criterion: 'pragmatic',
+        comment:
+          'Paragraphs follow the bullets, but the text is mainly description and loose opinion. Sentences are short and joined with "og" and "fordi", and the last line ("Så madspild er dårligt for alle") is a general statement rather than an answer to the evaluation question.',
+      },
+      {
+        criterion: 'linguistic',
+        comment:
+          'Simple vocabulary. Inversion is missed after almost every fronted element ("Hver aften vi smider", "Første gang jeg så det, jeg blev", "På listen der er"), "ikke" is misplaced in subordinate clauses, and there are plural and ending errors ("kollegere", "meget stor", "mere forsigtig").',
+      },
+    ],
+    annotations: [
+      {
+        quote: 'i en bager',
+        kind: 'error',
+        note: '"en bager" is the person (baker); the shop is "et bageri", or you work "hos en bager".',
+        fix: 'i et bageri',
+      },
+      {
+        quote: 'Hver aften vi smider',
+        kind: 'error',
+        note: 'Fronted time expression, so the verb comes before the subject.',
+        fix: 'Hver aften smider vi',
+        ruleId: 'v2-inversion',
+      },
+      {
+        quote: 'Mine kollegere',
+        kind: 'error',
+        note: 'The plural of "en kollega" is "kolleger" (or "kollegaer"), never "kollegere".',
+        fix: 'Mine kolleger',
+      },
+      {
+        quote: 'Første gang jeg så det, jeg blev',
+        kind: 'error',
+        note: 'The whole clause "Første gang jeg så det" is in the front slot, so the main clause must start with the verb.',
+        fix: 'Første gang jeg så det, blev jeg',
+        ruleId: 'v2-inversion',
+      },
+      {
+        quote: 'fordi i mit land man smider ikke mad ud',
+        kind: 'error',
+        note: 'A fordi-clause keeps normal subordinate word order: subject first, then "ikke" before the verb. Move the place adverbial to the end.',
+        fix: 'fordi man ikke smider mad ud i mit land',
+        ruleId: 'ikke-regel',
+      },
+      {
+        quote: 'portionerne i Danmark er meget stor',
+        kind: 'error',
+        note: 'A predicative adjective agrees with a plural subject: -e.',
+        fix: 'portionerne i Danmark er meget store',
+      },
+      {
+        quote: 'Butikkerne kan ikke gøre så meget.',
+        kind: 'style',
+        note: 'This is the whole case against shops, and your own bakery story contradicts it. Use it: "På den anden side smider butikker som den, jeg arbejder i, store mængder brød ud hver aften."',
+      },
+    ],
+  },
+  {
+    id: 'wgr-d2b-2-02',
+    taskId: 'wsim-d2b-2',
+    band: '02',
+    origin: 'illustrative',
+    text: p(
+      'Madspild er en stor problem for verden. Jeg kender det godt fordi jeg har tre børn og de spiser ikke alt maden. Hver dag jeg laver aftensmad og der er altid mad tilbage på tallerkenen. Min yngste søn han kan ikke lide grøntsager så han lader dem ligge. Jeg prøvede at give ham mindre men han spiser stadigvæk ikke det. Så jeg smider det ud i skraldespand. Min mand siger at jeg skal købe mindre, men børnene er altid sulten efter skole og så jeg køber meget. Nogle gange jeg giver det til vores hund, hun er glad haha. Også i køleskab der er tit mælk og yoghurt som er for gammel og så det skal ud.',
+      'I listen står at man skal betale for madaffald. Det er ikke god idé fordi mange familie har ikke mange penge og det bliver for dyrt for dem. Hvis man skal betale så man smider det i naturen i stedet og det er også dårligt. Også bedst før skal ikke afskaffes, for så ved man ikke hvornår maden er gammel og man bliver syg af det.',
+      'Jeg synes butikker og forbrugere skal gøre noget begge to. Det er vigtig.',
+      'Mange hilsner',
+    ),
+    summary:
+      'Bare pass: about 200 understandable words with a real family example and two suggestions touched, but the evaluation is two sentences with no reasons and no choice, and word-order, gender and agreement errors run through the text.',
+    criteria: [
+      {
+        criterion: 'task',
+        comment:
+          'Experience is covered at length (the children\'s leftovers, old milk). Two suggestions are commented (betale for madaffald, "bedst før") with simple reasons. The evaluation, which should be half the answer, is "Jeg synes butikker og forbrugere skal gøre noget begge to. Det er vigtig.": it does not choose between consumers and shops and gives no argument.',
+      },
+      {
+        criterion: 'pragmatic',
+        comment:
+          'Some paragraphing, but long chains with "og" and "så", and a chatty "haha" that does not belong in an essay. "Mange hilsner" is a letter ending; an essay should close with a summary of the writer\'s view.',
+      },
+      {
+        criterion: 'linguistic',
+        comment:
+          'Basic vocabulary with frequent errors: gender and agreement ("en stor problem", "Det er vigtig", "mange familie"), missing inversion ("Hver dag jeg laver", "Nogle gange jeg giver", "så man smider"), "ikke" misplaced ("fordi mange familie har ikke") and missing definite forms ("i skraldespand", "i køleskab"). The meaning still comes through.',
+      },
+    ],
+    annotations: [
+      {
+        quote: 'en stor problem',
+        kind: 'error',
+        note: '"problem" is a neuter (et) noun, and the adjective agrees: stort.',
+        fix: 'et stort problem',
+      },
+      {
+        quote: 'Hver dag jeg laver aftensmad',
+        kind: 'error',
+        note: 'Fronted time expression, so the verb comes before the subject.',
+        fix: 'Hver dag laver jeg aftensmad',
+        ruleId: 'v2-inversion',
+      },
+      {
+        quote: 'Min yngste søn han kan ikke',
+        kind: 'error',
+        note: 'Danish does not repeat the subject with a pronoun. One subject is enough.',
+        fix: 'Min yngste søn kan ikke',
+        ruleId: 'forfelt-single',
+      },
+      {
+        quote: 'Nogle gange jeg giver',
+        kind: 'error',
+        note: 'Fronted adverbial, so the verb comes before the subject.',
+        fix: 'Nogle gange giver jeg',
+        ruleId: 'v2-inversion',
+      },
+      {
+        quote: 'fordi mange familie har ikke mange penge',
+        kind: 'error',
+        note: 'Two errors: the plural of "familie" is "familier", and in a fordi-clause "ikke" goes before the verb.',
+        fix: 'fordi mange familier ikke har mange penge',
+        ruleId: 'ikke-regel',
+      },
+      {
+        quote: 'så man smider det i naturen',
+        kind: 'error',
+        note: 'After a fronted hvis-clause, "så" takes the front slot and the verb must follow it directly.',
+        fix: 'så smider man det i naturen',
+        ruleId: 'v2-inversion',
+      },
+      {
+        quote: 'Jeg synes butikker og forbrugere skal gøre noget begge to. Det er vigtig.',
+        kind: 'style',
+        note: 'This is the whole evaluation. The task asks who is mainly responsible, with reasons, in about half the text. Also: "vigtigt" (neuter, agrees with "det").',
+      },
+      {
+        quote: 'Mange hilsner',
+        kind: 'style',
+        note: 'An essay is not a letter. End with your view: "Alt i alt mener jeg, at …".',
+      },
+    ],
+  },
+  {
+    id: 'wgr-d2b-3-12',
+    taskId: 'wsim-d2b-3',
+    band: '12',
+    origin: 'illustrative',
+    text: p(
+      'For tyve år siden betalte de fleste danskere kontant i supermarkedet. I dag er det blevet en sjældenhed, og nogle butikker tager slet ikke imod sedler og mønter længere.',
+      'Selv betaler jeg næsten altid med MobilePay eller mit betalingskort, fordi det er hurtigt. Alligevel har jeg altid en 200-kroneseddel i pungen. Sidste vinter gik betalingssystemet ned i et supermarked, hvor jeg stod i kø, og kun de kunder, der havde kontanter, kunne betale.',
+      'Jeg er enig i synspunktet om, at ældre og andre, der ikke er vant til teknologi, bliver holdt udenfor. Min nabo på 83 har hverken smartphone eller netbank. Derimod er jeg ikke enig i, at man mister overblikket over sit forbrug. Banken viser jo hvert køb, så overblikket er snarere blevet bedre.',
+      'Der er flere fordele ved et samfund helt uden kontanter. Betalinger går hurtigere, butikkerne slipper for at tælle og transportere penge, og der bliver færre røverier. Desuden bliver det sværere at snyde med skat, når alle betalinger kan spores. Omvendt er der alvorlige ulemper. Hvis strømmen forsvinder, eller et hackerangreb lammer bankerne, kan ingen købe mad eller medicin. Samtidig kan bankerne se alt, hvad vi køber, og det er et indgreb i privatlivet.',
+      'Når jeg vejer fordele og ulemper op imod hinanden, mener jeg, at udviklingen overvejende er positiv, men at kontanterne ikke bør forsvinde helt. De er en nødvendig reserve i en krise og en livline for dem, der står uden for den digitale verden.',
+      'Samlet set er færre kontanter en gevinst, så længe butikkerne fortsat har pligt til at tage imod dem.',
+    ),
+    summary:
+      'Top band: the experience covers both cash and digital payment with a telling incident, two statements are argued, and the evaluation weighs advantages against disadvantages of going completely cashless before reaching a clear, conditional position.',
+    criteria: [
+      {
+        criterion: 'task',
+        comment:
+          'The experience names card, phone and cash and gives one concrete incident (the supermarket outage). Two statements are named and taken a stand on, one agreed with and one rejected with a counter-argument ("Banken viser jo hvert køb"). The evaluation, from "Der er flere fordele" to the end, is about half the text, weighs three advantages against three disadvantages and ends in a clear position with a condition.',
+      },
+      {
+        criterion: 'pragmatic',
+        comment:
+          'One paragraph per bullet plus an opening and a conclusion. The evaluation is clearly signposted ("Der er flere fordele …", "Desuden …", "Omvendt …", "Samtidig …", "Når jeg vejer …"), and the outage story from the experience paragraph quietly supports the later argument about crises.',
+      },
+      {
+        criterion: 'linguistic',
+        comment:
+          'Varied and precise vocabulary (en sjældenhed, lammer, et indgreb i privatlivet, en livline, overvejende). Correct inversion after fronted elements ("Selv betaler jeg", "Alligevel har jeg", "Omvendt er der") and correct placement of "ikke" in subordinate clauses ("at kontanterne ikke bør forsvinde").',
+      },
+    ],
+    annotations: [
+      {
+        quote: 'Selv betaler jeg næsten altid med MobilePay eller mit betalingskort',
+        kind: 'good',
+        note: 'Fronting "Selv" gives emphasis, and inversion follows correctly. Naming two ways to pay answers the "kontanter, kort og mobil" bullet.',
+        ruleId: 'v2-inversion',
+      },
+      {
+        quote: 'kun de kunder, der havde kontanter, kunne betale',
+        kind: 'good',
+        note: 'One concrete detail that the evaluation can later build on, with a correctly embedded relative clause.',
+        ruleId: 'relative-clause',
+      },
+      {
+        quote: 'Derimod er jeg ikke enig i, at man mister overblikket over sit forbrug.',
+        kind: 'good',
+        note: 'Disagreeing with one statement and giving a counter-argument shows that "kommentér" is more than repeating the box.',
+        ruleId: 'v2-inversion',
+      },
+      {
+        quote: 'Omvendt er der alvorlige ulemper.',
+        kind: 'good',
+        note: 'A short signpost sentence that turns the evaluation from advantages to disadvantages, as the bullet asks.',
+      },
+      {
+        quote: 'Hvis strømmen forsvinder, eller et hackerangreb lammer bankerne, kan ingen købe mad eller medicin.',
+        kind: 'good',
+        note: 'Two conditions share one hvis, and the main clause inverts because the whole hvis-clause fills the front slot.',
+        ruleId: 'v2-inversion',
+      },
+      {
+        quote: 'at kontanterne ikke bør forsvinde helt',
+        kind: 'good',
+        note: 'In the at-clause "ikke" correctly comes before the finite verb "bør".',
+        ruleId: 'ikke-regel',
+      },
+      {
+        quote: 'så længe butikkerne fortsat har pligt til at tage imod dem',
+        kind: 'good',
+        note: 'Ending with a condition makes the position precise, and it links back to a statement in the box.',
+      },
+    ],
+  },
+  {
+    id: 'wgr-d2b-3-7',
+    taskId: 'wsim-d2b-3',
+    band: '7',
+    origin: 'illustrative',
+    text: p(
+      'I dag betaler næsten alle danskere med kort eller mobil, og mange butikker vil ikke have kontanter.',
+      'Jeg betaler altid med MobilePay eller mit kort. Jeg kan ikke huske, hvornår jeg sidst havde kontanter i min pung. I Rumænien, hvor jeg kommer fra, er det anderledes. Der betaler mange mennesker stadig kontant, især på landet. Da jeg besøgte min familie sidste sommer, jeg måtte hæve penge i en automat, fordi mange små butikker tager ikke kort.',
+      'Jeg er enig i, at ældre bliver holdt udenfor. Min svigermor er 79 år, og hun har ikke en smartphone. Hun synes, at det er svært at betale i butikkerne, og hun føler dum, når hun står ved kassen. Jeg er også enig i, at et samfund uden kontanter er sårbart, fordi hvis der kommer en nedbrud, så kan man ikke betale for noget.',
+      'Der er fordele og ulemper ved et samfund uden kontanter. En fordel er, at det er hurtigt og nemt at betale. En anden fordel er, at det er sværere at snyde med skat, fordi alle betalinger er digitale. Men der er også ulemper. Mange ældre kan ikke bruge teknologien, og hvis der kommer et hackerangreb, har vi et stort problem. Jeg synes, at det er godt med mobilbetaling, men jeg synes ikke, at kontanterne skal forsvinde helt.',
+      'Til sidst vil jeg sige, at det er vigtigt at tænke på alle mennesker i samfundet.',
+    ),
+    summary:
+      'Solid middle band: every bullet is answered and both advantages and disadvantages appear, but the evaluation lists rather than weighs, repeats points from the comments, and a handful of word-order and gender errors appear.',
+    criteria: [
+      {
+        criterion: 'task',
+        comment:
+          'The experience compares Denmark with Romania and covers card, phone and cash. Two statements are named and agreed with, with an example for the first (the mother-in-law). The evaluation is under 40 % of the text: it lists two advantages and two disadvantages ("En fordel er … En anden fordel er …"), partly repeating the comment paragraph, and the position in its last sentence gets no reason.',
+      },
+      {
+        criterion: 'pragmatic',
+        comment:
+          'Clear paragraphs that follow the bullets. The connectors are repetitive ("Jeg er enig i" twice, "Jeg synes" three times, "En fordel … En anden fordel"), and the conclusion ("det er vigtigt at tænke på alle mennesker") is vaguer than the position just before it.',
+      },
+      {
+        criterion: 'linguistic',
+        comment:
+          'Generally correct, everyday Danish with some good structures ("I Rumænien, hvor jeg kommer fra, er det anderledes"). Errors: missing inversion after a da-clause, "ikke" after the verb in a fordi-clause, a missing reflexive ("hun føler dum") and a gender slip ("en nedbrud"). None block understanding.',
+      },
+    ],
+    annotations: [
+      {
+        quote: 'I Rumænien, hvor jeg kommer fra, er det anderledes.',
+        kind: 'good',
+        note: 'Correct inversion after a fronted place adverbial with an inserted relative clause.',
+        ruleId: 'v2-inversion',
+      },
+      {
+        quote: 'Da jeg besøgte min familie sidste sommer, jeg måtte',
+        kind: 'error',
+        note: 'A whole da-clause fills the front slot, so the main clause must start with the verb.',
+        fix: 'Da jeg besøgte min familie sidste sommer, måtte jeg',
+        ruleId: 'v2-inversion',
+      },
+      {
+        quote: 'fordi mange små butikker tager ikke kort',
+        kind: 'error',
+        note: 'In a subordinate clause (after fordi) "ikke" goes before the finite verb.',
+        fix: 'fordi mange små butikker ikke tager kort',
+        ruleId: 'ikke-regel',
+      },
+      {
+        quote: 'hun føler dum',
+        kind: 'error',
+        note: '"føle" needs the reflexive pronoun when it describes how you feel: "føle sig".',
+        fix: 'hun føler sig dum',
+      },
+      {
+        quote: 'en nedbrud',
+        kind: 'error',
+        note: '"nedbrud" is a neuter (et) noun.',
+        fix: 'et nedbrud',
+      },
+      {
+        quote: 'En anden fordel er',
+        kind: 'style',
+        note: 'Listing "En fordel … En anden fordel …" works, but it reads like a list. Vary it and add a reason or consequence: "Desuden bliver det sværere at snyde med skat, fordi …".',
+      },
+      {
+        quote: 'men jeg synes ikke, at kontanterne skal forsvinde helt',
+        kind: 'good',
+        note: 'A real position on "helt uden kontanter", which the evaluation needs. Add one "fordi …" and it becomes an argument.',
+      },
+    ],
+  },
+  {
+    id: 'wgr-d2b-3-4',
+    taskId: 'wsim-d2b-3',
+    band: '4',
+    origin: 'illustrative',
+    text: p(
+      'Jeg betaler altid med min mobil. Det er meget nemt, og jeg behøver ikke at have en pung med. I mit land jeg brugte altid kontanter, men da jeg kom til Danmark i 2019, jeg fik en bankkonto og MobilePay. Nu jeg har ikke kontanter mere. En gang var jeg på et marked i Roskilde, og en mand sælgede honning, men han tog kun kontanter. Jeg kunne ikke købe noget, og det var irriterende.',
+      'På listen står der, at det er hurtigere at betale med mobilen. Det er rigtigt, jeg er enig. Det tager kun to sekunder, og man skal ikke tælle mønter. Også butikker skal ikke have pligt til at tage imod kontanter, fordi det er deres egen valg, hvordan kunderne betaler.',
+      'Der er mange fordele ved et samfund uden kontanter. Det er hurtigt, man skal ikke vente i køen, og man taber ikke pengene på gaden. Folk kan ikke snyde med skat, og der er ikke så mange tyve, fordi der er ingen penge at stjæle. Også butikkerne sparer tid, fordi de skal ikke tælle penge om aftenen. Ulempen er måske de gamle mennesker, men de kan lære det.',
+      'Derfor jeg synes, at Danmark skal være helt uden kontanter. Det er fremtiden.',
+    ),
+    summary:
+      'Pass: the experience is concrete and a position is taken, but the evaluation covers advantages only and dismisses the disadvantages in half a sentence, the comments are thin, and word-order errors are frequent.',
+    criteria: [
+      {
+        criterion: 'task',
+        comment:
+          'The experience is clear (the honey seller at the market who only took cash). Two statements are commented, but the first gets only "Det er rigtigt, jeg er enig" with no reason. The bullet asks for "fordele og ulemper", yet the evaluation lists only advantages and waves away the disadvantages with "Ulempen er måske de gamle mennesker, men de kan lære det"; outages and privacy are never considered, even though the writer\'s own market story points to one.',
+      },
+      {
+        criterion: 'pragmatic',
+        comment:
+          'Paragraphs follow the bullets, and the conclusion states a clear view. The text is mostly short statements joined with "og" and "fordi", with little development, and "Det er fremtiden" is a slogan rather than a reason.',
+      },
+      {
+        criterion: 'linguistic',
+        comment:
+          'Simple, mostly clear vocabulary. Inversion is missed after most fronted elements ("I mit land jeg brugte", "Nu jeg har ikke", "Derfor jeg synes"), "ikke"/"ingen" are misplaced in fordi-clauses, and there are form errors ("sælgede", "deres egen valg").',
+      },
+    ],
+    annotations: [
+      {
+        quote: 'I mit land jeg brugte altid kontanter',
+        kind: 'error',
+        note: 'Fronted place adverbial, so the verb comes before the subject.',
+        fix: 'I mit land brugte jeg altid kontanter',
+        ruleId: 'v2-inversion',
+      },
+      {
+        quote: 'Nu jeg har ikke kontanter mere',
+        kind: 'error',
+        note: '"Nu" fills the front slot, so the finite verb comes next, then the subject, then "ikke".',
+        fix: 'Nu har jeg ikke kontanter mere',
+        ruleId: 'v2-inversion',
+      },
+      {
+        quote: 'sælgede',
+        kind: 'error',
+        note: '"sælge" is irregular: sælger, solgte, har solgt.',
+        fix: 'solgte',
+      },
+      {
+        quote: 'deres egen valg',
+        kind: 'error',
+        note: '"valg" is a neuter (et) noun, so the possessive takes the neuter form "eget".',
+        fix: 'deres eget valg',
+      },
+      {
+        quote: 'fordi der er ingen penge at stjæle',
+        kind: 'error',
+        note: 'In a subordinate clause, "ingen" is split into "ikke … nogen" with "ikke" before the verb.',
+        fix: 'fordi der ikke er nogen penge at stjæle',
+        ruleId: 'ikke-regel',
+      },
+      {
+        quote: 'Ulempen er måske de gamle mennesker, men de kan lære det.',
+        kind: 'style',
+        note: 'The bullet asks for advantages AND disadvantages. One sentence that dismisses the only disadvantage is not a weighing; add outages, hacker attacks or privacy, and your own market story.',
+      },
+      {
+        quote: 'Derfor jeg synes',
+        kind: 'error',
+        note: '"Derfor" takes the front slot, so the verb must come before the subject.',
+        fix: 'Derfor synes jeg',
+        ruleId: 'v2-inversion',
+      },
+    ],
+  },
+  {
+    id: 'wgr-d2b-3-02',
+    taskId: 'wsim-d2b-3',
+    band: '02',
+    origin: 'illustrative',
+    text: p(
+      'Jeg vil skrive om kontanter. I Danmark man bruger ikke meget kontanter mere, alle har mobilepay. Jeg har også mobilepay og kort fra banken. Jeg betaler altid med mobilen, også når jeg køber en lille is til mine børn. Men min mor i Irak hun bruger kun kontanter, hun har ikke bankkort fordi hun stoler ikke på banker. Når hun kommer og besøger mig i Danmark, det er svært for hende. Sidste gang vi var i en café og hun ville betale for kaffe, men de sagde nej, kun kort. Hun var meget ked af og vi gik hjem. Det var en dårlig dag. Jeg følte mig skam.',
+      'I listen der står at ældre bliver holdt udenfor og det er rigtig. Min mor er ikke så gammel, hun er 61 år men hun kan ikke bruge en smartphone. Mange gamle mennesker er også sådan. De skal lære det men det er svært for dem fordi de ikke vokset op med teknologi. Også der står at det er hurtigere med mobilen, det er rigtig, jeg bruger kun et sekund når jeg betaler.',
+      'Jeg synes kontanter er godt og dårligt. Vi skal have begge to.',
+      'Tak for at læse.',
+    ),
+    summary:
+      'Bare pass: about 200 words with a touching café story and two statements touched, but the evaluation of advantages and disadvantages is two sentences without a single argument, and errors in word order, verb forms and idiom run through the text.',
+    criteria: [
+      {
+        criterion: 'task',
+        comment:
+          'Experience is covered (the mother from Iraq refused in a café), though the writer\'s own payment habits get only two short sentences before it turns to her story. Two statements are commented with simple reasons. The evaluation, which should be half the answer, is "Jeg synes kontanter er godt og dårligt. Vi skal have begge to.": no advantage or disadvantage is actually named or weighed.',
+      },
+      {
+        criterion: 'pragmatic',
+        comment:
+          'Some paragraphing, but the opening ("Jeg vil skrive om kontanter") announces the topic instead of introducing it, sentences are chained with "og", "men" and commas, and "Tak for at læse" is a translated English closing that does not belong in an essay.',
+      },
+      {
+        criterion: 'linguistic',
+        comment:
+          'Basic vocabulary with frequent errors: missing inversion ("I Danmark man bruger", "Når hun kommer …, det er", "I listen der står"), "ikke" after the verb in a fordi-clause, a missing auxiliary ("de ikke vokset op"), incomplete idioms ("ked af", "Jeg følte mig skam") and agreement ("det er rigtig"). The meaning is still clear.',
+      },
+    ],
+    annotations: [
+      {
+        quote: 'I Danmark man bruger ikke',
+        kind: 'error',
+        note: 'Fronted place adverbial, so the verb comes before the subject.',
+        fix: 'I Danmark bruger man ikke',
+        ruleId: 'v2-inversion',
+      },
+      {
+        quote: 'fordi hun stoler ikke på banker',
+        kind: 'error',
+        note: 'In a fordi-clause "ikke" goes before the finite verb.',
+        fix: 'fordi hun ikke stoler på banker',
+        ruleId: 'ikke-regel',
+      },
+      {
+        quote: 'Når hun kommer og besøger mig i Danmark, det er',
+        kind: 'error',
+        note: 'The når-clause fills the front slot, so the main clause starts with the verb.',
+        fix: 'Når hun kommer og besøger mig i Danmark, er det',
+        ruleId: 'v2-inversion',
+      },
+      {
+        quote: 'Hun var meget ked af og',
+        kind: 'error',
+        note: 'The fixed expression is "ked af det" (upset); "ked af" alone needs an object.',
+        fix: 'Hun var meget ked af det, og',
+      },
+      {
+        quote: 'Jeg følte mig skam.',
+        kind: 'error',
+        note: '"skam" is a noun. Use the verb "at skamme sig", or "jeg følte skam".',
+        fix: 'Jeg skammede mig.',
+      },
+      {
+        quote: 'fordi de ikke vokset op',
+        kind: 'error',
+        note: 'The perfect tense needs its auxiliary: "vokse op" takes "er" (de er vokset op).',
+        fix: 'fordi de ikke er vokset op',
+      },
+      {
+        quote: 'Jeg synes kontanter er godt og dårligt. Vi skal have begge to.',
+        kind: 'style',
+        note: 'This is the whole evaluation. Name at least two advantages (fast, harder to cheat on tax) and two disadvantages (people like your mother left out, outages), then say which weigh more.',
+      },
+      {
+        quote: 'Tak for at læse.',
+        kind: 'style',
+        note: 'A translation of "Thanks for reading". An essay ends with your conclusion: "Alt i alt mener jeg, at …".',
       },
     ],
   },

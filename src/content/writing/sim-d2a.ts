@@ -116,6 +116,40 @@ export const SIM_TASKS_D2A: PracticeTask[] = [
         ],
       },
     },
+    tips: [
+      {
+        title: 'The evaluation is about school hours only',
+        text: 'The question is "et forbud mod mobiltelefoner i skoletiden", not screen time in general. Do not drift into how much screen time is healthy at home; every argument should be about phones during the school day.',
+      },
+      {
+        title: 'These are leisure hours on a weekday',
+        text: 'The table measures screen time "i fritiden på en hverdag". It says nothing about weekends or school use, so do not write that children sit in front of a screen for five hours at school.',
+      },
+      {
+        title: 'Two trends, and the rise is in hours',
+        text: 'Mention both: screen time rose in every group, and it climbs with age. The biggest rise is among the 12–14-year-olds, "1,2 timer mere om dagen". Talk about hours here, not percent.',
+      },
+      {
+        title: 'Use the age gap in your own view',
+        text: 'The table gives you a nuanced position for free: a total ban may suit the younger pupils, while the oldest could get clear rules instead, e.g. "et forbud i indskolingen og faste regler i udskolingen".',
+      },
+    ],
+    words: [
+      { da: 'en skærmtid', en: 'screen time' },
+      { da: 'i fritiden', en: 'in your free time' },
+      { da: 'en aldersgruppe', en: 'an age group' },
+      { da: 'en stigning', en: 'a rise, an increase' },
+      { da: 'at stige markant', en: 'to rise sharply' },
+      { da: 'et forbud mod mobiltelefoner', en: 'a ban on mobile phones' },
+      { da: 'at koncentrere sig om undervisningen', en: 'to concentrate on the lessons' },
+      { da: 'at blive forstyrret af beskeder', en: 'to be disturbed by messages' },
+      { da: 'et frikvarter', en: 'a break (at school)' },
+      { da: 'et fællesskab', en: 'a community, togetherness' },
+      { da: 'et nyttigt redskab', en: 'a useful tool' },
+      { da: 'at styre sit eget forbrug', en: 'to control your own use' },
+      { da: 'at håndhæve et forbud', en: 'to enforce a ban' },
+      { da: 'skærmfri timer', en: 'screen-free hours' },
+    ],
   },
   {
     id: 'wsim-d2a-2',
@@ -207,6 +241,40 @@ export const SIM_TASKS_D2A: PracticeTask[] = [
         ],
       },
     },
+    tips: [
+      {
+        title: 'The causes bullet asks about the age gap',
+        text: 'Bullet 2 asks why the age groups differ ("forskellene mellem aldersgrupperne"), not why second-hand has grown in general. Compare young and old: money, habits with apps, attitudes to used clothes.',
+      },
+      {
+        title: 'Say "procentpoint" for the gaps',
+        text: 'The 18–29-year-olds went from 31 % to 58 %: that is 27 procentpoint more, not 27 % more. The gap between youngest and oldest grew from 23 to 44 procentpoint, which is a strong trend to name.',
+      },
+      {
+        title: 'Read the measure: a share of people, not how much they buy',
+        text: 'The figures are the share who bought anything second-hand in the past year. They do not show how many clothes people bought, or whether they bought less new, so do not claim that second-hand has replaced new clothes.',
+      },
+      {
+        title: 'Compare with buying new',
+        text: '"I stedet for nyt" means your pros and cons should set used against new: price, climate and uniqueness against wear, sizes, returns and jobs in clothes shops.',
+      },
+    ],
+    words: [
+      { da: 'brugt tøj', en: 'second-hand clothes' },
+      { da: 'en genbrugsbutik', en: 'a second-hand shop' },
+      { da: 'en andel', en: 'a share, a proportion' },
+      { da: 'et procentpoint', en: 'a percentage point' },
+      { da: 'at blive fordoblet', en: 'to double' },
+      { da: 'at have en stram økonomi', en: 'to be short of money' },
+      { da: 'at handle via en app', en: 'to shop through an app' },
+      { da: 'at være moderne', en: 'to be fashionable' },
+      { da: 'at give tøjet et længere liv', en: 'to give the clothes a longer life' },
+      { da: 'at skåne miljøet', en: 'to spare the environment' },
+      { da: 'en klimagevinst', en: 'a climate benefit' },
+      { da: 'slidt', en: 'worn' },
+      { da: 'en fortrydelsesret', en: 'a right to return (cancel) a purchase' },
+      { da: 'et forbrug', en: 'consumption' },
+    ],
   },
   {
     id: 'wsim-d2a-3',
@@ -300,6 +368,41 @@ export const SIM_TASKS_D2A: PracticeTask[] = [
         ],
       },
     },
+    tips: [
+      {
+        title: 'New cars, not all cars on the road',
+        text: 'The table shows how new cars sold each year are split. Write "over halvdelen af de nye biler er elbiler", never "over halvdelen af bilerne i Danmark".',
+      },
+      {
+        title: 'Do not forget the plug-in hybrids',
+        text: 'Most answers only compare electric with petrol and diesel. The third trend, hybrids rising to 27 % in 2021 and falling back to 11 %, shows you read the whole table, and it gives you a cause to explain.',
+      },
+      {
+        title: 'The evaluation is about the tax benefit',
+        text: 'Weigh "afgiftsfordele" given by the state, not electric cars as such. Range and charging time are about the car; state revenue, who gets the benefit, CO2 and the speed of the green shift are about the policy.',
+      },
+      {
+        title: 'Use the 55 % in your own view',
+        text: 'Now that electric cars are the majority of new cars, you can argue whether the benefit is still needed: "Når over halvdelen af de nye biler allerede er elbiler, …". That links the evaluation to the diagram.',
+      },
+    ],
+    words: [
+      { da: 'en elbil', en: 'an electric car' },
+      { da: 'en plugin-hybridbil', en: 'a plug-in hybrid car' },
+      { da: 'et drivmiddel', en: 'a fuel type' },
+      { da: 'at vinde frem', en: 'to gain ground' },
+      { da: 'at gå tilbage', en: 'to decline' },
+      { da: 'en ladestander', en: 'a charging point' },
+      { da: 'en rækkevidde', en: 'a range (on one charge)' },
+      { da: 'en afgift', en: 'a tax, a duty' },
+      { da: 'en afgiftsfordel', en: 'a tax benefit' },
+      { da: 'en udledning af CO2', en: 'a CO2 emission' },
+      { da: 'den grønne omstilling', en: 'the green transition' },
+      { da: 'statens indtægter', en: 'state revenue' },
+      { da: 'de velhavende', en: 'the well-off' },
+      { da: 'at udfase gradvist', en: 'to phase out gradually' },
+      { da: 'den kollektive trafik', en: 'public transport' },
+    ],
   },
 ];
 
@@ -631,6 +734,676 @@ Forbud mod mobil i skolen er godt synes jeg. Børn lærer mere. Men nogen gange 
         note: '"Nogle gange" (plural "some"), not "nogen"; the fronted adverbial needs inversion — and this is the only disadvantage in the text, with no reason given. The evaluation should be about half of the answer.',
         fix: 'Men nogle gange skal de bruge mobilen, for eksempel til at søge information.',
         ruleId: 'v2-inversion',
+      },
+    ],
+  },
+  {
+    id: 'wgr-d2a-2-12',
+    taskId: 'wsim-d2a-2',
+    band: '12',
+    origin: 'illustrative',
+    text: `Diagrammet viser, hvor stor en andel af danskerne i fire aldersgrupper der har købt brugt tøj inden for det seneste år, i 2016 og 2024.
+
+Det mest bemærkelsesværdige er, at andelen er steget i alle aldersgrupper og næsten er fordoblet på otte år. Jo yngre man er, desto oftere køber man brugt. I 2024 har 58 % af de 18–29-årige købt brugt tøj, mens det kun gælder hver syvende af dem over 60. Forskellen mellem de yngste og de ældste er dermed vokset fra 23 til 44 procentpoint.
+
+Der kan være flere årsager til forskellene. For det første har mange unge en stram økonomi. For det andet er de vant til at handle via apps. Desuden er vintage blevet moderne, mens mange ældre måske stadig forbinder brugt tøj med dårlig økonomi.
+
+At købe brugt tøj i stedet for nyt har både fordele og ulemper. Den største fordel er, at det skåner miljøet, fordi der ikke skal bruges vand og energi på at producere nyt. Det er desuden billigere, og tøjet får et længere liv. Til gengæld kan det tage lang tid at finde den rigtige størrelse, og ved private handler har man sjældent fortrydelsesret. Nogle køber måske også mere, netop fordi det er billigt, og så forsvinder klimagevinsten.
+
+Efter min mening opvejer fordelene klart ulemperne. Selvom det kræver lidt mere tålmodighed, er det en nem måde at spare penge og samtidig tage hensyn til miljøet på. Alt i alt mener jeg derfor, at flere bør vælge brugt, især når det gælder jakker og børnetøj, som hurtigt bliver for småt.`,
+    summary:
+      'A top-band answer: the description names the two trends and the widening gap in percentage points, the causes explain the age differences that bullet 2 asks about, and the evaluation weighs used against new before a clear, qualified view.',
+    criteria: [
+      {
+        criterion: 'task',
+        comment:
+          'All three bullets are answered. The description picks out trends ("næsten er fordoblet", "Jo yngre man er, desto oftere") and uses only a few rounded figures. The causes compare young and old, which is exactly what "forskellene mellem aldersgrupperne" asks for. The evaluation (about 128 of ~259 words, ≈ 49 %) weighs three advantages against three disadvantages, ends in a reasoned view and a sammenfatning.',
+      },
+      {
+        criterion: 'pragmatic',
+        comment:
+          'One paragraph per bullet plus a short conclusion. Clear signposting: "For det første … For det andet … Desuden" for causes, "Den største fordel … Til gengæld" for the evaluation, "Alt i alt mener jeg derfor" to close. The register is neutral and factual throughout.',
+      },
+      {
+        criterion: 'linguistic',
+        comment:
+          'Near-flawless and varied: "bemærkelsesværdige", "en stram økonomi", "skåner miljøet", "forsvinder klimagevinsten". Inversion is correct after every fronted element ("Til gengæld kan det", "Selvom det kræver …, er det"), and adverbs sit before the verb in subordinate clauses ("mens mange ældre måske stadig forbinder").',
+      },
+    ],
+    annotations: [
+      {
+        quote: 'og næsten er fordoblet på otte år',
+        kind: 'good',
+        note: 'A trend in one phrase instead of four pairs of numbers, which is what "hovedtrækkene" asks for.',
+      },
+      {
+        quote: 'Jo yngre man er, desto oftere køber man brugt',
+        kind: 'good',
+        note: 'The "jo … desto" pattern sums up the age trend neatly; after "desto oftere" the verb comes before the subject.',
+        ruleId: 'v2-inversion',
+      },
+      {
+        quote: 'hver syvende af dem over 60',
+        kind: 'good',
+        note: 'Turning 14 % into "hver syvende" varies the figures and shows the reader you understand them.',
+      },
+      {
+        quote: 'fra 23 til 44 procentpoint',
+        kind: 'good',
+        note: 'Correctly "procentpoint" for the difference between two percentages.',
+      },
+      {
+        quote: 'Der kan være flere årsager til forskellene.',
+        kind: 'good',
+        note: 'Picks up the exact wording of bullet 2, which asks about the differences between the age groups, not the growth in general.',
+      },
+      {
+        quote: 'mens mange ældre måske stadig forbinder brugt tøj med dårlig økonomi',
+        kind: 'good',
+        note: 'In a subordinate clause the adverbs "måske stadig" go before the finite verb. "Måske" also marks the cause as a possibility, not a fact from the diagram.',
+        ruleId: 'ikke-regel',
+      },
+      {
+        quote: 'Til gengæld kan det tage lang tid',
+        kind: 'good',
+        note: 'A clear turn from advantages to disadvantages, with correct inversion after the fronted "Til gengæld".',
+        ruleId: 'v2-inversion',
+      },
+      {
+        quote: 'Efter min mening opvejer fordelene klart ulemperne.',
+        kind: 'good',
+        note: 'A clear own position that weighs the two sides, followed by a reason ("en nem måde at spare penge …") and a reservation about which clothes.',
+      },
+    ],
+  },
+  {
+    id: 'wgr-d2a-2-7',
+    taskId: 'wsim-d2a-2',
+    band: '7',
+    origin: 'illustrative',
+    text: `Diagrammet viser hvor mange danskere der har købt brugt tøj i 2016 og 2024. Det er delt i fire aldersgrupper.
+
+Man kan se, at flere har købt brugt tøj i 2024 end i 2016, og det gælder i alle aldersgrupper. De unge køber mest brugt tøj. I 2024 58 % af de 18–29-årige har købt brugt tøj, men kun 14 % af de over 60-årige. Andelen er næsten fordoblet i alle grupper.
+
+Der er flere årsager til, at de unge køber mere brugt tøj end de ældre. Først de unge har ikke så mange penge, fordi mange af dem er studerende. De bruger også apps som Vinted, og de synes, det er sjovt at finde et billigt kjole eller en jakke. De tænker også meget på klimaet. De ældre har mere penge, og de vil gerne have nyt tøj. Måske de synes også, at brugt tøj er lidt beskidt.
+
+Der er fordele og ulemper ved at købe brugt tøj. En fordel er, at det er billigt. En anden fordel er, at det er godt for miljøet, fordi man ikke skal producere nyt tøj. En ulempe er, at tøjet kan være slidt, og man kan ikke altid finde sin størrelse. En anden ulempe er, at man kan ikke give tøjet tilbage, hvis man køber det fra en privat person.
+
+Jeg synes, at det er en god idé at købe brugt tøj, fordi det er godt for miljøet og for økonomien. Derfor jeg køber selv brugt tøj nogle gange.`,
+    summary:
+      'A solid middle answer: all bullets are covered and the meaning is always clear, but the evaluation is a list of pros and cons with little weighing, the ending is personal rather than a summing-up, and word-order slips recur.',
+    criteria: [
+      {
+        criterion: 'task',
+        comment:
+          'All three bullets are answered, and the causes rightly compare young and old. The description opens with "hvor mange danskere" although the table shows a share, but then finds the trends ("De unge køber mest", "næsten fordoblet"). The evaluation (about 98 of ~247 words, ≈ 40 %) lists two advantages and two disadvantages without weighing them, and the own view repeats the advantages instead of arguing why they count more.',
+      },
+      {
+        criterion: 'pragmatic',
+        comment:
+          'One paragraph per bullet, but the evaluation is built on the same frame four times ("En fordel er … En anden fordel er … En ulempe er … En anden ulempe er"), and "også" appears three times in the causes paragraph. The last sentence is about the writer\'s own shopping and does not sum up.',
+      },
+      {
+        criterion: 'linguistic',
+        comment:
+          'Adequate and mostly correct, with some good phrases ("Andelen er næsten fordoblet", "sin størrelse"). Recurring errors: no inversion after "I 2024", "Først", "Måske" and "Derfor"; "ikke" after the verb in an at-clause ("at man kan ikke give"); "et billigt kjole" and "mere penge" for "flere penge". None of this blocks understanding.',
+      },
+    ],
+    annotations: [
+      {
+        quote: 'Diagrammet viser hvor mange danskere',
+        kind: 'style',
+        note: 'The table shows a share (andel, %), not a number of people (antal). Mixing the two is a common misreading. Danish also puts a comma before the hv-clause.',
+        fix: 'Diagrammet viser, hvor stor en andel af danskerne',
+      },
+      {
+        quote: 'I 2024 58 % af de 18–29-årige har købt',
+        kind: 'error',
+        note: 'A fronted time expression takes the first slot, so the finite verb must come next.',
+        fix: 'I 2024 har 58 % af de 18–29-årige købt',
+        ruleId: 'v2-inversion',
+      },
+      {
+        quote: 'Først de unge har',
+        kind: 'error',
+        note: '"Først" in the front slot needs the verb straight after it; "For det første" is the usual way to start a list of causes.',
+        fix: 'For det første har de unge',
+        ruleId: 'v2-inversion',
+      },
+      {
+        quote: 'et billigt kjole',
+        kind: 'error',
+        note: '"Kjole" is an en-word, so the article and the adjective take the common-gender form.',
+        fix: 'en billig kjole',
+      },
+      {
+        quote: 'Måske de synes også',
+        kind: 'error',
+        note: 'Fronted "Måske" counts as the first element, so the verb comes before the subject.',
+        fix: 'Måske synes de også',
+        ruleId: 'v2-inversion',
+      },
+      {
+        quote: 'at man kan ikke give tøjet tilbage',
+        kind: 'error',
+        note: 'Inside an at-clause, "ikke" goes before the finite verb.',
+        fix: 'at man ikke kan give tøjet tilbage',
+        ruleId: 'ikke-regel',
+      },
+      {
+        quote: 'En anden fordel er, at det er godt for miljøet',
+        kind: 'style',
+        note: 'The evaluation uses the same frame four times ("En fordel er … En anden fordel er … En ulempe er … En anden ulempe er"). Vary the links and weigh the points against each other instead of only listing them.',
+        fix: 'Desuden er det godt for miljøet',
+      },
+      {
+        quote: 'Derfor jeg køber selv brugt tøj nogle gange.',
+        kind: 'error',
+        note: '"Derfor" must be followed by the verb. The sentence is also a personal aside, not a summing-up of the evaluation.',
+        fix: 'Alt i alt mener jeg derfor, at fordelene opvejer ulemperne, fordi både miljøet og økonomien får gavn af det.',
+        ruleId: 'v2-inversion',
+      },
+    ],
+  },
+  {
+    id: 'wgr-d2a-2-4',
+    taskId: 'wsim-d2a-2',
+    band: '4',
+    origin: 'illustrative',
+    text: `Diagrammet viser brugt tøj i Danmark. I 2016 31 % af de 18–29-årige købte brugt tøj, og i 2024 det var 58 %. For de 30–44-årige det var 24 % i 2016 og 41 % i 2024. De 45–59-årige var 15 % og 27 %. Og 60 år og derover var 8 % i 2016 og 14 % i 2024. Alle tal er steget.
+
+Unge mennesker køber mere brugt tøj, fordi de er fattig. De har ikke arbejde, de er studerende og får SU. Det er også moderne at gå i gammel tøj nu. Gamle mennesker kan ikke lide brugt tøj, de vil have nye tøj fra butikken. De bruger heller ikke apps på mobilen.
+
+Jeg synes, brugt tøj er godt. Det er billigt, og man kan finde mange gode ting i genbrugsbutikker. Det er også godt for klimaet, fordi fabrikkerne skal ikke lave så meget nyt tøj. Mange tøj bliver smidt ud, og det er dårligt. Når man køber brugt tøj, man hjælper miljøet. Min datter køber altid tøj på Vinted, og hun er meget glad. Måske nogle gange tøjet er lidt slidt, men det er ikke et problem. Derfor alle skal købe brugt tøj. Det er bedst for alle.`,
+    summary:
+      'A just-passing answer: the description reads out every number, the causes are sweeping generalisations, and the evaluation only argues for second-hand, with frequent word-order and ending errors.',
+    criteria: [
+      {
+        criterion: 'task',
+        comment:
+          'The description lists all eight figures row by row and only reaches a trend in "Alle tal er steget"; the age gap is never named. The causes touch on the age difference, but "Gamle mennesker kan ikke lide brugt tøj" is stated as a fact. The evaluation (about 86 of ~201 words) gives only advantages; the one drawback ("lidt slidt") is waved away, so "fordele og ulemper" is half answered, and there is no real summing-up.',
+      },
+      {
+        criterion: 'pragmatic',
+        comment:
+          'Paragraphs follow the bullets, but the sentences are short and loosely joined with "og" and commas ("De har ikke arbejde, de er studerende og får SU"). The story about "Min datter" does not support the evaluation, and "Det er bedst for alle" repeats instead of concluding.',
+      },
+      {
+        criterion: 'linguistic',
+        comment:
+          'Simple, repetitive vocabulary ("godt" again and again, "Det er bedst for alle"). Frequent errors: missing inversion ("I 2016 31 % … købte", "Når man køber brugt tøj, man hjælper", "Derfor alle skal"), "ikke" after the verb in a fordi-clause, and agreement ("de er fattig", "gammel tøj", "nye tøj", "Mange tøj"). The meaning still comes through.',
+      },
+    ],
+    annotations: [
+      {
+        quote: 'I 2016 31 % af de 18–29-årige købte brugt tøj',
+        kind: 'error',
+        note: 'After the fronted "I 2016" the verb must come next. The whole paragraph also reads the table aloud; "hovedtrækkene" means two or three trends.',
+        fix: 'I 2016 købte 31 % af de 18–29-årige brugt tøj',
+        ruleId: 'v2-inversion',
+      },
+      {
+        quote: 'fordi de er fattig',
+        kind: 'error',
+        note: 'A predicative adjective after a plural subject takes -e. "Fattig" is also too strong here; a neutral phrase fits a factual text better.',
+        fix: 'fordi de har en stram økonomi',
+      },
+      {
+        quote: 'gammel tøj',
+        kind: 'error',
+        note: '"Tøj" is an et-word, so the adjective takes -t.',
+        fix: 'gammelt tøj',
+      },
+      {
+        quote: 'fordi fabrikkerne skal ikke lave',
+        kind: 'error',
+        note: 'In a fordi-clause "ikke" goes before the finite verb.',
+        fix: 'fordi fabrikkerne ikke skal lave',
+        ruleId: 'ikke-regel',
+      },
+      {
+        quote: 'Mange tøj',
+        kind: 'error',
+        note: '"Tøj" is uncountable, so it takes "meget", not "mange".',
+        fix: 'Meget tøj',
+      },
+      {
+        quote: 'Når man køber brugt tøj, man hjælper miljøet.',
+        kind: 'error',
+        note: 'A fronted subordinate clause counts as the first element, so the verb comes straight after the comma.',
+        fix: 'Når man køber brugt tøj, hjælper man miljøet.',
+        ruleId: 'v2-inversion',
+      },
+      {
+        quote: 'Måske nogle gange tøjet er lidt slidt, men det er ikke et problem.',
+        kind: 'style',
+        note: 'The only disadvantage in the text, and it is dismissed without a reason. The task asks you to weigh disadvantages too. The word order also needs inversion after "Måske".',
+        fix: 'En ulempe er dog, at tøjet kan være slidt, og at man sjældent kan bytte det, hvis det ikke passer.',
+      },
+      {
+        quote: 'Derfor alle skal købe brugt tøj.',
+        kind: 'error',
+        note: '"Derfor" takes the front slot, so the verb comes next. "Alle skal" is also an absolute claim that the text has not argued for.',
+        fix: 'Derfor bør flere købe brugt tøj.',
+        ruleId: 'v2-inversion',
+      },
+    ],
+  },
+  {
+    id: 'wgr-d2a-2-02',
+    taskId: 'wsim-d2a-2',
+    band: '02',
+    origin: 'illustrative',
+    text: `Diagram er om brugt tøj og hvor mange købe det. Der er fire alder, 18–29 år, 30–44 år, 45–59 år og 60 år og over. I 2016 unge købte 31 og i 2024 58, det er meget mere. Gamle mennesker købe ikke så meget, kun 8 og 14. Alle grupper er mere i 2024, næsten dobbelt.
+
+Hvorfor unge købe mere brugt tøj? Jeg tror fordi de har ikke mange penge og tøj i butikken er meget dyrt nu. Også de bruge internet hele tiden og der er mange app hvor man kan sælge og købe tøj. Unge kan godt lide gammel stil, det hedder vintage, og de vil være anderledes end andre. Gamle mennesker har mere penge og de går i butik i byen, de vil ikke have andre menneskers tøj fordi det er ikke ren. I min land vi køber også brugt tøj på markedet, det er normal der, alle gør det og det er ikke flovt. Jeg køber også brugt tøj til mine børn fordi de vokser hurtig og det er spild af penge at købe nyt hver gang.
+
+Brugt tøj er god for miljø og billig. Men nogle gange det er gammel og ødelagt. Jeg synes det er godt.`,
+    summary:
+      'A bare pass: about 200 understandable words and a relevant causes paragraph, but the evaluation is three short sentences, the numbers lack units, and errors appear in almost every sentence.',
+    criteria: [
+      {
+        criterion: 'task',
+        comment:
+          'The description gives figures without "%" ("unge købte 31 og i 2024 58") but does see that every group has risen. The causes are the longest part and partly relevant, but drift into "I min land" and the writer\'s own children. The evaluation is only three short sentences (about 20 of ~200 words, ≈ 10 %): one advantage, one disadvantage, no comparison with new clothes, no reason for the view and no summing-up.',
+      },
+      {
+        criterion: 'pragmatic',
+        comment:
+          'Three paragraphs match the bullets, which helps. Inside them, sentences are chained with "og" and commas, and "Jeg synes det er godt." is the whole conclusion. The opening question "Hvorfor unge købe …?" is a nice idea with the wrong word order.',
+      },
+      {
+        criterion: 'linguistic',
+        comment:
+          'Basic vocabulary and errors in nearly every sentence: present tense without -r ("købe", "bruge"), missing inversion ("I 2016 unge købte", "I min land vi køber"), "ikke" after the verb in fordi-clauses, "min land", "mange app", "god for miljø". A Danish reader can still follow the meaning.',
+      },
+    ],
+    annotations: [
+      {
+        quote: 'Diagram er om brugt tøj og hvor mange købe det',
+        kind: 'error',
+        note: 'The diagram is a specific one, so it needs the definite form; "handler om" is the natural verb; present tense always ends in -r.',
+        fix: 'Diagrammet handler om, hvor mange der køber brugt tøj',
+      },
+      {
+        quote: 'I 2016 unge købte 31 og i 2024 58',
+        kind: 'error',
+        note: 'After the fronted "I 2016" the verb comes second. The numbers need "%", or the reader cannot tell if they are people or percent.',
+        fix: 'I 2016 købte 31 % af de unge brugt tøj, og i 2024 var det 58 %',
+        ruleId: 'v2-inversion',
+      },
+      {
+        quote: 'fordi de har ikke mange penge',
+        kind: 'error',
+        note: 'In a fordi-clause "ikke" goes before the finite verb.',
+        fix: 'fordi de ikke har mange penge',
+        ruleId: 'ikke-regel',
+      },
+      {
+        quote: 'mange app',
+        kind: 'error',
+        note: 'After "mange" the noun must be plural.',
+        fix: 'mange apps',
+      },
+      {
+        quote: 'fordi det er ikke ren',
+        kind: 'error',
+        note: '"Ikke" goes before the verb in the fordi-clause, and the adjective agrees with the et-word "tøj".',
+        fix: 'fordi det ikke er rent',
+        ruleId: 'ikke-regel',
+      },
+      {
+        quote: 'I min land vi køber',
+        kind: 'error',
+        note: '"Land" is an et-word (mit), and after the fronted "I mit land" the verb comes before the subject. The whole sentence is also off the task.',
+        fix: 'I mit land køber vi',
+        ruleId: 'v2-inversion',
+      },
+      {
+        quote: 'Brugt tøj er god for miljø og billig.',
+        kind: 'error',
+        note: '"Tøj" is an et-word, so both adjectives take -t, and "miljøet" needs the definite form. This one sentence is nearly the whole evaluation, which should be about half the text.',
+        fix: 'Brugt tøj er godt for miljøet og billigt.',
+      },
+      {
+        quote: 'Men nogle gange det er gammel og ødelagt.',
+        kind: 'error',
+        note: 'Fronted "nogle gange" needs inversion, and the adjective agrees with "tøj".',
+        fix: 'Men nogle gange er det gammelt og ødelagt.',
+        ruleId: 'v2-inversion',
+      },
+    ],
+  },
+  {
+    id: 'wgr-d2a-3-12',
+    taskId: 'wsim-d2a-3',
+    band: '12',
+    origin: 'illustrative',
+    text: `Diagrammet viser, hvordan nye personbiler i Danmark har fordelt sig på drivmiddel fra 2019 til 2024.
+
+Det mest iøjnefaldende er, at elbilernes andel er steget fra 4 % til 55 %, så de nu udgør over halvdelen af de nye biler. Samtidig er andelen af benzin- og dieselbiler faldet fra 90 % til en tredjedel, og det største fald skete fra 2019 til 2021. Plugin-hybridbilerne toppede i 2021 med 27 %, men er siden gået tilbage til 11 %.
+
+Der kan være flere årsager til, at elbilerne har vundet frem. For det første er de blevet billigere og kan køre længere på en opladning. For det andet er der kommet langt flere ladestandere. Endelig er bilkøberne blevet mere klimabevidste, og derfor tør flere nu springe hybridbilen over og vælge en ren elbil.
+
+Der er både fordele og ulemper ved, at staten giver afgiftsfordele til elbiler. Den vigtigste fordel er, at de fremskynder den grønne omstilling og mindsker udledningen af CO2, fordi lavere afgifter gør elbilen til et realistisk valg for almindelige familier. På den anden side mister staten store indtægter, som må hentes et andet sted. Desuden går fordelen især til dem, der har råd til en ny bil, mens folk med en gammel benzinbil ikke får noget.
+
+Efter min mening har afgiftsfordelene været en god investering, men nu bør de gradvist udfases. Når over halvdelen af de nye biler allerede er elbiler, er der ikke længere brug for så stor en gulerod. Alt i alt mener jeg derfor, at pengene hellere skal bruges på den kollektive trafik.`,
+    summary:
+      'A top-band answer: all three trends are described selectively, the causes explain both the rise of electric cars and the fall of hybrids, and the evaluation weighs the tax policy itself before a nuanced view that uses the diagram.',
+    criteria: [
+      {
+        criterion: 'task',
+        comment:
+          'All three bullets are answered. The description covers the three trends, including the hybrid peak that many answers miss, and correctly speaks of "de nye biler". Three causes are given, one of them explaining why hybrids fell back. The evaluation (about 126 of ~258 words, ≈ 49 %) stays on the state\'s tax benefit, weighs one strong advantage against two disadvantages, and ends in a reasoned position with a sammenfatning.',
+      },
+      {
+        criterion: 'pragmatic',
+        comment:
+          'One paragraph per bullet plus a conclusion. "For det første … For det andet … Endelig" structures the causes; "Den vigtigste fordel … På den anden side … Desuden" structures the evaluation. The view links back to the figures ("over halvdelen af de nye biler"), which ties the text together.',
+      },
+      {
+        criterion: 'linguistic',
+        comment:
+          'Precise, varied and correct: "vundet frem", "fremskynder den grønne omstilling", "gradvist udfases", "så stor en gulerod". Inversion is correct after fronted elements, including a whole subordinate clause ("Når over halvdelen … er elbiler, er der"), and "ikke" sits before the verb in "mens folk … ikke får noget".',
+      },
+    ],
+    annotations: [
+      {
+        quote: 'så de nu udgør over halvdelen af de nye biler',
+        kind: 'good',
+        note: 'Precise reading of the table: it is half of the new cars, not of all cars on the road.',
+      },
+      {
+        quote: 'og det største fald skete fra 2019 til 2021',
+        kind: 'good',
+        note: 'Pointing out when the change happened is a main feature; one sentence replaces six rows of numbers.',
+      },
+      {
+        quote: 'Plugin-hybridbilerne toppede i 2021 med 27 %',
+        kind: 'good',
+        note: 'The third trend in the table, which many answers skip.',
+      },
+      {
+        quote: 'For det andet er der kommet langt flere ladestandere',
+        kind: 'good',
+        note: 'Signposted cause with correct inversion after the fronted "For det andet".',
+        ruleId: 'v2-inversion',
+      },
+      {
+        quote: 'og derfor tør flere nu springe hybridbilen over',
+        kind: 'good',
+        note: 'Explains the fall of the hybrids too, and the verb correctly follows "derfor".',
+        ruleId: 'v2-inversion',
+      },
+      {
+        quote: 'Den vigtigste fordel er, at de fremskynder den grønne omstilling',
+        kind: 'good',
+        note: 'Evaluates the policy (the tax benefit), not the electric car itself, which is what the bullet asks.',
+      },
+      {
+        quote: 'På den anden side mister staten store indtægter',
+        kind: 'good',
+        note: 'A clear turn to the disadvantages, with the verb before the subject after the fronted phrase.',
+        ruleId: 'v2-inversion',
+      },
+      {
+        quote: 'Når over halvdelen af de nye biler allerede er elbiler, er der ikke længere brug for',
+        kind: 'good',
+        note: 'A fronted subordinate clause followed by the verb, and an argument built on the diagram\'s own figure.',
+        ruleId: 'v2-inversion',
+      },
+    ],
+  },
+  {
+    id: 'wgr-d2a-3-7',
+    taskId: 'wsim-d2a-3',
+    band: '7',
+    origin: 'illustrative',
+    text: `Diagrammet viser, hvordan nye biler i Danmark fordeler sig på elbiler, plugin-hybridbiler og benzin- og dieselbiler fra 2019 til 2024.
+
+Det vigtigste er, at elbilerne er steget meget. I 2019 kun 4 % af de nye biler var elbiler, men i 2024 det var 55 %. Benzin- og dieselbilerne er faldet fra 90 % til 34 %. Plugin-hybridbilerne steg først til 27 % i 2021, og så de faldt igen til 11 %.
+
+Der er flere grunde til, at elbilerne er blevet populære. Elbilerne er blevet billigere, og de kan køre længere end før. Der er også flere ladestandere nu, så man kan lade bilen mange steder. Mange mennesker tænker også mere på klimaet og vil ikke forurene. Desuden er benzinen blevet meget dyrt, så det er billigere at køre i en elbil.
+
+Der er fordele og ulemper ved afgiftsfordele til elbiler. En fordel er, at flere mennesker kan købe en elbil, fordi den bliver billigere. Det er godt for klimaet, fordi elbiler udleder ikke CO2, når de kører. En ulempe er, at staten får færre penge, og så har den mindre penge til skoler og hospitaler. En anden ulempe er, at det mest er rige mennesker, der køber nye biler.
+
+Jeg synes, at afgiftsfordele er en god idé, fordi klimaet er meget vigtigt. Men når der er mange elbiler, staten skal stoppe med fordelene. Alt i alt er elbiler godt for Danmark.`,
+    summary:
+      'A solid middle answer: the description and causes are clear, and the evaluation touches the right points, but it is short, the view is thinly argued, the conclusion slides from the tax benefit to electric cars in general, and word-order slips recur.',
+    criteria: [
+      {
+        criterion: 'task',
+        comment:
+          'All three bullets are answered, and the description includes the hybrid peak. The causes are relevant, but the price of petrol is a guess presented as fact. The evaluation (about 100 of ~233 words, ≈ 43 %) names one advantage and two disadvantages of the tax benefit; the view ("fordi klimaet er meget vigtigt") is not weighed against the disadvantages, and the closing sentence is about electric cars, not the policy.',
+      },
+      {
+        criterion: 'pragmatic',
+        comment:
+          'Clear paragraphs that follow the bullets. Linking is repetitive: "også" twice in two sentences in the causes, and "En fordel er … En ulempe er … En anden ulempe er" in the evaluation. The idea of phasing out the benefit ("når der er mange elbiler") is good but is not developed.',
+      },
+      {
+        criterion: 'linguistic',
+        comment:
+          'Mostly correct, with some good phrases ("fordeler sig på", "udleder"). Recurring errors: no inversion after "I 2019", "i 2024", "og så" and a fronted når-clause; "ikke" after the verb in a fordi-clause; "dyrt" with the en-word "benzinen"; "mindre penge" for "færre penge". None of this blocks understanding.',
+      },
+    ],
+    annotations: [
+      {
+        quote: 'I 2019 kun 4 % af de nye biler var elbiler',
+        kind: 'error',
+        note: 'A fronted time expression takes the first slot, so the finite verb must come next.',
+        fix: 'I 2019 var kun 4 % af de nye biler elbiler',
+        ruleId: 'v2-inversion',
+      },
+      {
+        quote: 'i 2024 det var 55 %',
+        kind: 'error',
+        note: 'Same rule: after "i 2024" the verb comes before the subject.',
+        fix: 'i 2024 var det 55 %',
+        ruleId: 'v2-inversion',
+      },
+      {
+        quote: 'og så de faldt igen',
+        kind: 'error',
+        note: '"Så" here is a fronted adverb (then), so the verb must follow it.',
+        fix: 'og så faldt de igen',
+        ruleId: 'v2-inversion',
+      },
+      {
+        quote: 'benzinen blevet meget dyrt',
+        kind: 'error',
+        note: '"Benzin" is an en-word, so the predicative adjective takes no -t.',
+        fix: 'benzinen blevet meget dyr',
+      },
+      {
+        quote: 'fordi elbiler udleder ikke CO2',
+        kind: 'error',
+        note: 'In a fordi-clause "ikke" goes before the finite verb.',
+        fix: 'fordi elbiler ikke udleder CO2',
+        ruleId: 'ikke-regel',
+      },
+      {
+        quote: 'mindre penge',
+        kind: 'error',
+        note: '"Penge" is plural, so it takes "færre", as the writer correctly does earlier in the same sentence.',
+        fix: 'færre penge',
+      },
+      {
+        quote: 'Men når der er mange elbiler, staten skal stoppe med fordelene.',
+        kind: 'error',
+        note: 'A fronted når-clause counts as the first element, so the verb comes right after the comma.',
+        fix: 'Men når der er mange elbiler, skal staten stoppe med fordelene.',
+        ruleId: 'v2-inversion',
+      },
+      {
+        quote: 'Alt i alt er elbiler godt for Danmark.',
+        kind: 'style',
+        note: 'The conclusion answers a different question: the task is about the state\'s tax benefits, not whether electric cars are good.',
+        fix: 'Alt i alt mener jeg, at afgiftsfordelene har været en god idé, men at de bør stoppe, når elbilerne er blevet almindelige.',
+      },
+    ],
+  },
+  {
+    id: 'wgr-d2a-3-4',
+    taskId: 'wsim-d2a-3',
+    band: '4',
+    origin: 'illustrative',
+    text: `Diagrammet viser biler i Danmark fra 2019 til 2024. I 2019 der var 4 % elbiler, 6 % plugin-hybrid og 90 % benzin og diesel. I 2020 det var 16 %, 17 % og 67 %. I 2021 elbiler var 33 % og plugin-hybrid 27 % og benzin og diesel 40 %. I 2022 og 2023 elbiler blev mere, og i 2024 det er 55 %. Benzin og diesel er kun 34 % i 2024.
+
+Elbiler er blevet populær, fordi de er godt for miljøet. Folk vil ikke have forurening, og der er også mange steder at lade bilen nu. Mange af mine kollegere har købt elbil, og de siger, at det er billig at køre. Og benzinen koster meget nu, så folk vil gerne spare penge. Det er også stille og man skal ikke til tankstationen.
+
+Jeg synes, afgiftsfordele er en god idé. Hvis elbiler er billig, mange mennesker køber dem, og så kommer der mindre CO2. Det er godt for klimaet og for vores børn. Når flere kører elbil, luften i byen bliver også bedre. Men elbiler er stadig dyrt, og ikke alle har råd. Staten skal hjælpe dem mere. Jeg tror, at om ti år alle biler er elbiler i Danmark.`,
+    summary:
+      'A just-passing answer: the description lists the figures year by year, the evaluation argues only for the tax benefit and misreads its one "disadvantage", and agreement and word-order errors are frequent.',
+    criteria: [
+      {
+        criterion: 'task',
+        comment:
+          'The description reads out the table year by year and never states a trend in words; the hybrids\' rise and fall is lost in the list. The causes are relevant but brief and partly anecdotal ("mine kollegere"). The evaluation (about 67 of ~204 words, ≈ 33 %) gives two advantages, less CO2 and cleaner air; "elbiler er stadig dyrt" is an argument for more support, not a disadvantage of the benefit, so the weighing the bullet asks for is missing, and there is no summing-up.',
+      },
+      {
+        criterion: 'pragmatic',
+        comment:
+          'Paragraphs follow the bullets, but sentences are short and linked mostly with "og". The last sentence ("om ti år alle biler er elbiler") is a prediction, not a conclusion. Few linking words beyond "også".',
+      },
+      {
+        criterion: 'linguistic',
+        comment:
+          'Simple vocabulary. Frequent errors: missing inversion after "I 2019", "I 2020", "I 2021" and fronted hvis- and når-clauses; plural agreement ("populær", "godt", "billig", "dyrt" with plural subjects); "kollegere". The meaning is still clear.',
+      },
+    ],
+    annotations: [
+      {
+        quote: 'I 2019 der var',
+        kind: 'error',
+        note: 'After the fronted "I 2019" the verb comes before the subject.',
+        fix: 'I 2019 var der',
+        ruleId: 'v2-inversion',
+      },
+      {
+        quote: 'I 2020 det var 16 %, 17 % og 67 %.',
+        kind: 'style',
+        note: 'Reading the table year by year uses words the evaluation needs and hides the trends. "Hovedtrækkene" means the big lines.',
+        fix: 'Elbilernes andel er steget hvert år, mens benzin- og dieselbilerne er faldet fra 90 % til cirka en tredjedel.',
+      },
+      {
+        quote: 'Elbiler er blevet populær, fordi de er godt',
+        kind: 'error',
+        note: 'Predicative adjectives agree with a plural subject and take -e; "godt" becomes "gode".',
+        fix: 'Elbiler er blevet populære, fordi de er gode',
+      },
+      {
+        quote: 'kollegere',
+        kind: 'error',
+        note: 'The plural of "kollega" is "kolleger" (or "kollegaer"); there is no -ere ending.',
+        fix: 'kolleger',
+      },
+      {
+        quote: 'det er billig at køre',
+        kind: 'error',
+        note: 'After "det er" the adjective takes the neuter -t form.',
+        fix: 'det er billigt at køre',
+      },
+      {
+        quote: 'Hvis elbiler er billig, mange mennesker køber dem',
+        kind: 'error',
+        note: 'A fronted hvis-clause is the first element, so the verb comes next; "billig" also agrees with the plural "elbiler".',
+        fix: 'Hvis elbiler er billige, køber mange mennesker dem',
+        ruleId: 'v2-inversion',
+      },
+      {
+        quote: 'Men elbiler er stadig dyrt, og ikke alle har råd. Staten skal hjælpe dem mere.',
+        kind: 'error',
+        note: 'This is meant as the disadvantage, but it argues for more support, so the evaluation stays one-sided. "Dyrt" should also agree with the plural "elbiler". A real drawback of the policy is the cost to the state or who gets the benefit.',
+        fix: 'En ulempe er dog, at staten mister mange penge i afgifter, og at det især er de velhavende, der får glæde af fordelene.',
+      },
+      {
+        quote: 'at om ti år alle biler er elbiler i Danmark',
+        kind: 'error',
+        note: 'Keep the normal subordinate-clause order (subject, then verb) and put the time phrase at the end.',
+        fix: 'at alle biler i Danmark er elbiler om ti år',
+      },
+    ],
+  },
+  {
+    id: 'wgr-d2a-3-02',
+    taskId: 'wsim-d2a-3',
+    band: '02',
+    origin: 'illustrative',
+    text: `Diagram viser elbil og benzin bil og diesel bil i Danmark. 2019 det var 4 % elbil og 90 % benzin og diesel, det er næsten alle. Så elbil går op hver år og benzin går ned. I 2024 elbil er 55 %, det er mere end halv. Plugin hybrid gå op og så gå ned igen, jeg ved ikke hvorfor. Benzin og diesel er kun 34 % i 2024, det er en stor forskel fra før.
+
+Mange menneske købe elbil nu fordi benzin er meget dyrt og elbil er billigere at køre. Også elbil er godt for miljø, ingen røg. Regeringen siger at vi skal passe på klimaet og man ser det i fjernsyn hele tiden. Der er også mange ladestation nu, før var det svært at finde en. Min nabo han har en Tesla og den er meget hurtig og stille, han er meget glad for den og han siger den er billig at køre. I min land ingen har elbil, det er for dyrt og der er ikke strøm nok. Jeg vil også gerne købe elbil når jeg har penge.
+
+Afgift fordel er godt, fordi så flere køber elbil. Men staten får ikke penge. Jeg synes det er godt for klima.`,
+    summary:
+      'A bare pass: about 200 understandable words with a usable description, but the evaluation is three short sentences, the causes drift into anecdotes, and errors appear in nearly every sentence.',
+    criteria: [
+      {
+        criterion: 'task',
+        comment:
+          'The description finds the main trends ("elbil går op hver år og benzin går ned", "mere end halv") and even notices the hybrids, though without explaining them. The causes are relevant at first but drift into the neighbour\'s Tesla and "I min land". The evaluation (about 20 of ~204 words, ≈ 10 %) has one advantage, one disadvantage without a reason, and no real position or summing-up.',
+      },
+      {
+        criterion: 'pragmatic',
+        comment:
+          'Three paragraphs match the bullets, but sentences are chained with "og" and commas ("han er meget glad for den og han siger …"). "Jeg synes det er godt for klima." ends the text without weighing anything.',
+      },
+      {
+        criterion: 'linguistic',
+        comment:
+          'Basic vocabulary and errors in nearly every sentence: verbs without -r ("købe", "gå"), missing inversion ("2019 det var", "I 2024 elbil er", "I min land ingen har"), singular for plural ("elbil", "menneske", "ladestation"), "hver år", "min land", a doubled subject ("Min nabo han"). The meaning can still be followed.',
+      },
+    ],
+    annotations: [
+      {
+        quote: 'Diagram viser elbil og benzin bil og diesel bil',
+        kind: 'error',
+        note: 'The diagram needs the definite form, the categories are plural, and Danish writes compounds as one word.',
+        fix: 'Diagrammet viser elbiler, benzinbiler og dieselbiler',
+      },
+      {
+        quote: '2019 det var 4 % elbil',
+        kind: 'error',
+        note: 'Write "I 2019", and after the fronted time expression the verb comes before the subject.',
+        fix: 'I 2019 var 4 % elbiler',
+        ruleId: 'v2-inversion',
+      },
+      {
+        quote: 'hver år',
+        kind: 'error',
+        note: '"År" is an et-word, so it takes "hvert".',
+        fix: 'hvert år',
+      },
+      {
+        quote: 'Plugin hybrid gå op og så gå ned igen',
+        kind: 'error',
+        note: 'The verbs need past tense here, the noun needs the definite plural, and the compound has a hyphen.',
+        fix: 'Plugin-hybridbilerne gik op og så ned igen',
+      },
+      {
+        quote: 'Mange menneske købe elbil',
+        kind: 'error',
+        note: '"Mange" needs a plural noun, and present tense ends in -r.',
+        fix: 'Mange mennesker køber elbiler',
+      },
+      {
+        quote: 'Min nabo han har en Tesla',
+        kind: 'error',
+        note: 'Danish does not repeat the subject with a pronoun. The story about the neighbour also takes words from the evaluation.',
+        fix: 'Min nabo har en Tesla',
+      },
+      {
+        quote: 'I min land ingen har elbil',
+        kind: 'error',
+        note: '"Land" is an et-word (mit), and after the fronted "I mit land" the verb comes before the subject.',
+        fix: 'I mit land har ingen elbil',
+        ruleId: 'v2-inversion',
+      },
+      {
+        quote: 'Afgift fordel er godt, fordi så flere køber elbil.',
+        kind: 'error',
+        note: '"Afgiftsfordele" is one word, plural, and the adjective agrees with it. This is nearly the whole evaluation, which should be about half the text.',
+        fix: 'Afgiftsfordele er gode, fordi flere så køber elbiler.',
       },
     ],
   },
