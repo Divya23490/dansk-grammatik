@@ -1,12 +1,10 @@
 import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { ActivityIndicator, Linking, Pressable, ScrollView, View, useWindowDimensions } from 'react-native';
 import {
   OFFICIAL_EXAMPLES,
   TASK_TYPE_GUIDES,
   WRITING_TASK_TYPES,
-  findSimTask,
-  gradedForType,
   simTasksOfType,
   type PracticeTask,
   type TaskTypeGuide,
@@ -22,7 +20,10 @@ import { Screen } from '../../src/ui/Screen';
 import { Segmented } from '../../src/ui/Segmented';
 import { useTheme } from '../../src/ui/theme';
 import { ExamplesSplit, SPLIT_MIN } from '../../src/ui/writing/ExamplesSplit';
-import { BAND_ORDER, GradedAnswerCard } from '../../src/ui/writing/GradedAnswerCard';
+import { TaskCard } from '../../src/ui/writing/TaskCard';
+import { TaskPicker } from '../../src/ui/writing/TaskPicker';
+import { exampleGroups } from '../../src/writing/exampleGroups';
+import { GradedAnswerCard } from '../../src/ui/writing/GradedAnswerCard';
 import { plural, TYPE_SHORT } from '../../src/ui/writing/labels';
 
 type Tab = 'tips' | 'template' | 'examples' | 'practice' | 'phrases';
@@ -51,7 +52,7 @@ const ruleName = (id: string) => (RULES as Record<string, { da: string } | undef
 /** One task type: tips, the paragraph template, graded examples, tasks to practise, phrases and pitfalls. */
 export default function WritingType() {
   const t = useTheme();
-  const params = useLocalSearchParams<{ type: string; tab?: string }>();
+  const params = useLocalSearchParams<{ type: string; tab?: string; task?: string }>();
   const type = one(params.type) as WritingTaskType;
   const initial = one(params.tab) as Tab | undefined;
   const [tab, setTab] = useState<Tab>(TABS.some((x) => x.key === initial) ? initial! : 'tips');
@@ -95,7 +96,7 @@ export default function WritingType() {
 
       {tab === 'tips' ? <TipsTab g={g} /> : null}
       {tab === 'template' ? <TemplateTab g={g} /> : null}
-      {tab === 'examples' ? <ExamplesTab type={type} w={w} split={split} /> : null}
+      {tab === 'examples' ? <ExamplesTab type={type} w={w} split={split} initialTask={one(params.task)} /> : null}
       {tab === 'practice' ? <PracticeTab type={type} w={w} /> : null}
       {tab === 'phrases' ? <PhrasesTab g={g} /> : null}
     </Screen>
@@ -220,51 +221,73 @@ function TemplateTab({ g }: { g: TaskTypeGuide }) {
 
 // ── Examples ────────────────────────────────────────────────────────────────
 
-function ExamplesTab({ type, w, split }: { type: WritingTaskType; w: PrivateWriting; split: boolean }) {
+function ExamplesTab({
+  type,
+  w,
+  split,
+  initialTask,
+}: {
+  type: WritingTaskType;
+  w: PrivateWriting;
+  split: boolean;
+  initialTask?: string;
+}) {
   const t = useTheme();
-  const graded = [...gradedForType(type)].sort((a, b) => BAND_ORDER.indexOf(a.band) - BAND_ORDER.indexOf(b.band));
-  const samples = samplesOfType(w, type);
   const official = OFFICIAL_EXAMPLES.filter((ex) => ex.types.includes(type));
+  const groups = useMemo(
+    () => exampleGroups(simTasksOfType(type), privateTasksOfType(w, type), samplesOfType(w, type)),
+    [type, w],
+  );
+  const [taskId, setTaskId] = useState<string | null>(initialTask ?? null);
+  const group = groups.find((g) => g.task.id === taskId) ?? groups[0];
 
-  if (split && graded.length) {
+  if (!group) return <Empty>Graded example answers for this task type are on their way.</Empty>;
+
+  const picker = (
+    <View style={{ gap: t.space(2) }}>
+      <TaskPicker tasks={groups.map((g) => g.task)} value={group.task.id} onChange={setTaskId} />
+      {w.state === 'signedOut' ? (
+        <Txt variant="label" color={t.c.textFaint}>
+          Sign in to see graded answers to past official papers and your own samples.
+        </Txt>
+      ) : null}
+    </View>
+  );
+
+  if (split) {
     return (
-      <ExamplesSplit
-        ladder={graded.map((a) => ({ answer: a, task: findSimTask(a.taskId) }))}
-        samples={samples.map((sm) => ({ answer: sm, task: sm.task ?? w.tasks.find((x) => x.id === sm.taskId) }))}
-        official={official}
-      />
+      <View style={{ gap: t.space(4) }}>
+        {picker}
+        <ExamplesSplit key={group.task.id} group={group} official={official} />
+      </View>
     );
   }
 
   return (
-    <View style={{ gap: t.space(5) }}>
-      <View style={{ gap: t.space(3) }}>
-        <Card tone="warning" style={{ paddingVertical: t.space(3) }}>
-          <Txt variant="heading" color={t.c.warning} style={{ fontSize: 15 }}>
-            Illustrative — written for this app, not an official grade
-          </Txt>
-          <Txt variant="body" color={t.c.textMuted} style={{ fontSize: 14, lineHeight: 20, marginTop: t.space(1) }}>
-            Each answer shows roughly what a band looks like. Real grades are holistic across both tasks.
-          </Txt>
-        </Card>
-        {graded.length ? (
-          graded.map((a) => <GradedAnswerCard key={a.id} answer={a} task={findSimTask(a.taskId)} />)
-        ) : (
-          <Empty>Graded example answers for this task are on their way.</Empty>
-        )}
-      </View>
-
-      {samples.length ? (
+    <View style={{ gap: t.space(4) }}>
+      {picker}
+      <Card tone="warning" style={{ paddingVertical: t.space(3) }}>
+        <Txt variant="heading" color={t.c.warning} style={{ fontSize: 15 }}>
+          Illustrative — written for this app, not an official grade
+        </Txt>
+        <Txt variant="body" color={t.c.textMuted} style={{ fontSize: 14, lineHeight: 20, marginTop: t.space(1) }}>
+          Each answer shows roughly what a band looks like. Real grades are holistic across both tasks.
+        </Txt>
+      </Card>
+      <TaskCard task={group.task} compact />
+      {group.ladder.map((a) => (
+        <GradedAnswerCard key={a.id} answer={a} />
+      ))}
+      {group.samples.length ? (
         <View style={{ gap: t.space(3) }}>
           <Txt variant="heading" color={t.c.textMuted} style={{ paddingHorizontal: t.space(1) }}>
             Learner samples
           </Txt>
-          {samples.map((sm) => (
-            <GradedAnswerCard key={sm.id} answer={sm} task={sm.task ?? w.tasks.find((x) => x.id === sm.taskId)} />
+          {group.samples.map((sm) => (
+            <GradedAnswerCard key={sm.id} answer={sm} />
           ))}
         </View>
       ) : null}
-
       {official.length ? (
         <View style={{ gap: t.space(3) }}>
           <Txt variant="heading" color={t.c.textMuted} style={{ paddingHorizontal: t.space(1) }}>

@@ -28,7 +28,10 @@ describe('graded 2B ladder', () => {
       expect(a.origin).toBe('illustrative');
       expect(taskIds.has(a.taskId)).toBe(true);
     }
-    expect(GRADED_D2B.map((a) => a.band)).toEqual(['12', '7', '4', '02']);
+  });
+
+  it.each(SIM_TASKS_D2B)('$id has a full 12/7/4/02 ladder', (task) => {
+    expect(GRADED_D2B.filter((a) => a.taskId === task.id).map((a) => a.band)).toEqual(['12', '7', '4', '02']);
   });
 
   it.each(GRADED_D2B)('$id annotations quote the text exactly', (a) => {
@@ -42,8 +45,9 @@ describe('graded 2B ladder', () => {
 
   it('band 12 and band 7 meet the 200-word minimum', () => {
     for (const band of ['12', '7'] as const) {
-      const a = GRADED_D2B.find((g) => g.band === band)!;
-      expect(countWords(a.text)).toBeGreaterThanOrEqual(200);
+      for (const a of GRADED_D2B.filter((g) => g.band === band)) {
+        expect(countWords(a.text), a.id).toBeGreaterThanOrEqual(200);
+      }
     }
   });
 });

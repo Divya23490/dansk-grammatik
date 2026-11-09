@@ -36,6 +36,7 @@ import { useWide } from '../../../src/ui/useWide';
 import { FeedbackView } from '../../../src/ui/writing/FeedbackView';
 import { TYPE_MINUTES } from '../../../src/ui/writing/labels';
 import { TaskCard } from '../../../src/ui/writing/TaskCard';
+import { TaskExtras } from '../../../src/ui/writing/TaskExtras';
 
 const one = (v: string | string[] | undefined) => (Array.isArray(v) ? v[0] : v);
 const AUTOSAVE_MS = 800;
@@ -186,7 +187,12 @@ function Editor({ task, modeParam }: { task: PracticeTask; modeParam?: DraftMode
     }
   };
 
-  const taskView = <TaskCard task={task} />;
+  const taskView = (
+    <View style={{ gap: t.space(3) }}>
+      <TaskCard task={task} />
+      <TaskExtras task={task} />
+    </View>
+  );
 
   const editor = (
     <View style={{ gap: t.space(4) }}>

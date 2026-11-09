@@ -42,7 +42,11 @@ describe('illustrative 2A grade ladder', () => {
       expect(taskIds.has(a.taskId), a.id).toBe(true);
       expect(a.origin).toBe('illustrative');
     }
-    expect(GRADED_D2A.map((a) => a.band)).toEqual(['12', '7', '4', '02']);
+    for (const t of SIM_TASKS_D2A) {
+      const ladder = GRADED_D2A.filter((a) => a.taskId === t.id);
+      expect(ladder.map((a) => a.band).sort(), t.id).toEqual(['02', '12', '4', '7']);
+      for (const a of ladder) expect(a.id).toBe(`wgr-${t.id.replace('wsim-', '')}-${a.band}`);
+    }
   });
 
   it('comments on all three criteria', () => {

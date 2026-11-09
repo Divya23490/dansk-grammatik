@@ -153,6 +153,28 @@ export function validatePracticeTask(t: PracticeTask, opts: TaskCheckOptions = {
       }
   }
 
+  if (t.tips !== undefined) {
+    if (!Array.isArray(t.tips)) err('tips must be a list');
+    else t.tips.forEach((x, i) => (!isText(x?.title) || !isText(x?.text)) && err(`tips[${i}] needs title and text`));
+  }
+  if (t.words !== undefined) {
+    if (!Array.isArray(t.words)) err('words must be a list');
+    else t.words.forEach((p, i) => (!isText(p?.da) || !isText(p?.en)) && err(`words[${i}] needs da and en`));
+  }
+  if (t.examples !== undefined) {
+    if (!Array.isArray(t.examples)) err('examples must be a list');
+    else {
+      const ids = new Set<string>();
+      t.examples.forEach((a, i) => {
+        for (const e of validateGradedAnswer(a)) err(`examples[${i}]: ${e}`);
+        if (a?.taskId !== t.id) err(`examples[${i}]: taskId "${String(a?.taskId)}" should be "${t.id}"`);
+        if (a?.origin !== 'illustrative') err(`examples[${i}]: origin should be illustrative`);
+        if (ids.has(a?.id)) err(`examples[${i}]: duplicate id "${a?.id}"`);
+        ids.add(a?.id);
+      });
+    }
+  }
+
   return errors;
 }
 

@@ -59,14 +59,14 @@ describe('writing prep content', () => {
 
   it.each(WRITING_TASK_TYPES)('%s has simulated tasks and a 12→02 ladder', (type) => {
     const tasks = simTasksOfType(type);
-    expect(tasks.length).toBeGreaterThanOrEqual(3);
+    expect(tasks.length).toBeGreaterThanOrEqual(6);
     for (const t of tasks) {
       expect(t.origin).toBe('simulated');
       expect(t.session).toBeUndefined();
       expect(t.bullets.map((b) => b.key)).toEqual(BULLETS_BY_TYPE[type]);
     }
     const ladder = gradedForType(type);
-    expect(ladder.map((a) => a.band).sort()).toEqual(['02', '12', '4', '7']);
+    expect(ladder.length).toBeGreaterThanOrEqual(4);
     for (const a of ladder) {
       expect(a.origin).toBe('illustrative');
       expect(a.criteria.map((c) => c.criterion).sort()).toEqual(['linguistic', 'pragmatic', 'task']);
@@ -79,6 +79,15 @@ describe('writing prep content', () => {
       const keys = TASK_TYPE_GUIDES[task.type].template.map((sl) => sl.key);
       expect(Object.keys(task.slots ?? {}).sort(), task.id).toEqual([...keys].sort());
       for (const k of keys) expect(task.slots![k].starters.length, `${task.id}.${k}`).toBeGreaterThanOrEqual(2);
+    }
+  });
+
+  it('gives every simulated task a full ladder, tips and a word bank', () => {
+    for (const task of SIM_WRITING_TASKS) {
+      const bands = GRADED_ANSWERS.filter((a) => a.taskId === task.id).map((a) => a.band);
+      expect(bands.sort(), task.id).toEqual(['02', '12', '4', '7']);
+      expect(task.tips?.length ?? 0, `${task.id} tips`).toBeGreaterThanOrEqual(3);
+      expect(task.words?.length ?? 0, `${task.id} words`).toBeGreaterThanOrEqual(10);
     }
   });
 
